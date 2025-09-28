@@ -10,6 +10,17 @@ module extended_ALU(clk, src1, src0, func, dst_EX_DM, ov, zr, neg);
 	// 111 ==> undefined
 	
 		`include "common_params.inc"
+    
+	 
+	input clk;
+	input [31:0] src1, src0;
+	input [2:0] func;				// selects function to perform
+	output reg [31:0] dst_EX_DM;
+	output ov, zr, neg;
+
+	logic [31:0] ifadd_OUT, ifmul_OUT, iftoi_OUT, iitof_OUT, iimul_OUT;
+
+	logic [31:0] OUT;
 
 		
 endmodule

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ALU_EXT
-Sun Sep 28 13:12:03 2025
+Sun Sep 28 13:14:45 2025
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Sun Sep 28 13:12:03 2025          ;
+; Analysis & Synthesis Status        ; Failed - Sun Sep 28 13:14:45 2025          ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; ALU_EXT                                    ;
 ; Top-level Entity Name              ; ALU_EXT                                    ;
@@ -155,22 +155,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Sun Sep 28 13:12:02 2025
+    Info: Processing started: Sun Sep 28 13:14:44 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ALU_EXT -c ALU_EXT
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file alu_ext.v
     Info (12023): Found entity 1: extended_ALU
-Error (10161): Verilog HDL error at ALU_EXT.v(1): object "clk" is not declared File: C:/Users/JOSE LUIS TARQUI/Desktop/SCEIE/LASCAS/IA Y FPG/MI nuevo codigo/CNN_WITH_FPGA/ALU_EXT.v Line: 1
-Error (10161): Verilog HDL error at ALU_EXT.v(1): object "src1" is not declared File: C:/Users/JOSE LUIS TARQUI/Desktop/SCEIE/LASCAS/IA Y FPG/MI nuevo codigo/CNN_WITH_FPGA/ALU_EXT.v Line: 1
-Error (10161): Verilog HDL error at ALU_EXT.v(1): object "src0" is not declared File: C:/Users/JOSE LUIS TARQUI/Desktop/SCEIE/LASCAS/IA Y FPG/MI nuevo codigo/CNN_WITH_FPGA/ALU_EXT.v Line: 1
-Error (10161): Verilog HDL error at ALU_EXT.v(1): object "func" is not declared File: C:/Users/JOSE LUIS TARQUI/Desktop/SCEIE/LASCAS/IA Y FPG/MI nuevo codigo/CNN_WITH_FPGA/ALU_EXT.v Line: 1
-Error (10161): Verilog HDL error at ALU_EXT.v(1): object "dst_EX_DM" is not declared File: C:/Users/JOSE LUIS TARQUI/Desktop/SCEIE/LASCAS/IA Y FPG/MI nuevo codigo/CNN_WITH_FPGA/ALU_EXT.v Line: 1
-Error (10161): Verilog HDL error at ALU_EXT.v(1): object "ov" is not declared File: C:/Users/JOSE LUIS TARQUI/Desktop/SCEIE/LASCAS/IA Y FPG/MI nuevo codigo/CNN_WITH_FPGA/ALU_EXT.v Line: 1
-Error (10161): Verilog HDL error at ALU_EXT.v(1): object "zr" is not declared File: C:/Users/JOSE LUIS TARQUI/Desktop/SCEIE/LASCAS/IA Y FPG/MI nuevo codigo/CNN_WITH_FPGA/ALU_EXT.v Line: 1
-Error (10161): Verilog HDL error at ALU_EXT.v(1): object "neg" is not declared File: C:/Users/JOSE LUIS TARQUI/Desktop/SCEIE/LASCAS/IA Y FPG/MI nuevo codigo/CNN_WITH_FPGA/ALU_EXT.v Line: 1
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 8 errors, 1 warning
+Error (10161): Verilog HDL error at ALU_EXT.v(21): object "logic" is not declared File: C:/Users/JOSE LUIS TARQUI/Desktop/SCEIE/LASCAS/IA Y FPG/MI nuevo codigo/CNN_WITH_FPGA/ALU_EXT.v Line: 21
+Error (10161): Verilog HDL error at ALU_EXT.v(23): object "logic" is not declared File: C:/Users/JOSE LUIS TARQUI/Desktop/SCEIE/LASCAS/IA Y FPG/MI nuevo codigo/CNN_WITH_FPGA/ALU_EXT.v Line: 23
+Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 2 errors, 1 warning
     Error: Peak virtual memory: 4573 megabytes
-    Error: Processing ended: Sun Sep 28 13:12:03 2025
+    Error: Processing ended: Sun Sep 28 13:14:45 2025
     Error: Elapsed time: 00:00:01
     Error: Total CPU time (on all processors): 00:00:01
 
