@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ALU_EXT
-Sun Sep 28 13:48:49 2025
+Sun Sep 28 13:51:51 2025
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -14,11 +14,12 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Port Connectivity Checks: "float_to_signed_int:iftoi"
- 10. Port Connectivity Checks: "FP_mul:ifmul"
- 11. Port Connectivity Checks: "FP_adder:ifadd"
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  9. Port Connectivity Checks: "signed_int_to_float:iitof"
+ 10. Port Connectivity Checks: "float_to_signed_int:iftoi"
+ 11. Port Connectivity Checks: "FP_mul:ifmul"
+ 12. Port Connectivity Checks: "FP_adder:ifadd"
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -44,7 +45,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Sep 28 13:48:49 2025      ;
+; Analysis & Synthesis Status        ; Successful - Sun Sep 28 13:51:51 2025      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; ALU_EXT                                    ;
 ; Top-level Entity Name              ; ALU_EXT                                    ;
@@ -169,6 +170,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; left_shifter.sv                  ; yes             ; Auto-Found SystemVerilog HDL File  ; C:/Users/JOSE LUIS TARQUI/Desktop/SCEIE/LASCAS/IA Y FPG/MI nuevo codigo/CNN_WITH_FPGA/left_shifter.sv        ;         ;
 ; fp_mul.sv                        ; yes             ; Auto-Found SystemVerilog HDL File  ; C:/Users/JOSE LUIS TARQUI/Desktop/SCEIE/LASCAS/IA Y FPG/MI nuevo codigo/CNN_WITH_FPGA/fp_mul.sv              ;         ;
 ; float_to_signed_int.sv           ; yes             ; Auto-Found SystemVerilog HDL File  ; C:/Users/JOSE LUIS TARQUI/Desktop/SCEIE/LASCAS/IA Y FPG/MI nuevo codigo/CNN_WITH_FPGA/float_to_signed_int.sv ;         ;
+; signed_int_to_float.sv           ; yes             ; Auto-Found SystemVerilog HDL File  ; C:/Users/JOSE LUIS TARQUI/Desktop/SCEIE/LASCAS/IA Y FPG/MI nuevo codigo/CNN_WITH_FPGA/signed_int_to_float.sv ;         ;
 +----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -222,6 +224,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "signed_int_to_float:iitof"                                                            ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; FP_val ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +--------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "float_to_signed_int:iftoi"                                                                    ;
 +----------------+--------+----------+-------------------------------------------------------------------------------------+
@@ -264,7 +275,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Sun Sep 28 13:48:48 2025
+    Info: Processing started: Sun Sep 28 13:51:49 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ALU_EXT -c ALU_EXT
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file alu_ext.v
@@ -296,6 +307,9 @@ Warning (12125): Using design file float_to_signed_int.sv, which is not specifie
     Info (12023): Found entity 1: float_to_signed_int
 Info (12128): Elaborating entity "float_to_signed_int" for hierarchy "float_to_signed_int:iftoi"
 Warning (10230): Verilog HDL assignment warning at float_to_signed_int.sv(15): truncated value with size 32 to match size of target (31)
+Warning (12125): Using design file signed_int_to_float.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: signed_int_to_float
+Info (12128): Elaborating entity "signed_int_to_float" for hierarchy "signed_int_to_float:iitof"
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "dst_EX_DM[0]" is stuck at GND
     Warning (13410): Pin "dst_EX_DM[1]" is stuck at GND
@@ -406,10 +420,10 @@ Warning (21074): Design contains 68 input pin(s) that do not drive logic
 Info (21057): Implemented 103 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 68 input pins
     Info (21059): Implemented 35 output pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 122 warnings
-    Info: Peak virtual memory: 4593 megabytes
-    Info: Processing ended: Sun Sep 28 13:48:49 2025
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:02
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 123 warnings
+    Info: Peak virtual memory: 4594 megabytes
+    Info: Processing ended: Sun Sep 28 13:51:51 2025
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
 
 
