@@ -1,4 +1,4 @@
-module extended_ALU(clk, src1, src0, func, dst_EX_DM, ov, zr, neg);
+module ALU_EXT(clk, src1, src0, func, dst_EX_DM, ov, zr, neg);
 	// Encoding of func[2:0] is as follows: //
 	// 000 ==> MUL   Multiplicación de enteros con signo
 	// 001 ==> UMUL  Multiplicación de enteros sin signo

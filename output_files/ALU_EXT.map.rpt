@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ALU_EXT
-Sun Sep 28 13:14:45 2025
+Sun Sep 28 13:19:03 2025
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -10,7 +10,12 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Elapsed Time Per Partition
+ 10. Analysis & Synthesis Messages
 
 
 
@@ -36,20 +41,20 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Sun Sep 28 13:14:45 2025          ;
+; Analysis & Synthesis Status        ; Successful - Sun Sep 28 13:19:03 2025      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; ALU_EXT                                    ;
 ; Top-level Entity Name              ; ALU_EXT                                    ;
 ; Family                             ; Cyclone II                                 ;
-; Total logic elements               ; N/A until Partition Merge                  ;
-;     Total combinational functions  ; N/A until Partition Merge                  ;
-;     Dedicated logic registers      ; N/A until Partition Merge                  ;
-; Total registers                    ; N/A until Partition Merge                  ;
-; Total pins                         ; N/A until Partition Merge                  ;
-; Total virtual pins                 ; N/A until Partition Merge                  ;
-; Total memory bits                  ; N/A until Partition Merge                  ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                  ;
-; Total PLLs                         ; N/A until Partition Merge                  ;
+; Total logic elements               ; 0                                          ;
+;     Total combinational functions  ; 0                                          ;
+;     Dedicated logic registers      ; 0                                          ;
+; Total registers                    ; 0                                          ;
+; Total pins                         ; 103                                        ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
 +------------------------------------+--------------------------------------------+
 
 
@@ -149,23 +154,206 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                            ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------+---------+
+; ALU_EXT.v                        ; yes             ; User Verilog HDL File        ; C:/Users/JOSE LUIS TARQUI/Desktop/SCEIE/LASCAS/IA Y FPG/MI nuevo codigo/CNN_WITH_FPGA/ALU_EXT.v         ;         ;
+; common_params.inc                ; yes             ; Auto-Found Unspecified File  ; C:/Users/JOSE LUIS TARQUI/Desktop/SCEIE/LASCAS/IA Y FPG/MI nuevo codigo/CNN_WITH_FPGA/common_params.inc ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+;                                             ;       ;
+; Total combinational functions               ; 0     ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 103   ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
++---------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |ALU_EXT                   ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 103  ; 0            ; |ALU_EXT            ;              ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Sun Sep 28 13:14:44 2025
+    Info: Processing started: Sun Sep 28 13:19:01 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ALU_EXT -c ALU_EXT
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file alu_ext.v
-    Info (12023): Found entity 1: extended_ALU
-Error (10161): Verilog HDL error at ALU_EXT.v(21): object "logic" is not declared File: C:/Users/JOSE LUIS TARQUI/Desktop/SCEIE/LASCAS/IA Y FPG/MI nuevo codigo/CNN_WITH_FPGA/ALU_EXT.v Line: 21
-Error (10161): Verilog HDL error at ALU_EXT.v(23): object "logic" is not declared File: C:/Users/JOSE LUIS TARQUI/Desktop/SCEIE/LASCAS/IA Y FPG/MI nuevo codigo/CNN_WITH_FPGA/ALU_EXT.v Line: 23
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 2 errors, 1 warning
-    Error: Peak virtual memory: 4573 megabytes
-    Error: Processing ended: Sun Sep 28 13:14:45 2025
-    Error: Elapsed time: 00:00:01
-    Error: Total CPU time (on all processors): 00:00:01
+    Info (12023): Found entity 1: ALU_EXT
+Info (12127): Elaborating entity "ALU_EXT" for the top level hierarchy
+Warning (10034): Output port "dst_EX_DM" at ALU_EXT.v(18) has no driver
+Warning (10034): Output port "ov" at ALU_EXT.v(19) has no driver
+Warning (10034): Output port "zr" at ALU_EXT.v(19) has no driver
+Warning (10034): Output port "neg" at ALU_EXT.v(19) has no driver
+Warning (12158): Entity "ALU_EXT" contains only dangling pins
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "dst_EX_DM[0]" is stuck at GND
+    Warning (13410): Pin "dst_EX_DM[1]" is stuck at GND
+    Warning (13410): Pin "dst_EX_DM[2]" is stuck at GND
+    Warning (13410): Pin "dst_EX_DM[3]" is stuck at GND
+    Warning (13410): Pin "dst_EX_DM[4]" is stuck at GND
+    Warning (13410): Pin "dst_EX_DM[5]" is stuck at GND
+    Warning (13410): Pin "dst_EX_DM[6]" is stuck at GND
+    Warning (13410): Pin "dst_EX_DM[7]" is stuck at GND
+    Warning (13410): Pin "dst_EX_DM[8]" is stuck at GND
+    Warning (13410): Pin "dst_EX_DM[9]" is stuck at GND
+    Warning (13410): Pin "dst_EX_DM[10]" is stuck at GND
+    Warning (13410): Pin "dst_EX_DM[11]" is stuck at GND
+    Warning (13410): Pin "dst_EX_DM[12]" is stuck at GND
+    Warning (13410): Pin "dst_EX_DM[13]" is stuck at GND
+    Warning (13410): Pin "dst_EX_DM[14]" is stuck at GND
+    Warning (13410): Pin "dst_EX_DM[15]" is stuck at GND
+    Warning (13410): Pin "dst_EX_DM[16]" is stuck at GND
+    Warning (13410): Pin "dst_EX_DM[17]" is stuck at GND
+    Warning (13410): Pin "dst_EX_DM[18]" is stuck at GND
+    Warning (13410): Pin "dst_EX_DM[19]" is stuck at GND
+    Warning (13410): Pin "dst_EX_DM[20]" is stuck at GND
+    Warning (13410): Pin "dst_EX_DM[21]" is stuck at GND
+    Warning (13410): Pin "dst_EX_DM[22]" is stuck at GND
+    Warning (13410): Pin "dst_EX_DM[23]" is stuck at GND
+    Warning (13410): Pin "dst_EX_DM[24]" is stuck at GND
+    Warning (13410): Pin "dst_EX_DM[25]" is stuck at GND
+    Warning (13410): Pin "dst_EX_DM[26]" is stuck at GND
+    Warning (13410): Pin "dst_EX_DM[27]" is stuck at GND
+    Warning (13410): Pin "dst_EX_DM[28]" is stuck at GND
+    Warning (13410): Pin "dst_EX_DM[29]" is stuck at GND
+    Warning (13410): Pin "dst_EX_DM[30]" is stuck at GND
+    Warning (13410): Pin "dst_EX_DM[31]" is stuck at GND
+    Warning (13410): Pin "ov" is stuck at GND
+    Warning (13410): Pin "zr" is stuck at GND
+    Warning (13410): Pin "neg" is stuck at GND
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 68 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk"
+    Warning (15610): No output dependent on input pin "src1[0]"
+    Warning (15610): No output dependent on input pin "src1[1]"
+    Warning (15610): No output dependent on input pin "src1[2]"
+    Warning (15610): No output dependent on input pin "src1[3]"
+    Warning (15610): No output dependent on input pin "src1[4]"
+    Warning (15610): No output dependent on input pin "src1[5]"
+    Warning (15610): No output dependent on input pin "src1[6]"
+    Warning (15610): No output dependent on input pin "src1[7]"
+    Warning (15610): No output dependent on input pin "src1[8]"
+    Warning (15610): No output dependent on input pin "src1[9]"
+    Warning (15610): No output dependent on input pin "src1[10]"
+    Warning (15610): No output dependent on input pin "src1[11]"
+    Warning (15610): No output dependent on input pin "src1[12]"
+    Warning (15610): No output dependent on input pin "src1[13]"
+    Warning (15610): No output dependent on input pin "src1[14]"
+    Warning (15610): No output dependent on input pin "src1[15]"
+    Warning (15610): No output dependent on input pin "src1[16]"
+    Warning (15610): No output dependent on input pin "src1[17]"
+    Warning (15610): No output dependent on input pin "src1[18]"
+    Warning (15610): No output dependent on input pin "src1[19]"
+    Warning (15610): No output dependent on input pin "src1[20]"
+    Warning (15610): No output dependent on input pin "src1[21]"
+    Warning (15610): No output dependent on input pin "src1[22]"
+    Warning (15610): No output dependent on input pin "src1[23]"
+    Warning (15610): No output dependent on input pin "src1[24]"
+    Warning (15610): No output dependent on input pin "src1[25]"
+    Warning (15610): No output dependent on input pin "src1[26]"
+    Warning (15610): No output dependent on input pin "src1[27]"
+    Warning (15610): No output dependent on input pin "src1[28]"
+    Warning (15610): No output dependent on input pin "src1[29]"
+    Warning (15610): No output dependent on input pin "src1[30]"
+    Warning (15610): No output dependent on input pin "src1[31]"
+    Warning (15610): No output dependent on input pin "src0[0]"
+    Warning (15610): No output dependent on input pin "src0[1]"
+    Warning (15610): No output dependent on input pin "src0[2]"
+    Warning (15610): No output dependent on input pin "src0[3]"
+    Warning (15610): No output dependent on input pin "src0[4]"
+    Warning (15610): No output dependent on input pin "src0[5]"
+    Warning (15610): No output dependent on input pin "src0[6]"
+    Warning (15610): No output dependent on input pin "src0[7]"
+    Warning (15610): No output dependent on input pin "src0[8]"
+    Warning (15610): No output dependent on input pin "src0[9]"
+    Warning (15610): No output dependent on input pin "src0[10]"
+    Warning (15610): No output dependent on input pin "src0[11]"
+    Warning (15610): No output dependent on input pin "src0[12]"
+    Warning (15610): No output dependent on input pin "src0[13]"
+    Warning (15610): No output dependent on input pin "src0[14]"
+    Warning (15610): No output dependent on input pin "src0[15]"
+    Warning (15610): No output dependent on input pin "src0[16]"
+    Warning (15610): No output dependent on input pin "src0[17]"
+    Warning (15610): No output dependent on input pin "src0[18]"
+    Warning (15610): No output dependent on input pin "src0[19]"
+    Warning (15610): No output dependent on input pin "src0[20]"
+    Warning (15610): No output dependent on input pin "src0[21]"
+    Warning (15610): No output dependent on input pin "src0[22]"
+    Warning (15610): No output dependent on input pin "src0[23]"
+    Warning (15610): No output dependent on input pin "src0[24]"
+    Warning (15610): No output dependent on input pin "src0[25]"
+    Warning (15610): No output dependent on input pin "src0[26]"
+    Warning (15610): No output dependent on input pin "src0[27]"
+    Warning (15610): No output dependent on input pin "src0[28]"
+    Warning (15610): No output dependent on input pin "src0[29]"
+    Warning (15610): No output dependent on input pin "src0[30]"
+    Warning (15610): No output dependent on input pin "src0[31]"
+    Warning (15610): No output dependent on input pin "func[0]"
+    Warning (15610): No output dependent on input pin "func[1]"
+    Warning (15610): No output dependent on input pin "func[2]"
+Info (21057): Implemented 103 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 68 input pins
+    Info (21059): Implemented 35 output pins
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 111 warnings
+    Info: Peak virtual memory: 4593 megabytes
+    Info: Processing ended: Sun Sep 28 13:19:03 2025
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
 
 
