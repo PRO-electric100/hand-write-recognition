@@ -36,6 +36,12 @@ module ALU_EXT(clk, src1, src0, func, dst_EX_DM, ov, zr, neg);
 		.B(src0),
 		.OUT(ifmul_OUT)
 	);
+	
+		float_to_signed_int iftoi(
+		.FP_val(src1),
+		.signed_int_val(iftoi_OUT)
+	);
+
 
 		
 endmodule
