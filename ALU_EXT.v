@@ -8,4 +8,8 @@ module extended_ALU(clk, src1, src0, func, dst_EX_DM, ov, zr, neg);
 	// 101 ==> ITF   Conversión de entero a punto flotante
 	// 110 ==> FTI   Conversión de punto flotante a entero
 	// 111 ==> undefined
+	
+		`include "common_params.inc"
+
+		
 endmodule
