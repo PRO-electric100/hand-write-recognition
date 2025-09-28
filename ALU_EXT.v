@@ -48,5 +48,27 @@ module ALU_EXT(clk, src1, src0, func, dst_EX_DM, ov, zr, neg);
 		.FP_val(iitof_OUT)
 	);
 
-		
+	//multiplicacion de enteros de 16bits x 16bits, tambien adicionamos los signos
+	int_mul_16by16 iimul(
+		.A(src1),
+		.B(src0),
+		.sign(~func[0]),			// 0 ==> MUL 1 ==> UMUL
+		.OUT(iimul_OUT)
+	);
+	
+	assign OUT = (func==MUL || func==UMUL) ? iimul_OUT :
+             (func==ADDF || func==SUBF) ? ifadd_OUT :
+             (func==MULF) ? ifmul_OUT :
+             (func==ITF) ? iitof_OUT :
+             (func==FTI) ? iftoi_OUT :
+             32'hDEADDEAD;  // undefined behavior
+
+	assign ov = 1'b0;  // Nunca hay overflow
+	assign zr = (func==MUL || func==UMUL || func==FTI) ? |OUT : |OUT[30:0]; //bandera de zero ( zr = 0 (no es cero) zr = 1 (es cero, ignora bit de signo))
+	assign neg = (func==UMUL) ? 1'b0 : OUT[31];
+	
+	assign neg = (func==UMUL) ? 1'b0 : OUT[31]; //        Float: zr = 1 (es cero, ignora bit de signo)  (Bandera de Negativo)
+	
+	always @(posedge clk)
+    dst_EX_DM <= OUT;   //salida de la operacion
 endmodule

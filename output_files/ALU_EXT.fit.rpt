@@ -1,5 +1,5 @@
 Fitter report for ALU_EXT
-Sun Sep 28 13:51:52 2025
+Sun Sep 28 14:03:30 2025
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -50,7 +50,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Fitter Summary                                                                  ;
 +------------------------------------+--------------------------------------------+
-; Fitter Status                      ; Failed - Sun Sep 28 13:51:52 2025          ;
+; Fitter Status                      ; Failed - Sun Sep 28 14:03:30 2025          ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; ALU_EXT                                    ;
 ; Top-level Entity Name              ; ALU_EXT                                    ;
@@ -894,7 +894,7 @@ Info (176215): I/O bank details after I/O pin placement
         Info (176213): I/O bank number 4 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  24 pins available
 Error (176205): Can't place 103 pins with 3.3-V LVTTL I/O standard because Fitter has only 86 such free pins available for general purpose I/O placement
 Error (176204): Can't place pins due to device constraints
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Error (171000): Can't fit design in device
 Warning (169069): Following 35 pins have nothing, GND, or VCC driving datain port -- changes to this connectivity may change fitting results
     Info (169070): Pin dst_EX_DM[0] has GND driving its datain port
@@ -936,9 +936,9 @@ Warning (169174): The Reserve All Unused Pins setting has not been specified, an
 Info (144001): Generated suppressed messages file C:/Users/JOSE LUIS TARQUI/Desktop/SCEIE/LASCAS/IA Y FPG/MI nuevo codigo/CNN_WITH_FPGA/output_files/ALU_EXT.fit.smsg
 Error: Quartus II 64-Bit Fitter was unsuccessful. 3 errors, 7 warnings
     Error: Peak virtual memory: 4744 megabytes
-    Error: Processing ended: Sun Sep 28 13:51:52 2025
-    Error: Elapsed time: 00:00:01
-    Error: Total CPU time (on all processors): 00:00:01
+    Error: Processing ended: Sun Sep 28 14:03:30 2025
+    Error: Elapsed time: 00:00:02
+    Error: Total CPU time (on all processors): 00:00:02
 
 
 +----------------------------+
