@@ -21,6 +21,15 @@ module ALU_EXT(clk, src1, src0, func, dst_EX_DM, ov, zr, neg);
 	reg [31:0] ifadd_OUT, ifmul_OUT, iftoi_OUT, iitof_OUT, iimul_OUT;
 
 	reg [31:0] OUT;
+	
+	//modulo de suma
+	
+	FP_adder ifadd(
+		.A(src1),
+		.B(func==SUBF ? {~src0[31], src0[30:0]} : src0),	// flip second operand if doing A - B
+		.out(ifadd_OUT)
+	);
+
 
 		
 endmodule
