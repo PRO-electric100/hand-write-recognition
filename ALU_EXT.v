@@ -18,9 +18,9 @@ module extended_ALU(clk, src1, src0, func, dst_EX_DM, ov, zr, neg);
 	output reg [31:0] dst_EX_DM;
 	output ov, zr, neg;
 
-	logic [31:0] ifadd_OUT, ifmul_OUT, iftoi_OUT, iitof_OUT, iimul_OUT;
+	reg [31:0] ifadd_OUT, ifmul_OUT, iftoi_OUT, iitof_OUT, iimul_OUT;
 
-	logic [31:0] OUT;
+	reg [31:0] OUT;
 
 		
 endmodule
