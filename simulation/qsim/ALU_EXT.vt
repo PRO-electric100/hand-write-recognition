@@ -1,0 +1,4680 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "09/28/2025 14:57:36"
+                                                                        
+// Verilog Self-Checking Test Bench (with test vectors) for design :    ALU_EXT
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module ALU_EXT_vlg_sample_tst(
+	clk,
+	func,
+	src0,
+	src1,
+	sampler_tx
+);
+input  clk;
+input [2:0] func;
+input [31:0] src0;
+input [31:0] src1;
+output sampler_tx;
+
+reg sample;
+time current_time;
+always @(clk or func or src0 or src1)
+                                                                                
+begin                                                 
+ if ($realtime > 0)                                   
+ begin                                                
+	if ($realtime == 0 || $realtime != current_time)  
+	begin									          
+		if (sample === 1'bx)                          
+			sample = 0;                               
+		else                                          
+			sample = ~sample;                         
+	end										          
+	current_time = $realtime;					      
+ end                                                  
+end                                                   
+
+assign sampler_tx = sample;
+endmodule
+
+module ALU_EXT_vlg_check_tst (
+	dst_EX_DM,
+	neg,
+	ov,
+	zr,
+	sampler_rx
+);
+input [31:0] dst_EX_DM;
+input  neg;
+input  ov;
+input  zr;
+input sampler_rx;
+
+reg [31:0] dst_EX_DM_expected;
+reg  neg_expected;
+reg  ov_expected;
+reg  zr_expected;
+
+reg [31:0] dst_EX_DM_prev;
+reg  neg_prev;
+reg  ov_prev;
+reg  zr_prev;
+
+reg [31:0] dst_EX_DM_expected_prev;
+reg  neg_expected_prev;
+reg  ov_expected_prev;
+reg  zr_expected_prev;
+
+reg [31:0] last_dst_EX_DM_exp;
+reg  last_neg_exp;
+reg  last_ov_exp;
+reg  last_zr_exp;
+
+reg trigger;
+
+integer i;
+integer nummismatches;
+
+reg [1:4] on_first_change ;
+
+
+initial
+begin
+trigger = 0;
+i = 0;
+nummismatches = 0;
+on_first_change = 4'b1;
+end
+
+// update real /o prevs
+
+always @(trigger)
+begin
+	dst_EX_DM_prev = dst_EX_DM;
+	neg_prev = neg;
+	ov_prev = ov;
+	zr_prev = zr;
+end
+
+// update expected /o prevs
+
+always @(trigger)
+begin
+	dst_EX_DM_expected_prev = dst_EX_DM_expected;
+	neg_expected_prev = neg_expected;
+	ov_expected_prev = ov_expected;
+	zr_expected_prev = zr_expected;
+end
+
+
+// expected dst_EX_DM[ 31 ]
+initial
+begin
+	dst_EX_DM_expected[31] = 1'bX;
+end 
+// expected dst_EX_DM[ 30 ]
+initial
+begin
+	dst_EX_DM_expected[30] = 1'bX;
+end 
+// expected dst_EX_DM[ 29 ]
+initial
+begin
+	dst_EX_DM_expected[29] = 1'bX;
+end 
+// expected dst_EX_DM[ 28 ]
+initial
+begin
+	dst_EX_DM_expected[28] = 1'bX;
+end 
+// expected dst_EX_DM[ 27 ]
+initial
+begin
+	dst_EX_DM_expected[27] = 1'bX;
+end 
+// expected dst_EX_DM[ 26 ]
+initial
+begin
+	dst_EX_DM_expected[26] = 1'bX;
+end 
+// expected dst_EX_DM[ 25 ]
+initial
+begin
+	dst_EX_DM_expected[25] = 1'bX;
+end 
+// expected dst_EX_DM[ 24 ]
+initial
+begin
+	dst_EX_DM_expected[24] = 1'bX;
+end 
+// expected dst_EX_DM[ 23 ]
+initial
+begin
+	dst_EX_DM_expected[23] = 1'bX;
+end 
+// expected dst_EX_DM[ 22 ]
+initial
+begin
+	dst_EX_DM_expected[22] = 1'bX;
+end 
+// expected dst_EX_DM[ 21 ]
+initial
+begin
+	dst_EX_DM_expected[21] = 1'bX;
+end 
+// expected dst_EX_DM[ 20 ]
+initial
+begin
+	dst_EX_DM_expected[20] = 1'bX;
+end 
+// expected dst_EX_DM[ 19 ]
+initial
+begin
+	dst_EX_DM_expected[19] = 1'bX;
+end 
+// expected dst_EX_DM[ 18 ]
+initial
+begin
+	dst_EX_DM_expected[18] = 1'bX;
+end 
+// expected dst_EX_DM[ 17 ]
+initial
+begin
+	dst_EX_DM_expected[17] = 1'bX;
+end 
+// expected dst_EX_DM[ 16 ]
+initial
+begin
+	dst_EX_DM_expected[16] = 1'bX;
+end 
+// expected dst_EX_DM[ 15 ]
+initial
+begin
+	dst_EX_DM_expected[15] = 1'bX;
+end 
+// expected dst_EX_DM[ 14 ]
+initial
+begin
+	dst_EX_DM_expected[14] = 1'bX;
+end 
+// expected dst_EX_DM[ 13 ]
+initial
+begin
+	dst_EX_DM_expected[13] = 1'bX;
+end 
+// expected dst_EX_DM[ 12 ]
+initial
+begin
+	dst_EX_DM_expected[12] = 1'bX;
+end 
+// expected dst_EX_DM[ 11 ]
+initial
+begin
+	dst_EX_DM_expected[11] = 1'bX;
+end 
+// expected dst_EX_DM[ 10 ]
+initial
+begin
+	dst_EX_DM_expected[10] = 1'bX;
+end 
+// expected dst_EX_DM[ 9 ]
+initial
+begin
+	dst_EX_DM_expected[9] = 1'bX;
+end 
+// expected dst_EX_DM[ 8 ]
+initial
+begin
+	dst_EX_DM_expected[8] = 1'bX;
+end 
+// expected dst_EX_DM[ 7 ]
+initial
+begin
+	dst_EX_DM_expected[7] = 1'bX;
+end 
+// expected dst_EX_DM[ 6 ]
+initial
+begin
+	dst_EX_DM_expected[6] = 1'bX;
+end 
+// expected dst_EX_DM[ 5 ]
+initial
+begin
+	dst_EX_DM_expected[5] = 1'bX;
+end 
+// expected dst_EX_DM[ 4 ]
+initial
+begin
+	dst_EX_DM_expected[4] = 1'bX;
+end 
+// expected dst_EX_DM[ 3 ]
+initial
+begin
+	dst_EX_DM_expected[3] = 1'bX;
+end 
+// expected dst_EX_DM[ 2 ]
+initial
+begin
+	dst_EX_DM_expected[2] = 1'bX;
+end 
+// expected dst_EX_DM[ 1 ]
+initial
+begin
+	dst_EX_DM_expected[1] = 1'bX;
+end 
+// expected dst_EX_DM[ 0 ]
+initial
+begin
+	dst_EX_DM_expected[0] = 1'bX;
+end 
+
+// expected neg
+initial
+begin
+	neg_expected = 1'bX;
+end 
+
+// expected ov
+initial
+begin
+	ov_expected = 1'bX;
+end 
+
+// expected zr
+initial
+begin
+	zr_expected = 1'b0;
+	zr_expected = #30000 1'b1;
+	zr_expected = #20000 1'b0;
+	zr_expected = #10000 1'b1;
+	zr_expected = #20000 1'b0;
+	zr_expected = #10000 1'b1;
+	zr_expected = #40000 1'b0;
+	zr_expected = #30000 1'b1;
+	zr_expected = #10000 1'b0;
+	zr_expected = #10000 1'b1;
+	zr_expected = #10000 1'b0;
+	zr_expected = #20000 1'b1;
+	zr_expected = #20000 1'b0;
+	zr_expected = #30000 1'b1;
+	zr_expected = #10000 1'b0;
+	zr_expected = #20000 1'b1;
+	zr_expected = #10000 1'b0;
+	zr_expected = #20000 1'b1;
+	zr_expected = #20000 1'b0;
+	zr_expected = #20000 1'b1;
+	zr_expected = #20000 1'b0;
+	zr_expected = #10000 1'b1;
+	zr_expected = #20000 1'b0;
+	zr_expected = #20000 1'b1;
+	zr_expected = #50000 1'b0;
+	zr_expected = #40000 1'b1;
+	zr_expected = #20000 1'b0;
+	zr_expected = #30000 1'b1;
+	zr_expected = #20000 1'b0;
+	zr_expected = #40000 1'b1;
+	zr_expected = #20000 1'b0;
+	zr_expected = #30000 1'b1;
+	zr_expected = #40000 1'b0;
+	zr_expected = #20000 1'b1;
+	zr_expected = #20000 1'b0;
+	zr_expected = #20000 1'b1;
+	zr_expected = #20000 1'b0;
+	zr_expected = #20000 1'b1;
+	zr_expected = #10000 1'b0;
+	zr_expected = #30000 1'b1;
+	zr_expected = #10000 1'b0;
+	zr_expected = #50000 1'b1;
+	zr_expected = #10000 1'b0;
+	zr_expected = #30000 1'b1;
+	zr_expected = #20000 1'b0;
+	zr_expected = #10000 1'b1;
+end 
+// generate trigger
+always @(dst_EX_DM_expected or dst_EX_DM or neg_expected or neg or ov_expected or ov or zr_expected or zr)
+begin
+	trigger <= ~trigger;
+end
+
+always @(posedge sampler_rx or negedge sampler_rx)
+begin
+`ifdef debug_tbench
+	$display("Scanning pattern %d @time = %t",i,$realtime );
+	i = i + 1;
+	$display("| expected dst_EX_DM = %b | expected neg = %b | expected ov = %b | expected zr = %b | ",dst_EX_DM_expected_prev,neg_expected_prev,ov_expected_prev,zr_expected_prev);
+	$display("| real dst_EX_DM = %b | real neg = %b | real ov = %b | real zr = %b | ",dst_EX_DM_prev,neg_prev,ov_prev,zr_prev);
+`endif
+	if (
+		( dst_EX_DM_expected_prev[0] !== 1'bx ) && ( dst_EX_DM_prev[0] !== dst_EX_DM_expected_prev[0] )
+		&& ((dst_EX_DM_expected_prev[0] !== last_dst_EX_DM_exp[0]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port dst_EX_DM[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", dst_EX_DM_expected_prev);
+		$display ("     Real value = %b", dst_EX_DM_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_dst_EX_DM_exp[0] = dst_EX_DM_expected_prev[0];
+	end
+	if (
+		( dst_EX_DM_expected_prev[1] !== 1'bx ) && ( dst_EX_DM_prev[1] !== dst_EX_DM_expected_prev[1] )
+		&& ((dst_EX_DM_expected_prev[1] !== last_dst_EX_DM_exp[1]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port dst_EX_DM[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", dst_EX_DM_expected_prev);
+		$display ("     Real value = %b", dst_EX_DM_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_dst_EX_DM_exp[1] = dst_EX_DM_expected_prev[1];
+	end
+	if (
+		( dst_EX_DM_expected_prev[2] !== 1'bx ) && ( dst_EX_DM_prev[2] !== dst_EX_DM_expected_prev[2] )
+		&& ((dst_EX_DM_expected_prev[2] !== last_dst_EX_DM_exp[2]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port dst_EX_DM[2] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", dst_EX_DM_expected_prev);
+		$display ("     Real value = %b", dst_EX_DM_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_dst_EX_DM_exp[2] = dst_EX_DM_expected_prev[2];
+	end
+	if (
+		( dst_EX_DM_expected_prev[3] !== 1'bx ) && ( dst_EX_DM_prev[3] !== dst_EX_DM_expected_prev[3] )
+		&& ((dst_EX_DM_expected_prev[3] !== last_dst_EX_DM_exp[3]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port dst_EX_DM[3] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", dst_EX_DM_expected_prev);
+		$display ("     Real value = %b", dst_EX_DM_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_dst_EX_DM_exp[3] = dst_EX_DM_expected_prev[3];
+	end
+	if (
+		( dst_EX_DM_expected_prev[4] !== 1'bx ) && ( dst_EX_DM_prev[4] !== dst_EX_DM_expected_prev[4] )
+		&& ((dst_EX_DM_expected_prev[4] !== last_dst_EX_DM_exp[4]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port dst_EX_DM[4] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", dst_EX_DM_expected_prev);
+		$display ("     Real value = %b", dst_EX_DM_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_dst_EX_DM_exp[4] = dst_EX_DM_expected_prev[4];
+	end
+	if (
+		( dst_EX_DM_expected_prev[5] !== 1'bx ) && ( dst_EX_DM_prev[5] !== dst_EX_DM_expected_prev[5] )
+		&& ((dst_EX_DM_expected_prev[5] !== last_dst_EX_DM_exp[5]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port dst_EX_DM[5] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", dst_EX_DM_expected_prev);
+		$display ("     Real value = %b", dst_EX_DM_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_dst_EX_DM_exp[5] = dst_EX_DM_expected_prev[5];
+	end
+	if (
+		( dst_EX_DM_expected_prev[6] !== 1'bx ) && ( dst_EX_DM_prev[6] !== dst_EX_DM_expected_prev[6] )
+		&& ((dst_EX_DM_expected_prev[6] !== last_dst_EX_DM_exp[6]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port dst_EX_DM[6] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", dst_EX_DM_expected_prev);
+		$display ("     Real value = %b", dst_EX_DM_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_dst_EX_DM_exp[6] = dst_EX_DM_expected_prev[6];
+	end
+	if (
+		( dst_EX_DM_expected_prev[7] !== 1'bx ) && ( dst_EX_DM_prev[7] !== dst_EX_DM_expected_prev[7] )
+		&& ((dst_EX_DM_expected_prev[7] !== last_dst_EX_DM_exp[7]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port dst_EX_DM[7] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", dst_EX_DM_expected_prev);
+		$display ("     Real value = %b", dst_EX_DM_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_dst_EX_DM_exp[7] = dst_EX_DM_expected_prev[7];
+	end
+	if (
+		( dst_EX_DM_expected_prev[8] !== 1'bx ) && ( dst_EX_DM_prev[8] !== dst_EX_DM_expected_prev[8] )
+		&& ((dst_EX_DM_expected_prev[8] !== last_dst_EX_DM_exp[8]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port dst_EX_DM[8] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", dst_EX_DM_expected_prev);
+		$display ("     Real value = %b", dst_EX_DM_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_dst_EX_DM_exp[8] = dst_EX_DM_expected_prev[8];
+	end
+	if (
+		( dst_EX_DM_expected_prev[9] !== 1'bx ) && ( dst_EX_DM_prev[9] !== dst_EX_DM_expected_prev[9] )
+		&& ((dst_EX_DM_expected_prev[9] !== last_dst_EX_DM_exp[9]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port dst_EX_DM[9] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", dst_EX_DM_expected_prev);
+		$display ("     Real value = %b", dst_EX_DM_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_dst_EX_DM_exp[9] = dst_EX_DM_expected_prev[9];
+	end
+	if (
+		( dst_EX_DM_expected_prev[10] !== 1'bx ) && ( dst_EX_DM_prev[10] !== dst_EX_DM_expected_prev[10] )
+		&& ((dst_EX_DM_expected_prev[10] !== last_dst_EX_DM_exp[10]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port dst_EX_DM[10] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", dst_EX_DM_expected_prev);
+		$display ("     Real value = %b", dst_EX_DM_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_dst_EX_DM_exp[10] = dst_EX_DM_expected_prev[10];
+	end
+	if (
+		( dst_EX_DM_expected_prev[11] !== 1'bx ) && ( dst_EX_DM_prev[11] !== dst_EX_DM_expected_prev[11] )
+		&& ((dst_EX_DM_expected_prev[11] !== last_dst_EX_DM_exp[11]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port dst_EX_DM[11] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", dst_EX_DM_expected_prev);
+		$display ("     Real value = %b", dst_EX_DM_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_dst_EX_DM_exp[11] = dst_EX_DM_expected_prev[11];
+	end
+	if (
+		( dst_EX_DM_expected_prev[12] !== 1'bx ) && ( dst_EX_DM_prev[12] !== dst_EX_DM_expected_prev[12] )
+		&& ((dst_EX_DM_expected_prev[12] !== last_dst_EX_DM_exp[12]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port dst_EX_DM[12] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", dst_EX_DM_expected_prev);
+		$display ("     Real value = %b", dst_EX_DM_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_dst_EX_DM_exp[12] = dst_EX_DM_expected_prev[12];
+	end
+	if (
+		( dst_EX_DM_expected_prev[13] !== 1'bx ) && ( dst_EX_DM_prev[13] !== dst_EX_DM_expected_prev[13] )
+		&& ((dst_EX_DM_expected_prev[13] !== last_dst_EX_DM_exp[13]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port dst_EX_DM[13] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", dst_EX_DM_expected_prev);
+		$display ("     Real value = %b", dst_EX_DM_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_dst_EX_DM_exp[13] = dst_EX_DM_expected_prev[13];
+	end
+	if (
+		( dst_EX_DM_expected_prev[14] !== 1'bx ) && ( dst_EX_DM_prev[14] !== dst_EX_DM_expected_prev[14] )
+		&& ((dst_EX_DM_expected_prev[14] !== last_dst_EX_DM_exp[14]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port dst_EX_DM[14] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", dst_EX_DM_expected_prev);
+		$display ("     Real value = %b", dst_EX_DM_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_dst_EX_DM_exp[14] = dst_EX_DM_expected_prev[14];
+	end
+	if (
+		( dst_EX_DM_expected_prev[15] !== 1'bx ) && ( dst_EX_DM_prev[15] !== dst_EX_DM_expected_prev[15] )
+		&& ((dst_EX_DM_expected_prev[15] !== last_dst_EX_DM_exp[15]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port dst_EX_DM[15] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", dst_EX_DM_expected_prev);
+		$display ("     Real value = %b", dst_EX_DM_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_dst_EX_DM_exp[15] = dst_EX_DM_expected_prev[15];
+	end
+	if (
+		( dst_EX_DM_expected_prev[16] !== 1'bx ) && ( dst_EX_DM_prev[16] !== dst_EX_DM_expected_prev[16] )
+		&& ((dst_EX_DM_expected_prev[16] !== last_dst_EX_DM_exp[16]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port dst_EX_DM[16] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", dst_EX_DM_expected_prev);
+		$display ("     Real value = %b", dst_EX_DM_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_dst_EX_DM_exp[16] = dst_EX_DM_expected_prev[16];
+	end
+	if (
+		( dst_EX_DM_expected_prev[17] !== 1'bx ) && ( dst_EX_DM_prev[17] !== dst_EX_DM_expected_prev[17] )
+		&& ((dst_EX_DM_expected_prev[17] !== last_dst_EX_DM_exp[17]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port dst_EX_DM[17] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", dst_EX_DM_expected_prev);
+		$display ("     Real value = %b", dst_EX_DM_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_dst_EX_DM_exp[17] = dst_EX_DM_expected_prev[17];
+	end
+	if (
+		( dst_EX_DM_expected_prev[18] !== 1'bx ) && ( dst_EX_DM_prev[18] !== dst_EX_DM_expected_prev[18] )
+		&& ((dst_EX_DM_expected_prev[18] !== last_dst_EX_DM_exp[18]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port dst_EX_DM[18] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", dst_EX_DM_expected_prev);
+		$display ("     Real value = %b", dst_EX_DM_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_dst_EX_DM_exp[18] = dst_EX_DM_expected_prev[18];
+	end
+	if (
+		( dst_EX_DM_expected_prev[19] !== 1'bx ) && ( dst_EX_DM_prev[19] !== dst_EX_DM_expected_prev[19] )
+		&& ((dst_EX_DM_expected_prev[19] !== last_dst_EX_DM_exp[19]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port dst_EX_DM[19] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", dst_EX_DM_expected_prev);
+		$display ("     Real value = %b", dst_EX_DM_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_dst_EX_DM_exp[19] = dst_EX_DM_expected_prev[19];
+	end
+	if (
+		( dst_EX_DM_expected_prev[20] !== 1'bx ) && ( dst_EX_DM_prev[20] !== dst_EX_DM_expected_prev[20] )
+		&& ((dst_EX_DM_expected_prev[20] !== last_dst_EX_DM_exp[20]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port dst_EX_DM[20] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", dst_EX_DM_expected_prev);
+		$display ("     Real value = %b", dst_EX_DM_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_dst_EX_DM_exp[20] = dst_EX_DM_expected_prev[20];
+	end
+	if (
+		( dst_EX_DM_expected_prev[21] !== 1'bx ) && ( dst_EX_DM_prev[21] !== dst_EX_DM_expected_prev[21] )
+		&& ((dst_EX_DM_expected_prev[21] !== last_dst_EX_DM_exp[21]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port dst_EX_DM[21] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", dst_EX_DM_expected_prev);
+		$display ("     Real value = %b", dst_EX_DM_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_dst_EX_DM_exp[21] = dst_EX_DM_expected_prev[21];
+	end
+	if (
+		( dst_EX_DM_expected_prev[22] !== 1'bx ) && ( dst_EX_DM_prev[22] !== dst_EX_DM_expected_prev[22] )
+		&& ((dst_EX_DM_expected_prev[22] !== last_dst_EX_DM_exp[22]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port dst_EX_DM[22] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", dst_EX_DM_expected_prev);
+		$display ("     Real value = %b", dst_EX_DM_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_dst_EX_DM_exp[22] = dst_EX_DM_expected_prev[22];
+	end
+	if (
+		( dst_EX_DM_expected_prev[23] !== 1'bx ) && ( dst_EX_DM_prev[23] !== dst_EX_DM_expected_prev[23] )
+		&& ((dst_EX_DM_expected_prev[23] !== last_dst_EX_DM_exp[23]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port dst_EX_DM[23] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", dst_EX_DM_expected_prev);
+		$display ("     Real value = %b", dst_EX_DM_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_dst_EX_DM_exp[23] = dst_EX_DM_expected_prev[23];
+	end
+	if (
+		( dst_EX_DM_expected_prev[24] !== 1'bx ) && ( dst_EX_DM_prev[24] !== dst_EX_DM_expected_prev[24] )
+		&& ((dst_EX_DM_expected_prev[24] !== last_dst_EX_DM_exp[24]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port dst_EX_DM[24] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", dst_EX_DM_expected_prev);
+		$display ("     Real value = %b", dst_EX_DM_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_dst_EX_DM_exp[24] = dst_EX_DM_expected_prev[24];
+	end
+	if (
+		( dst_EX_DM_expected_prev[25] !== 1'bx ) && ( dst_EX_DM_prev[25] !== dst_EX_DM_expected_prev[25] )
+		&& ((dst_EX_DM_expected_prev[25] !== last_dst_EX_DM_exp[25]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port dst_EX_DM[25] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", dst_EX_DM_expected_prev);
+		$display ("     Real value = %b", dst_EX_DM_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_dst_EX_DM_exp[25] = dst_EX_DM_expected_prev[25];
+	end
+	if (
+		( dst_EX_DM_expected_prev[26] !== 1'bx ) && ( dst_EX_DM_prev[26] !== dst_EX_DM_expected_prev[26] )
+		&& ((dst_EX_DM_expected_prev[26] !== last_dst_EX_DM_exp[26]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port dst_EX_DM[26] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", dst_EX_DM_expected_prev);
+		$display ("     Real value = %b", dst_EX_DM_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_dst_EX_DM_exp[26] = dst_EX_DM_expected_prev[26];
+	end
+	if (
+		( dst_EX_DM_expected_prev[27] !== 1'bx ) && ( dst_EX_DM_prev[27] !== dst_EX_DM_expected_prev[27] )
+		&& ((dst_EX_DM_expected_prev[27] !== last_dst_EX_DM_exp[27]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port dst_EX_DM[27] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", dst_EX_DM_expected_prev);
+		$display ("     Real value = %b", dst_EX_DM_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_dst_EX_DM_exp[27] = dst_EX_DM_expected_prev[27];
+	end
+	if (
+		( dst_EX_DM_expected_prev[28] !== 1'bx ) && ( dst_EX_DM_prev[28] !== dst_EX_DM_expected_prev[28] )
+		&& ((dst_EX_DM_expected_prev[28] !== last_dst_EX_DM_exp[28]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port dst_EX_DM[28] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", dst_EX_DM_expected_prev);
+		$display ("     Real value = %b", dst_EX_DM_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_dst_EX_DM_exp[28] = dst_EX_DM_expected_prev[28];
+	end
+	if (
+		( dst_EX_DM_expected_prev[29] !== 1'bx ) && ( dst_EX_DM_prev[29] !== dst_EX_DM_expected_prev[29] )
+		&& ((dst_EX_DM_expected_prev[29] !== last_dst_EX_DM_exp[29]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port dst_EX_DM[29] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", dst_EX_DM_expected_prev);
+		$display ("     Real value = %b", dst_EX_DM_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_dst_EX_DM_exp[29] = dst_EX_DM_expected_prev[29];
+	end
+	if (
+		( dst_EX_DM_expected_prev[30] !== 1'bx ) && ( dst_EX_DM_prev[30] !== dst_EX_DM_expected_prev[30] )
+		&& ((dst_EX_DM_expected_prev[30] !== last_dst_EX_DM_exp[30]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port dst_EX_DM[30] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", dst_EX_DM_expected_prev);
+		$display ("     Real value = %b", dst_EX_DM_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_dst_EX_DM_exp[30] = dst_EX_DM_expected_prev[30];
+	end
+	if (
+		( dst_EX_DM_expected_prev[31] !== 1'bx ) && ( dst_EX_DM_prev[31] !== dst_EX_DM_expected_prev[31] )
+		&& ((dst_EX_DM_expected_prev[31] !== last_dst_EX_DM_exp[31]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port dst_EX_DM[31] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", dst_EX_DM_expected_prev);
+		$display ("     Real value = %b", dst_EX_DM_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_dst_EX_DM_exp[31] = dst_EX_DM_expected_prev[31];
+	end
+	if (
+		( neg_expected_prev !== 1'bx ) && ( neg_prev !== neg_expected_prev )
+		&& ((neg_expected_prev !== last_neg_exp) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port neg :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", neg_expected_prev);
+		$display ("     Real value = %b", neg_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_neg_exp = neg_expected_prev;
+	end
+	if (
+		( ov_expected_prev !== 1'bx ) && ( ov_prev !== ov_expected_prev )
+		&& ((ov_expected_prev !== last_ov_exp) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port ov :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", ov_expected_prev);
+		$display ("     Real value = %b", ov_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_ov_exp = ov_expected_prev;
+	end
+	if (
+		( zr_expected_prev !== 1'bx ) && ( zr_prev !== zr_expected_prev )
+		&& ((zr_expected_prev !== last_zr_exp) ||
+			on_first_change[4])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port zr :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", zr_expected_prev);
+		$display ("     Real value = %b", zr_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[4] = 1'b0;
+		last_zr_exp = zr_expected_prev;
+	end
+
+	trigger <= ~trigger;
+end
+initial 
+
+begin 
+$timeformat(-12,3," ps",6);
+#1000000;
+if (nummismatches > 0)
+	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
+else
+	$display ("Simulation passed !");
+$finish;
+end 
+endmodule
+
+module ALU_EXT_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg clk;
+reg [2:0] func;
+reg [31:0] src0;
+reg [31:0] src1;
+// wires                                               
+wire [31:0] dst_EX_DM;
+wire neg;
+wire ov;
+wire zr;
+
+wire sampler;                             
+
+// assign statements (if any)                          
+ALU_EXT i1 (
+// port map - connection between master ports and signals/registers   
+	.clk(clk),
+	.dst_EX_DM(dst_EX_DM),
+	.func(func),
+	.neg(neg),
+	.ov(ov),
+	.src0(src0),
+	.src1(src1),
+	.zr(zr)
+);
+
+// clk
+always
+begin
+	clk = 1'b0;
+	clk = #9000 1'b1;
+	#1000;
+end 
+// func[ 2 ]
+initial
+begin
+	func[2] = 1'b0;
+	func[2] = #5000 1'b1;
+	func[2] = #5000 1'b0;
+	func[2] = #5000 1'b1;
+	func[2] = #15000 1'b0;
+	func[2] = #10000 1'b1;
+	func[2] = #5000 1'b0;
+	func[2] = #10000 1'b1;
+	func[2] = #10000 1'b0;
+	func[2] = #5000 1'b1;
+	func[2] = #5000 1'b0;
+	func[2] = #5000 1'b1;
+	func[2] = #10000 1'b0;
+	func[2] = #10000 1'b1;
+	func[2] = #5000 1'b0;
+	func[2] = #15000 1'b1;
+	func[2] = #10000 1'b0;
+	func[2] = #5000 1'b1;
+	func[2] = #5000 1'b0;
+	func[2] = #30000 1'b1;
+	func[2] = #5000 1'b0;
+	func[2] = #10000 1'b1;
+	func[2] = #5000 1'b0;
+	func[2] = #20000 1'b1;
+	func[2] = #20000 1'b0;
+	func[2] = #10000 1'b1;
+	func[2] = #5000 1'b0;
+	func[2] = #15000 1'b1;
+	func[2] = #5000 1'b0;
+	func[2] = #5000 1'b1;
+	func[2] = #5000 1'b0;
+	func[2] = #5000 1'b1;
+	func[2] = #10000 1'b0;
+	func[2] = #20000 1'b1;
+	func[2] = #5000 1'b0;
+	func[2] = #10000 1'b1;
+	func[2] = #5000 1'b0;
+	func[2] = #5000 1'b1;
+	func[2] = #25000 1'b0;
+	func[2] = #5000 1'b1;
+	func[2] = #5000 1'b0;
+	func[2] = #5000 1'b1;
+	func[2] = #5000 1'b0;
+	func[2] = #10000 1'b1;
+	func[2] = #30000 1'b0;
+	func[2] = #5000 1'b1;
+	func[2] = #5000 1'b0;
+	func[2] = #5000 1'b1;
+	func[2] = #10000 1'b0;
+	func[2] = #5000 1'b1;
+	func[2] = #20000 1'b0;
+	func[2] = #15000 1'b1;
+	func[2] = #10000 1'b0;
+	func[2] = #5000 1'b1;
+	func[2] = #5000 1'b0;
+	func[2] = #10000 1'b1;
+	func[2] = #25000 1'b0;
+	func[2] = #5000 1'b1;
+	func[2] = #30000 1'b0;
+	func[2] = #5000 1'b1;
+	func[2] = #5000 1'b0;
+	func[2] = #5000 1'b1;
+	func[2] = #5000 1'b0;
+	func[2] = #5000 1'b1;
+	func[2] = #15000 1'b0;
+	func[2] = #10000 1'b1;
+	func[2] = #5000 1'b0;
+	func[2] = #15000 1'b1;
+	func[2] = #5000 1'b0;
+	func[2] = #15000 1'b1;
+	func[2] = #5000 1'b0;
+	func[2] = #20000 1'b1;
+	func[2] = #10000 1'b0;
+	func[2] = #20000 1'b1;
+	func[2] = #15000 1'b0;
+	func[2] = #5000 1'b1;
+	func[2] = #50000 1'b0;
+	func[2] = #10000 1'b1;
+	func[2] = #5000 1'b0;
+	func[2] = #5000 1'b1;
+	func[2] = #10000 1'b0;
+	func[2] = #5000 1'b1;
+	func[2] = #10000 1'b0;
+	func[2] = #5000 1'b1;
+	func[2] = #10000 1'b0;
+	func[2] = #5000 1'b1;
+	func[2] = #5000 1'b0;
+	func[2] = #10000 1'b1;
+	func[2] = #5000 1'b0;
+	func[2] = #5000 1'b1;
+	func[2] = #5000 1'b0;
+	func[2] = #10000 1'b1;
+	func[2] = #10000 1'b0;
+	func[2] = #5000 1'b1;
+	func[2] = #5000 1'b0;
+	func[2] = #10000 1'b1;
+	func[2] = #5000 1'b0;
+	func[2] = #15000 1'b1;
+	func[2] = #5000 1'b0;
+	func[2] = #10000 1'b1;
+	func[2] = #10000 1'b0;
+	func[2] = #5000 1'b1;
+	func[2] = #5000 1'b0;
+	func[2] = #15000 1'b1;
+end 
+// func[ 1 ]
+initial
+begin
+	func[1] = 1'b0;
+	func[1] = #10000 1'b1;
+	func[1] = #10000 1'b0;
+	func[1] = #10000 1'b1;
+	func[1] = #15000 1'b0;
+	func[1] = #5000 1'b1;
+	func[1] = #15000 1'b0;
+	func[1] = #5000 1'b1;
+	func[1] = #15000 1'b0;
+	func[1] = #5000 1'b1;
+	func[1] = #5000 1'b0;
+	func[1] = #5000 1'b1;
+	func[1] = #5000 1'b0;
+	func[1] = #5000 1'b1;
+	func[1] = #5000 1'b0;
+	func[1] = #15000 1'b1;
+	func[1] = #5000 1'b0;
+	func[1] = #10000 1'b1;
+	func[1] = #5000 1'b0;
+	func[1] = #5000 1'b1;
+	func[1] = #5000 1'b0;
+	func[1] = #10000 1'b1;
+	func[1] = #5000 1'b0;
+	func[1] = #5000 1'b1;
+	func[1] = #5000 1'b0;
+	func[1] = #10000 1'b1;
+	func[1] = #15000 1'b0;
+	func[1] = #10000 1'b1;
+	func[1] = #5000 1'b0;
+	func[1] = #20000 1'b1;
+	func[1] = #5000 1'b0;
+	func[1] = #5000 1'b1;
+	func[1] = #15000 1'b0;
+	func[1] = #10000 1'b1;
+	func[1] = #5000 1'b0;
+	func[1] = #15000 1'b1;
+	func[1] = #5000 1'b0;
+	func[1] = #5000 1'b1;
+	func[1] = #5000 1'b0;
+	func[1] = #5000 1'b1;
+	func[1] = #15000 1'b0;
+	func[1] = #5000 1'b1;
+	func[1] = #5000 1'b0;
+	func[1] = #5000 1'b1;
+	func[1] = #5000 1'b0;
+	func[1] = #10000 1'b1;
+	func[1] = #10000 1'b0;
+	func[1] = #10000 1'b1;
+	func[1] = #10000 1'b0;
+	func[1] = #5000 1'b1;
+	func[1] = #5000 1'b0;
+	func[1] = #5000 1'b1;
+	func[1] = #5000 1'b0;
+	func[1] = #5000 1'b1;
+	func[1] = #25000 1'b0;
+	func[1] = #5000 1'b1;
+	func[1] = #15000 1'b0;
+	func[1] = #5000 1'b1;
+	func[1] = #5000 1'b0;
+	func[1] = #5000 1'b1;
+	func[1] = #20000 1'b0;
+	func[1] = #5000 1'b1;
+	func[1] = #5000 1'b0;
+	func[1] = #10000 1'b1;
+	func[1] = #5000 1'b0;
+	func[1] = #5000 1'b1;
+	func[1] = #5000 1'b0;
+	func[1] = #20000 1'b1;
+	func[1] = #10000 1'b0;
+	func[1] = #15000 1'b1;
+	func[1] = #10000 1'b0;
+	func[1] = #10000 1'b1;
+	func[1] = #10000 1'b0;
+	func[1] = #5000 1'b1;
+	func[1] = #5000 1'b0;
+	func[1] = #5000 1'b1;
+	func[1] = #5000 1'b0;
+	func[1] = #20000 1'b1;
+	func[1] = #20000 1'b0;
+	func[1] = #15000 1'b1;
+	func[1] = #25000 1'b0;
+	func[1] = #15000 1'b1;
+	func[1] = #20000 1'b0;
+	func[1] = #10000 1'b1;
+	func[1] = #5000 1'b0;
+	func[1] = #5000 1'b1;
+	func[1] = #5000 1'b0;
+	func[1] = #5000 1'b1;
+	func[1] = #10000 1'b0;
+	func[1] = #5000 1'b1;
+	func[1] = #5000 1'b0;
+	func[1] = #5000 1'b1;
+	func[1] = #5000 1'b0;
+	func[1] = #5000 1'b1;
+	func[1] = #5000 1'b0;
+	func[1] = #10000 1'b1;
+	func[1] = #5000 1'b0;
+	func[1] = #10000 1'b1;
+	func[1] = #10000 1'b0;
+	func[1] = #5000 1'b1;
+	func[1] = #5000 1'b0;
+	func[1] = #10000 1'b1;
+	func[1] = #10000 1'b0;
+	func[1] = #5000 1'b1;
+	func[1] = #5000 1'b0;
+	func[1] = #5000 1'b1;
+	func[1] = #30000 1'b0;
+	func[1] = #10000 1'b1;
+	func[1] = #5000 1'b0;
+	func[1] = #15000 1'b1;
+	func[1] = #10000 1'b0;
+	func[1] = #5000 1'b1;
+	func[1] = #5000 1'b0;
+	func[1] = #15000 1'b1;
+	func[1] = #5000 1'b0;
+end 
+// func[ 0 ]
+initial
+begin
+	func[0] = 1'b1;
+	func[0] = #5000 1'b0;
+	func[0] = #10000 1'b1;
+	func[0] = #10000 1'b0;
+	func[0] = #10000 1'b1;
+	func[0] = #25000 1'b0;
+	func[0] = #5000 1'b1;
+	func[0] = #10000 1'b0;
+	func[0] = #5000 1'b1;
+	func[0] = #5000 1'b0;
+	func[0] = #5000 1'b1;
+	func[0] = #15000 1'b0;
+	func[0] = #5000 1'b1;
+	func[0] = #5000 1'b0;
+	func[0] = #10000 1'b1;
+	func[0] = #30000 1'b0;
+	func[0] = #10000 1'b1;
+	func[0] = #5000 1'b0;
+	func[0] = #5000 1'b1;
+	func[0] = #15000 1'b0;
+	func[0] = #50000 1'b1;
+	func[0] = #40000 1'b0;
+	func[0] = #5000 1'b1;
+	func[0] = #5000 1'b0;
+	func[0] = #10000 1'b1;
+	func[0] = #10000 1'b0;
+	func[0] = #25000 1'b1;
+	func[0] = #5000 1'b0;
+	func[0] = #10000 1'b1;
+	func[0] = #5000 1'b0;
+	func[0] = #10000 1'b1;
+	func[0] = #10000 1'b0;
+	func[0] = #5000 1'b1;
+	func[0] = #20000 1'b0;
+	func[0] = #10000 1'b1;
+	func[0] = #20000 1'b0;
+	func[0] = #10000 1'b1;
+	func[0] = #35000 1'b0;
+	func[0] = #5000 1'b1;
+	func[0] = #20000 1'b0;
+	func[0] = #20000 1'b1;
+	func[0] = #15000 1'b0;
+	func[0] = #10000 1'b1;
+	func[0] = #5000 1'b0;
+	func[0] = #5000 1'b1;
+	func[0] = #5000 1'b0;
+	func[0] = #5000 1'b1;
+	func[0] = #15000 1'b0;
+	func[0] = #5000 1'b1;
+	func[0] = #10000 1'b0;
+	func[0] = #10000 1'b1;
+	func[0] = #20000 1'b0;
+	func[0] = #5000 1'b1;
+	func[0] = #5000 1'b0;
+	func[0] = #20000 1'b1;
+	func[0] = #5000 1'b0;
+	func[0] = #5000 1'b1;
+	func[0] = #10000 1'b0;
+	func[0] = #5000 1'b1;
+	func[0] = #5000 1'b0;
+	func[0] = #5000 1'b1;
+	func[0] = #5000 1'b0;
+	func[0] = #10000 1'b1;
+	func[0] = #5000 1'b0;
+	func[0] = #5000 1'b1;
+	func[0] = #25000 1'b0;
+	func[0] = #10000 1'b1;
+	func[0] = #10000 1'b0;
+	func[0] = #5000 1'b1;
+	func[0] = #5000 1'b0;
+	func[0] = #20000 1'b1;
+	func[0] = #10000 1'b0;
+	func[0] = #5000 1'b1;
+	func[0] = #10000 1'b0;
+	func[0] = #10000 1'b1;
+	func[0] = #15000 1'b0;
+	func[0] = #20000 1'b1;
+	func[0] = #5000 1'b0;
+	func[0] = #10000 1'b1;
+	func[0] = #35000 1'b0;
+	func[0] = #10000 1'b1;
+	func[0] = #20000 1'b0;
+	func[0] = #10000 1'b1;
+	func[0] = #25000 1'b0;
+	func[0] = #5000 1'b1;
+end 
+// src0[ 31 ]
+initial
+begin
+	src0[31] = 1'b0;
+	src0[31] = #20000 1'b1;
+	src0[31] = #30000 1'b0;
+	src0[31] = #10000 1'b1;
+	src0[31] = #10000 1'b0;
+	src0[31] = #20000 1'b1;
+	src0[31] = #20000 1'b0;
+	src0[31] = #30000 1'b1;
+	src0[31] = #10000 1'b0;
+	src0[31] = #10000 1'b1;
+	src0[31] = #20000 1'b0;
+	src0[31] = #20000 1'b1;
+	src0[31] = #20000 1'b0;
+	src0[31] = #10000 1'b1;
+	src0[31] = #50000 1'b0;
+	src0[31] = #20000 1'b1;
+	src0[31] = #10000 1'b0;
+	src0[31] = #20000 1'b1;
+	src0[31] = #10000 1'b0;
+	src0[31] = #10000 1'b1;
+	src0[31] = #10000 1'b0;
+	src0[31] = #10000 1'b1;
+	src0[31] = #20000 1'b0;
+	src0[31] = #30000 1'b1;
+	src0[31] = #10000 1'b0;
+	src0[31] = #10000 1'b1;
+	src0[31] = #30000 1'b0;
+	src0[31] = #10000 1'b1;
+	src0[31] = #10000 1'b0;
+	src0[31] = #10000 1'b1;
+	src0[31] = #10000 1'b0;
+	src0[31] = #40000 1'b1;
+	src0[31] = #40000 1'b0;
+	src0[31] = #10000 1'b1;
+	src0[31] = #30000 1'b0;
+	src0[31] = #10000 1'b1;
+	src0[31] = #10000 1'b0;
+	src0[31] = #30000 1'b1;
+	src0[31] = #10000 1'b0;
+	src0[31] = #10000 1'b1;
+	src0[31] = #40000 1'b0;
+	src0[31] = #40000 1'b1;
+	src0[31] = #150000 1'b0;
+	src0[31] = #30000 1'b1;
+end 
+// src0[ 30 ]
+initial
+begin
+	src0[30] = 1'b0;
+	src0[30] = #20000 1'b1;
+	src0[30] = #20000 1'b0;
+	src0[30] = #20000 1'b1;
+	src0[30] = #20000 1'b0;
+	src0[30] = #10000 1'b1;
+	src0[30] = #20000 1'b0;
+	src0[30] = #20000 1'b1;
+	src0[30] = #10000 1'b0;
+	src0[30] = #20000 1'b1;
+	src0[30] = #10000 1'b0;
+	src0[30] = #40000 1'b1;
+	src0[30] = #20000 1'b0;
+	src0[30] = #10000 1'b1;
+	src0[30] = #20000 1'b0;
+	src0[30] = #20000 1'b1;
+	src0[30] = #30000 1'b0;
+	src0[30] = #30000 1'b1;
+	src0[30] = #10000 1'b0;
+	src0[30] = #20000 1'b1;
+	src0[30] = #10000 1'b0;
+	src0[30] = #10000 1'b1;
+	src0[30] = #10000 1'b0;
+	src0[30] = #100000 1'b1;
+	src0[30] = #10000 1'b0;
+	src0[30] = #10000 1'b1;
+	src0[30] = #30000 1'b0;
+	src0[30] = #10000 1'b1;
+	src0[30] = #20000 1'b0;
+	src0[30] = #10000 1'b1;
+	src0[30] = #10000 1'b0;
+	src0[30] = #20000 1'b1;
+	src0[30] = #10000 1'b0;
+	src0[30] = #40000 1'b1;
+	src0[30] = #50000 1'b0;
+	src0[30] = #10000 1'b1;
+	src0[30] = #10000 1'b0;
+	src0[30] = #10000 1'b1;
+	src0[30] = #10000 1'b0;
+	src0[30] = #30000 1'b1;
+	src0[30] = #30000 1'b0;
+	src0[30] = #40000 1'b1;
+	src0[30] = #10000 1'b0;
+	src0[30] = #10000 1'b1;
+	src0[30] = #10000 1'b0;
+	src0[30] = #50000 1'b1;
+	src0[30] = #20000 1'b0;
+	src0[30] = #20000 1'b1;
+end 
+// src0[ 29 ]
+initial
+begin
+	src0[29] = 1'b1;
+	src0[29] = #10000 1'b0;
+	src0[29] = #30000 1'b1;
+	src0[29] = #10000 1'b0;
+	src0[29] = #20000 1'b1;
+	src0[29] = #30000 1'b0;
+	src0[29] = #20000 1'b1;
+	src0[29] = #10000 1'b0;
+	src0[29] = #50000 1'b1;
+	src0[29] = #10000 1'b0;
+	src0[29] = #20000 1'b1;
+	src0[29] = #10000 1'b0;
+	src0[29] = #30000 1'b1;
+	src0[29] = #50000 1'b0;
+	src0[29] = #20000 1'b1;
+	src0[29] = #20000 1'b0;
+	src0[29] = #10000 1'b1;
+	src0[29] = #10000 1'b0;
+	src0[29] = #30000 1'b1;
+	src0[29] = #30000 1'b0;
+	src0[29] = #10000 1'b1;
+	src0[29] = #10000 1'b0;
+	src0[29] = #10000 1'b1;
+	src0[29] = #20000 1'b0;
+	src0[29] = #10000 1'b1;
+	src0[29] = #10000 1'b0;
+	src0[29] = #30000 1'b1;
+	src0[29] = #10000 1'b0;
+	src0[29] = #10000 1'b1;
+	src0[29] = #10000 1'b0;
+	src0[29] = #10000 1'b1;
+	src0[29] = #30000 1'b0;
+	src0[29] = #30000 1'b1;
+	src0[29] = #10000 1'b0;
+	src0[29] = #20000 1'b1;
+	src0[29] = #40000 1'b0;
+	src0[29] = #20000 1'b1;
+	src0[29] = #90000 1'b0;
+	src0[29] = #10000 1'b1;
+	src0[29] = #40000 1'b0;
+	src0[29] = #20000 1'b1;
+	src0[29] = #30000 1'b0;
+	src0[29] = #10000 1'b1;
+	src0[29] = #40000 1'b0;
+	src0[29] = #30000 1'b1;
+end 
+// src0[ 28 ]
+initial
+begin
+	src0[28] = 1'b1;
+	src0[28] = #10000 1'b0;
+	src0[28] = #10000 1'b1;
+	src0[28] = #10000 1'b0;
+	src0[28] = #50000 1'b1;
+	src0[28] = #10000 1'b0;
+	src0[28] = #10000 1'b1;
+	src0[28] = #10000 1'b0;
+	src0[28] = #20000 1'b1;
+	src0[28] = #10000 1'b0;
+	src0[28] = #10000 1'b1;
+	src0[28] = #10000 1'b0;
+	src0[28] = #10000 1'b1;
+	src0[28] = #20000 1'b0;
+	src0[28] = #10000 1'b1;
+	src0[28] = #30000 1'b0;
+	src0[28] = #10000 1'b1;
+	src0[28] = #20000 1'b0;
+	src0[28] = #70000 1'b1;
+	src0[28] = #30000 1'b0;
+	src0[28] = #20000 1'b1;
+	src0[28] = #20000 1'b0;
+	src0[28] = #10000 1'b1;
+	src0[28] = #20000 1'b0;
+	src0[28] = #10000 1'b1;
+	src0[28] = #10000 1'b0;
+	src0[28] = #10000 1'b1;
+	src0[28] = #20000 1'b0;
+	src0[28] = #30000 1'b1;
+	src0[28] = #20000 1'b0;
+	src0[28] = #20000 1'b1;
+	src0[28] = #20000 1'b0;
+	src0[28] = #20000 1'b1;
+	src0[28] = #30000 1'b0;
+	src0[28] = #10000 1'b1;
+	src0[28] = #30000 1'b0;
+	src0[28] = #10000 1'b1;
+	src0[28] = #10000 1'b0;
+	src0[28] = #30000 1'b1;
+	src0[28] = #20000 1'b0;
+	src0[28] = #10000 1'b1;
+	src0[28] = #10000 1'b0;
+	src0[28] = #20000 1'b1;
+	src0[28] = #20000 1'b0;
+	src0[28] = #10000 1'b1;
+	src0[28] = #20000 1'b0;
+	src0[28] = #10000 1'b1;
+	src0[28] = #10000 1'b0;
+	src0[28] = #20000 1'b1;
+	src0[28] = #30000 1'b0;
+	src0[28] = #10000 1'b1;
+	src0[28] = #10000 1'b0;
+	src0[28] = #10000 1'b1;
+	src0[28] = #20000 1'b0;
+	src0[28] = #10000 1'b1;
+	src0[28] = #20000 1'b0;
+	src0[28] = #20000 1'b1;
+end 
+// src0[ 27 ]
+initial
+begin
+	src0[27] = 1'b0;
+	src0[27] = #20000 1'b1;
+	src0[27] = #20000 1'b0;
+	src0[27] = #10000 1'b1;
+	src0[27] = #10000 1'b0;
+	src0[27] = #30000 1'b1;
+	src0[27] = #10000 1'b0;
+	src0[27] = #10000 1'b1;
+	src0[27] = #20000 1'b0;
+	src0[27] = #10000 1'b1;
+	src0[27] = #30000 1'b0;
+	src0[27] = #30000 1'b1;
+	src0[27] = #20000 1'b0;
+	src0[27] = #20000 1'b1;
+	src0[27] = #30000 1'b0;
+	src0[27] = #40000 1'b1;
+	src0[27] = #20000 1'b0;
+	src0[27] = #10000 1'b1;
+	src0[27] = #10000 1'b0;
+	src0[27] = #40000 1'b1;
+	src0[27] = #20000 1'b0;
+	src0[27] = #20000 1'b1;
+	src0[27] = #10000 1'b0;
+	src0[27] = #10000 1'b1;
+	src0[27] = #20000 1'b0;
+	src0[27] = #40000 1'b1;
+	src0[27] = #10000 1'b0;
+	src0[27] = #10000 1'b1;
+	src0[27] = #10000 1'b0;
+	src0[27] = #50000 1'b1;
+	src0[27] = #40000 1'b0;
+	src0[27] = #60000 1'b1;
+	src0[27] = #10000 1'b0;
+	src0[27] = #30000 1'b1;
+	src0[27] = #10000 1'b0;
+	src0[27] = #10000 1'b1;
+	src0[27] = #10000 1'b0;
+	src0[27] = #20000 1'b1;
+	src0[27] = #20000 1'b0;
+	src0[27] = #30000 1'b1;
+	src0[27] = #20000 1'b0;
+	src0[27] = #10000 1'b1;
+	src0[27] = #20000 1'b0;
+	src0[27] = #20000 1'b1;
+	src0[27] = #50000 1'b0;
+	src0[27] = #10000 1'b1;
+	src0[27] = #10000 1'b0;
+end 
+// src0[ 26 ]
+initial
+begin
+	src0[26] = 1'b0;
+	src0[26] = #40000 1'b1;
+	src0[26] = #10000 1'b0;
+	src0[26] = #30000 1'b1;
+	src0[26] = #10000 1'b0;
+	src0[26] = #10000 1'b1;
+	src0[26] = #20000 1'b0;
+	src0[26] = #10000 1'b1;
+	src0[26] = #10000 1'b0;
+	src0[26] = #10000 1'b1;
+	src0[26] = #20000 1'b0;
+	src0[26] = #10000 1'b1;
+	src0[26] = #10000 1'b0;
+	src0[26] = #10000 1'b1;
+	src0[26] = #10000 1'b0;
+	src0[26] = #20000 1'b1;
+	src0[26] = #10000 1'b0;
+	src0[26] = #40000 1'b1;
+	src0[26] = #10000 1'b0;
+	src0[26] = #20000 1'b1;
+	src0[26] = #10000 1'b0;
+	src0[26] = #10000 1'b1;
+	src0[26] = #10000 1'b0;
+	src0[26] = #20000 1'b1;
+	src0[26] = #20000 1'b0;
+	src0[26] = #20000 1'b1;
+	src0[26] = #10000 1'b0;
+	src0[26] = #10000 1'b1;
+	src0[26] = #20000 1'b0;
+	src0[26] = #10000 1'b1;
+	src0[26] = #10000 1'b0;
+	src0[26] = #50000 1'b1;
+	src0[26] = #10000 1'b0;
+	src0[26] = #50000 1'b1;
+	src0[26] = #20000 1'b0;
+	src0[26] = #20000 1'b1;
+	src0[26] = #10000 1'b0;
+	src0[26] = #20000 1'b1;
+	src0[26] = #50000 1'b0;
+	src0[26] = #10000 1'b1;
+	src0[26] = #10000 1'b0;
+	src0[26] = #10000 1'b1;
+	src0[26] = #10000 1'b0;
+	src0[26] = #40000 1'b1;
+	src0[26] = #10000 1'b0;
+	src0[26] = #40000 1'b1;
+	src0[26] = #20000 1'b0;
+	src0[26] = #20000 1'b1;
+	src0[26] = #30000 1'b0;
+	src0[26] = #20000 1'b1;
+	src0[26] = #40000 1'b0;
+	src0[26] = #10000 1'b1;
+	src0[26] = #10000 1'b0;
+	src0[26] = #10000 1'b1;
+	src0[26] = #10000 1'b0;
+end 
+// src0[ 25 ]
+initial
+begin
+	src0[25] = 1'b1;
+	src0[25] = #20000 1'b0;
+	src0[25] = #30000 1'b1;
+	src0[25] = #10000 1'b0;
+	src0[25] = #10000 1'b1;
+	src0[25] = #10000 1'b0;
+	src0[25] = #10000 1'b1;
+	src0[25] = #20000 1'b0;
+	src0[25] = #10000 1'b1;
+	src0[25] = #10000 1'b0;
+	src0[25] = #10000 1'b1;
+	src0[25] = #20000 1'b0;
+	src0[25] = #20000 1'b1;
+	src0[25] = #50000 1'b0;
+	src0[25] = #10000 1'b1;
+	src0[25] = #30000 1'b0;
+	src0[25] = #70000 1'b1;
+	src0[25] = #10000 1'b0;
+	src0[25] = #10000 1'b1;
+	src0[25] = #20000 1'b0;
+	src0[25] = #40000 1'b1;
+	src0[25] = #30000 1'b0;
+	src0[25] = #10000 1'b1;
+	src0[25] = #10000 1'b0;
+	src0[25] = #10000 1'b1;
+	src0[25] = #10000 1'b0;
+	src0[25] = #10000 1'b1;
+	src0[25] = #20000 1'b0;
+	src0[25] = #20000 1'b1;
+	src0[25] = #10000 1'b0;
+	src0[25] = #10000 1'b1;
+	src0[25] = #10000 1'b0;
+	src0[25] = #20000 1'b1;
+	src0[25] = #10000 1'b0;
+	src0[25] = #10000 1'b1;
+	src0[25] = #20000 1'b0;
+	src0[25] = #20000 1'b1;
+	src0[25] = #10000 1'b0;
+	src0[25] = #10000 1'b1;
+	src0[25] = #10000 1'b0;
+	src0[25] = #110000 1'b1;
+	src0[25] = #40000 1'b0;
+	src0[25] = #20000 1'b1;
+	src0[25] = #10000 1'b0;
+	src0[25] = #20000 1'b1;
+	src0[25] = #10000 1'b0;
+	src0[25] = #10000 1'b1;
+	src0[25] = #10000 1'b0;
+	src0[25] = #20000 1'b1;
+	src0[25] = #20000 1'b0;
+	src0[25] = #30000 1'b1;
+	src0[25] = #10000 1'b0;
+end 
+// src0[ 24 ]
+initial
+begin
+	src0[24] = 1'b1;
+	src0[24] = #10000 1'b0;
+	src0[24] = #40000 1'b1;
+	src0[24] = #30000 1'b0;
+	src0[24] = #20000 1'b1;
+	src0[24] = #20000 1'b0;
+	src0[24] = #10000 1'b1;
+	src0[24] = #10000 1'b0;
+	src0[24] = #20000 1'b1;
+	src0[24] = #10000 1'b0;
+	src0[24] = #30000 1'b1;
+	src0[24] = #20000 1'b0;
+	src0[24] = #40000 1'b1;
+	src0[24] = #30000 1'b0;
+	src0[24] = #20000 1'b1;
+	src0[24] = #50000 1'b0;
+	src0[24] = #10000 1'b1;
+	src0[24] = #20000 1'b0;
+	src0[24] = #10000 1'b1;
+	src0[24] = #10000 1'b0;
+	src0[24] = #10000 1'b1;
+	src0[24] = #40000 1'b0;
+	src0[24] = #20000 1'b1;
+	src0[24] = #20000 1'b0;
+	src0[24] = #10000 1'b1;
+	src0[24] = #30000 1'b0;
+	src0[24] = #10000 1'b1;
+	src0[24] = #20000 1'b0;
+	src0[24] = #10000 1'b1;
+	src0[24] = #10000 1'b0;
+	src0[24] = #20000 1'b1;
+	src0[24] = #10000 1'b0;
+	src0[24] = #20000 1'b1;
+	src0[24] = #10000 1'b0;
+	src0[24] = #10000 1'b1;
+	src0[24] = #10000 1'b0;
+	src0[24] = #40000 1'b1;
+	src0[24] = #20000 1'b0;
+	src0[24] = #10000 1'b1;
+	src0[24] = #10000 1'b0;
+	src0[24] = #10000 1'b1;
+	src0[24] = #10000 1'b0;
+	src0[24] = #10000 1'b1;
+	src0[24] = #20000 1'b0;
+	src0[24] = #10000 1'b1;
+	src0[24] = #20000 1'b0;
+	src0[24] = #10000 1'b1;
+	src0[24] = #10000 1'b0;
+	src0[24] = #10000 1'b1;
+	src0[24] = #10000 1'b0;
+	src0[24] = #30000 1'b1;
+	src0[24] = #10000 1'b0;
+	src0[24] = #10000 1'b1;
+	src0[24] = #10000 1'b0;
+	src0[24] = #40000 1'b1;
+	src0[24] = #10000 1'b0;
+	src0[24] = #10000 1'b1;
+end 
+// src0[ 23 ]
+initial
+begin
+	src0[23] = 1'b0;
+	src0[23] = #10000 1'b1;
+	src0[23] = #10000 1'b0;
+	src0[23] = #20000 1'b1;
+	src0[23] = #10000 1'b0;
+	src0[23] = #80000 1'b1;
+	src0[23] = #20000 1'b0;
+	src0[23] = #10000 1'b1;
+	src0[23] = #30000 1'b0;
+	src0[23] = #30000 1'b1;
+	src0[23] = #10000 1'b0;
+	src0[23] = #40000 1'b1;
+	src0[23] = #10000 1'b0;
+	src0[23] = #10000 1'b1;
+	src0[23] = #20000 1'b0;
+	src0[23] = #20000 1'b1;
+	src0[23] = #10000 1'b0;
+	src0[23] = #30000 1'b1;
+	src0[23] = #10000 1'b0;
+	src0[23] = #20000 1'b1;
+	src0[23] = #30000 1'b0;
+	src0[23] = #10000 1'b1;
+	src0[23] = #20000 1'b0;
+	src0[23] = #40000 1'b1;
+	src0[23] = #10000 1'b0;
+	src0[23] = #10000 1'b1;
+	src0[23] = #50000 1'b0;
+	src0[23] = #30000 1'b1;
+	src0[23] = #20000 1'b0;
+	src0[23] = #50000 1'b1;
+	src0[23] = #40000 1'b0;
+	src0[23] = #10000 1'b1;
+	src0[23] = #20000 1'b0;
+	src0[23] = #10000 1'b1;
+	src0[23] = #10000 1'b0;
+	src0[23] = #30000 1'b1;
+	src0[23] = #20000 1'b0;
+	src0[23] = #10000 1'b1;
+	src0[23] = #30000 1'b0;
+	src0[23] = #40000 1'b1;
+	src0[23] = #20000 1'b0;
+	src0[23] = #10000 1'b1;
+	src0[23] = #60000 1'b0;
+end 
+// src0[ 22 ]
+initial
+begin
+	src0[22] = 1'b0;
+	src0[22] = #20000 1'b1;
+	src0[22] = #10000 1'b0;
+	src0[22] = #70000 1'b1;
+	src0[22] = #10000 1'b0;
+	src0[22] = #10000 1'b1;
+	src0[22] = #30000 1'b0;
+	src0[22] = #20000 1'b1;
+	src0[22] = #10000 1'b0;
+	src0[22] = #10000 1'b1;
+	src0[22] = #40000 1'b0;
+	src0[22] = #20000 1'b1;
+	src0[22] = #20000 1'b0;
+	src0[22] = #40000 1'b1;
+	src0[22] = #10000 1'b0;
+	src0[22] = #20000 1'b1;
+	src0[22] = #60000 1'b0;
+	src0[22] = #10000 1'b1;
+	src0[22] = #10000 1'b0;
+	src0[22] = #80000 1'b1;
+	src0[22] = #40000 1'b0;
+	src0[22] = #10000 1'b1;
+	src0[22] = #10000 1'b0;
+	src0[22] = #10000 1'b1;
+	src0[22] = #10000 1'b0;
+	src0[22] = #30000 1'b1;
+	src0[22] = #20000 1'b0;
+	src0[22] = #10000 1'b1;
+	src0[22] = #20000 1'b0;
+	src0[22] = #20000 1'b1;
+	src0[22] = #10000 1'b0;
+	src0[22] = #10000 1'b1;
+	src0[22] = #20000 1'b0;
+	src0[22] = #10000 1'b1;
+	src0[22] = #10000 1'b0;
+	src0[22] = #30000 1'b1;
+	src0[22] = #10000 1'b0;
+	src0[22] = #10000 1'b1;
+	src0[22] = #60000 1'b0;
+	src0[22] = #10000 1'b1;
+	src0[22] = #10000 1'b0;
+	src0[22] = #10000 1'b1;
+	src0[22] = #30000 1'b0;
+	src0[22] = #10000 1'b1;
+	src0[22] = #10000 1'b0;
+	src0[22] = #30000 1'b1;
+	src0[22] = #20000 1'b0;
+	src0[22] = #10000 1'b1;
+end 
+// src0[ 21 ]
+initial
+begin
+	src0[21] = 1'b0;
+	src0[21] = #20000 1'b1;
+	src0[21] = #10000 1'b0;
+	src0[21] = #20000 1'b1;
+	src0[21] = #20000 1'b0;
+	src0[21] = #20000 1'b1;
+	src0[21] = #20000 1'b0;
+	src0[21] = #10000 1'b1;
+	src0[21] = #10000 1'b0;
+	src0[21] = #10000 1'b1;
+	src0[21] = #10000 1'b0;
+	src0[21] = #50000 1'b1;
+	src0[21] = #70000 1'b0;
+	src0[21] = #20000 1'b1;
+	src0[21] = #30000 1'b0;
+	src0[21] = #10000 1'b1;
+	src0[21] = #10000 1'b0;
+	src0[21] = #10000 1'b1;
+	src0[21] = #60000 1'b0;
+	src0[21] = #20000 1'b1;
+	src0[21] = #10000 1'b0;
+	src0[21] = #60000 1'b1;
+	src0[21] = #20000 1'b0;
+	src0[21] = #10000 1'b1;
+	src0[21] = #20000 1'b0;
+	src0[21] = #10000 1'b1;
+	src0[21] = #20000 1'b0;
+	src0[21] = #20000 1'b1;
+	src0[21] = #30000 1'b0;
+	src0[21] = #40000 1'b1;
+	src0[21] = #10000 1'b0;
+	src0[21] = #50000 1'b1;
+	src0[21] = #10000 1'b0;
+	src0[21] = #30000 1'b1;
+	src0[21] = #30000 1'b0;
+	src0[21] = #20000 1'b1;
+	src0[21] = #10000 1'b0;
+	src0[21] = #10000 1'b1;
+	src0[21] = #10000 1'b0;
+	src0[21] = #10000 1'b1;
+	src0[21] = #20000 1'b0;
+	src0[21] = #20000 1'b1;
+	src0[21] = #10000 1'b0;
+	src0[21] = #30000 1'b1;
+end 
+// src0[ 20 ]
+initial
+begin
+	src0[20] = 1'b1;
+	src0[20] = #10000 1'b0;
+	src0[20] = #10000 1'b1;
+	src0[20] = #10000 1'b0;
+	src0[20] = #10000 1'b1;
+	src0[20] = #10000 1'b0;
+	src0[20] = #10000 1'b1;
+	src0[20] = #10000 1'b0;
+	src0[20] = #30000 1'b1;
+	src0[20] = #20000 1'b0;
+	src0[20] = #20000 1'b1;
+	src0[20] = #30000 1'b0;
+	src0[20] = #10000 1'b1;
+	src0[20] = #20000 1'b0;
+	src0[20] = #10000 1'b1;
+	src0[20] = #50000 1'b0;
+	src0[20] = #60000 1'b1;
+	src0[20] = #10000 1'b0;
+	src0[20] = #10000 1'b1;
+	src0[20] = #10000 1'b0;
+	src0[20] = #30000 1'b1;
+	src0[20] = #10000 1'b0;
+	src0[20] = #10000 1'b1;
+	src0[20] = #30000 1'b0;
+	src0[20] = #10000 1'b1;
+	src0[20] = #30000 1'b0;
+	src0[20] = #10000 1'b1;
+	src0[20] = #30000 1'b0;
+	src0[20] = #20000 1'b1;
+	src0[20] = #10000 1'b0;
+	src0[20] = #10000 1'b1;
+	src0[20] = #20000 1'b0;
+	src0[20] = #50000 1'b1;
+	src0[20] = #10000 1'b0;
+	src0[20] = #10000 1'b1;
+	src0[20] = #10000 1'b0;
+	src0[20] = #20000 1'b1;
+	src0[20] = #30000 1'b0;
+	src0[20] = #30000 1'b1;
+	src0[20] = #10000 1'b0;
+	src0[20] = #10000 1'b1;
+	src0[20] = #10000 1'b0;
+	src0[20] = #10000 1'b1;
+	src0[20] = #20000 1'b0;
+	src0[20] = #10000 1'b1;
+	src0[20] = #20000 1'b0;
+	src0[20] = #10000 1'b1;
+	src0[20] = #20000 1'b0;
+	src0[20] = #20000 1'b1;
+	src0[20] = #40000 1'b0;
+	src0[20] = #10000 1'b1;
+	src0[20] = #20000 1'b0;
+	src0[20] = #20000 1'b1;
+	src0[20] = #10000 1'b0;
+end 
+// src0[ 19 ]
+initial
+begin
+	src0[19] = 1'b0;
+	src0[19] = #10000 1'b1;
+	src0[19] = #10000 1'b0;
+	src0[19] = #20000 1'b1;
+	src0[19] = #10000 1'b0;
+	src0[19] = #10000 1'b1;
+	src0[19] = #10000 1'b0;
+	src0[19] = #10000 1'b1;
+	src0[19] = #30000 1'b0;
+	src0[19] = #10000 1'b1;
+	src0[19] = #10000 1'b0;
+	src0[19] = #10000 1'b1;
+	src0[19] = #10000 1'b0;
+	src0[19] = #50000 1'b1;
+	src0[19] = #10000 1'b0;
+	src0[19] = #10000 1'b1;
+	src0[19] = #30000 1'b0;
+	src0[19] = #10000 1'b1;
+	src0[19] = #20000 1'b0;
+	src0[19] = #20000 1'b1;
+	src0[19] = #30000 1'b0;
+	src0[19] = #10000 1'b1;
+	src0[19] = #20000 1'b0;
+	src0[19] = #10000 1'b1;
+	src0[19] = #20000 1'b0;
+	src0[19] = #10000 1'b1;
+	src0[19] = #30000 1'b0;
+	src0[19] = #30000 1'b1;
+	src0[19] = #10000 1'b0;
+	src0[19] = #10000 1'b1;
+	src0[19] = #20000 1'b0;
+	src0[19] = #10000 1'b1;
+	src0[19] = #10000 1'b0;
+	src0[19] = #10000 1'b1;
+	src0[19] = #10000 1'b0;
+	src0[19] = #20000 1'b1;
+	src0[19] = #10000 1'b0;
+	src0[19] = #10000 1'b1;
+	src0[19] = #10000 1'b0;
+	src0[19] = #10000 1'b1;
+	src0[19] = #10000 1'b0;
+	src0[19] = #20000 1'b1;
+	src0[19] = #10000 1'b0;
+	src0[19] = #20000 1'b1;
+	src0[19] = #20000 1'b0;
+	src0[19] = #80000 1'b1;
+	src0[19] = #20000 1'b0;
+	src0[19] = #30000 1'b1;
+	src0[19] = #70000 1'b0;
+	src0[19] = #10000 1'b1;
+	src0[19] = #10000 1'b0;
+	src0[19] = #10000 1'b1;
+	src0[19] = #10000 1'b0;
+	src0[19] = #10000 1'b1;
+	src0[19] = #20000 1'b0;
+	src0[19] = #10000 1'b1;
+end 
+// src0[ 18 ]
+initial
+begin
+	src0[18] = 1'b0;
+	src0[18] = #30000 1'b1;
+	src0[18] = #20000 1'b0;
+	src0[18] = #10000 1'b1;
+	src0[18] = #30000 1'b0;
+	src0[18] = #10000 1'b1;
+	src0[18] = #10000 1'b0;
+	src0[18] = #20000 1'b1;
+	src0[18] = #10000 1'b0;
+	src0[18] = #10000 1'b1;
+	src0[18] = #10000 1'b0;
+	src0[18] = #10000 1'b1;
+	src0[18] = #30000 1'b0;
+	src0[18] = #50000 1'b1;
+	src0[18] = #10000 1'b0;
+	src0[18] = #10000 1'b1;
+	src0[18] = #10000 1'b0;
+	src0[18] = #10000 1'b1;
+	src0[18] = #10000 1'b0;
+	src0[18] = #10000 1'b1;
+	src0[18] = #30000 1'b0;
+	src0[18] = #20000 1'b1;
+	src0[18] = #20000 1'b0;
+	src0[18] = #10000 1'b1;
+	src0[18] = #10000 1'b0;
+	src0[18] = #10000 1'b1;
+	src0[18] = #10000 1'b0;
+	src0[18] = #10000 1'b1;
+	src0[18] = #10000 1'b0;
+	src0[18] = #40000 1'b1;
+	src0[18] = #20000 1'b0;
+	src0[18] = #10000 1'b1;
+	src0[18] = #10000 1'b0;
+	src0[18] = #30000 1'b1;
+	src0[18] = #10000 1'b0;
+	src0[18] = #50000 1'b1;
+	src0[18] = #40000 1'b0;
+	src0[18] = #40000 1'b1;
+	src0[18] = #30000 1'b0;
+	src0[18] = #10000 1'b1;
+	src0[18] = #40000 1'b0;
+	src0[18] = #10000 1'b1;
+	src0[18] = #10000 1'b0;
+	src0[18] = #10000 1'b1;
+	src0[18] = #10000 1'b0;
+	src0[18] = #30000 1'b1;
+	src0[18] = #10000 1'b0;
+	src0[18] = #10000 1'b1;
+	src0[18] = #10000 1'b0;
+	src0[18] = #20000 1'b1;
+	src0[18] = #10000 1'b0;
+	src0[18] = #30000 1'b1;
+	src0[18] = #10000 1'b0;
+	src0[18] = #30000 1'b1;
+	src0[18] = #10000 1'b0;
+end 
+// src0[ 17 ]
+initial
+begin
+	src0[17] = 1'b1;
+	src0[17] = #10000 1'b0;
+	src0[17] = #10000 1'b1;
+	src0[17] = #10000 1'b0;
+	src0[17] = #10000 1'b1;
+	src0[17] = #50000 1'b0;
+	src0[17] = #10000 1'b1;
+	src0[17] = #10000 1'b0;
+	src0[17] = #10000 1'b1;
+	src0[17] = #10000 1'b0;
+	src0[17] = #30000 1'b1;
+	src0[17] = #30000 1'b0;
+	src0[17] = #50000 1'b1;
+	src0[17] = #20000 1'b0;
+	src0[17] = #10000 1'b1;
+	src0[17] = #10000 1'b0;
+	src0[17] = #20000 1'b1;
+	src0[17] = #10000 1'b0;
+	src0[17] = #10000 1'b1;
+	src0[17] = #20000 1'b0;
+	src0[17] = #10000 1'b1;
+	src0[17] = #30000 1'b0;
+	src0[17] = #10000 1'b1;
+	src0[17] = #20000 1'b0;
+	src0[17] = #20000 1'b1;
+	src0[17] = #10000 1'b0;
+	src0[17] = #10000 1'b1;
+	src0[17] = #10000 1'b0;
+	src0[17] = #10000 1'b1;
+	src0[17] = #30000 1'b0;
+	src0[17] = #10000 1'b1;
+	src0[17] = #30000 1'b0;
+	src0[17] = #20000 1'b1;
+	src0[17] = #30000 1'b0;
+	src0[17] = #10000 1'b1;
+	src0[17] = #40000 1'b0;
+	src0[17] = #10000 1'b1;
+	src0[17] = #10000 1'b0;
+	src0[17] = #10000 1'b1;
+	src0[17] = #10000 1'b0;
+	src0[17] = #10000 1'b1;
+	src0[17] = #10000 1'b0;
+	src0[17] = #20000 1'b1;
+	src0[17] = #10000 1'b0;
+	src0[17] = #30000 1'b1;
+	src0[17] = #20000 1'b0;
+	src0[17] = #10000 1'b1;
+	src0[17] = #10000 1'b0;
+	src0[17] = #10000 1'b1;
+	src0[17] = #20000 1'b0;
+	src0[17] = #30000 1'b1;
+	src0[17] = #70000 1'b0;
+	src0[17] = #10000 1'b1;
+	src0[17] = #20000 1'b0;
+	src0[17] = #30000 1'b1;
+end 
+// src0[ 16 ]
+initial
+begin
+	src0[16] = 1'b0;
+	src0[16] = #20000 1'b1;
+	src0[16] = #30000 1'b0;
+	src0[16] = #10000 1'b1;
+	src0[16] = #10000 1'b0;
+	src0[16] = #30000 1'b1;
+	src0[16] = #10000 1'b0;
+	src0[16] = #20000 1'b1;
+	src0[16] = #10000 1'b0;
+	src0[16] = #10000 1'b1;
+	src0[16] = #10000 1'b0;
+	src0[16] = #20000 1'b1;
+	src0[16] = #70000 1'b0;
+	src0[16] = #10000 1'b1;
+	src0[16] = #10000 1'b0;
+	src0[16] = #20000 1'b1;
+	src0[16] = #10000 1'b0;
+	src0[16] = #20000 1'b1;
+	src0[16] = #20000 1'b0;
+	src0[16] = #10000 1'b1;
+	src0[16] = #20000 1'b0;
+	src0[16] = #10000 1'b1;
+	src0[16] = #10000 1'b0;
+	src0[16] = #10000 1'b1;
+	src0[16] = #70000 1'b0;
+	src0[16] = #10000 1'b1;
+	src0[16] = #20000 1'b0;
+	src0[16] = #20000 1'b1;
+	src0[16] = #30000 1'b0;
+	src0[16] = #30000 1'b1;
+	src0[16] = #20000 1'b0;
+	src0[16] = #40000 1'b1;
+	src0[16] = #10000 1'b0;
+	src0[16] = #20000 1'b1;
+	src0[16] = #10000 1'b0;
+	src0[16] = #10000 1'b1;
+	src0[16] = #40000 1'b0;
+	src0[16] = #50000 1'b1;
+	src0[16] = #20000 1'b0;
+	src0[16] = #10000 1'b1;
+	src0[16] = #10000 1'b0;
+	src0[16] = #10000 1'b1;
+	src0[16] = #60000 1'b0;
+	src0[16] = #20000 1'b1;
+	src0[16] = #10000 1'b0;
+	src0[16] = #10000 1'b1;
+	src0[16] = #20000 1'b0;
+	src0[16] = #10000 1'b1;
+	src0[16] = #10000 1'b0;
+	src0[16] = #10000 1'b1;
+end 
+// src0[ 15 ]
+initial
+begin
+	src0[15] = 1'b0;
+	src0[15] = #10000 1'b1;
+	src0[15] = #10000 1'b0;
+	src0[15] = #20000 1'b1;
+	src0[15] = #10000 1'b0;
+	src0[15] = #10000 1'b1;
+	src0[15] = #10000 1'b0;
+	src0[15] = #20000 1'b1;
+	src0[15] = #10000 1'b0;
+	src0[15] = #30000 1'b1;
+	src0[15] = #10000 1'b0;
+	src0[15] = #40000 1'b1;
+	src0[15] = #20000 1'b0;
+	src0[15] = #10000 1'b1;
+	src0[15] = #10000 1'b0;
+	src0[15] = #70000 1'b1;
+	src0[15] = #20000 1'b0;
+	src0[15] = #10000 1'b1;
+	src0[15] = #20000 1'b0;
+	src0[15] = #20000 1'b1;
+	src0[15] = #10000 1'b0;
+	src0[15] = #10000 1'b1;
+	src0[15] = #20000 1'b0;
+	src0[15] = #10000 1'b1;
+	src0[15] = #10000 1'b0;
+	src0[15] = #20000 1'b1;
+	src0[15] = #40000 1'b0;
+	src0[15] = #30000 1'b1;
+	src0[15] = #10000 1'b0;
+	src0[15] = #10000 1'b1;
+	src0[15] = #10000 1'b0;
+	src0[15] = #20000 1'b1;
+	src0[15] = #30000 1'b0;
+	src0[15] = #10000 1'b1;
+	src0[15] = #20000 1'b0;
+	src0[15] = #40000 1'b1;
+	src0[15] = #20000 1'b0;
+	src0[15] = #30000 1'b1;
+	src0[15] = #30000 1'b0;
+	src0[15] = #30000 1'b1;
+	src0[15] = #20000 1'b0;
+	src0[15] = #10000 1'b1;
+	src0[15] = #30000 1'b0;
+	src0[15] = #50000 1'b1;
+	src0[15] = #10000 1'b0;
+	src0[15] = #20000 1'b1;
+	src0[15] = #10000 1'b0;
+	src0[15] = #20000 1'b1;
+	src0[15] = #10000 1'b0;
+end 
+// src0[ 14 ]
+initial
+begin
+	src0[14] = 1'b1;
+	src0[14] = #10000 1'b0;
+	src0[14] = #20000 1'b1;
+	src0[14] = #30000 1'b0;
+	src0[14] = #10000 1'b1;
+	src0[14] = #30000 1'b0;
+	src0[14] = #30000 1'b1;
+	src0[14] = #10000 1'b0;
+	src0[14] = #60000 1'b1;
+	src0[14] = #10000 1'b0;
+	src0[14] = #10000 1'b1;
+	src0[14] = #10000 1'b0;
+	src0[14] = #10000 1'b1;
+	src0[14] = #10000 1'b0;
+	src0[14] = #10000 1'b1;
+	src0[14] = #10000 1'b0;
+	src0[14] = #10000 1'b1;
+	src0[14] = #30000 1'b0;
+	src0[14] = #30000 1'b1;
+	src0[14] = #10000 1'b0;
+	src0[14] = #20000 1'b1;
+	src0[14] = #50000 1'b0;
+	src0[14] = #10000 1'b1;
+	src0[14] = #10000 1'b0;
+	src0[14] = #20000 1'b1;
+	src0[14] = #10000 1'b0;
+	src0[14] = #20000 1'b1;
+	src0[14] = #30000 1'b0;
+	src0[14] = #10000 1'b1;
+	src0[14] = #10000 1'b0;
+	src0[14] = #10000 1'b1;
+	src0[14] = #50000 1'b0;
+	src0[14] = #10000 1'b1;
+	src0[14] = #10000 1'b0;
+	src0[14] = #60000 1'b1;
+	src0[14] = #10000 1'b0;
+	src0[14] = #10000 1'b1;
+	src0[14] = #20000 1'b0;
+	src0[14] = #10000 1'b1;
+	src0[14] = #10000 1'b0;
+	src0[14] = #20000 1'b1;
+	src0[14] = #10000 1'b0;
+	src0[14] = #30000 1'b1;
+	src0[14] = #30000 1'b0;
+	src0[14] = #10000 1'b1;
+	src0[14] = #10000 1'b0;
+	src0[14] = #30000 1'b1;
+	src0[14] = #20000 1'b0;
+	src0[14] = #50000 1'b1;
+	src0[14] = #10000 1'b0;
+	src0[14] = #10000 1'b1;
+end 
+// src0[ 13 ]
+initial
+begin
+	src0[13] = 1'b1;
+	src0[13] = #10000 1'b0;
+	src0[13] = #30000 1'b1;
+	src0[13] = #20000 1'b0;
+	src0[13] = #10000 1'b1;
+	src0[13] = #10000 1'b0;
+	src0[13] = #10000 1'b1;
+	src0[13] = #10000 1'b0;
+	src0[13] = #10000 1'b1;
+	src0[13] = #10000 1'b0;
+	src0[13] = #10000 1'b1;
+	src0[13] = #10000 1'b0;
+	src0[13] = #80000 1'b1;
+	src0[13] = #50000 1'b0;
+	src0[13] = #60000 1'b1;
+	src0[13] = #40000 1'b0;
+	src0[13] = #20000 1'b1;
+	src0[13] = #20000 1'b0;
+	src0[13] = #10000 1'b1;
+	src0[13] = #40000 1'b0;
+	src0[13] = #20000 1'b1;
+	src0[13] = #20000 1'b0;
+	src0[13] = #10000 1'b1;
+	src0[13] = #10000 1'b0;
+	src0[13] = #10000 1'b1;
+	src0[13] = #30000 1'b0;
+	src0[13] = #10000 1'b1;
+	src0[13] = #20000 1'b0;
+	src0[13] = #10000 1'b1;
+	src0[13] = #20000 1'b0;
+	src0[13] = #10000 1'b1;
+	src0[13] = #30000 1'b0;
+	src0[13] = #10000 1'b1;
+	src0[13] = #10000 1'b0;
+	src0[13] = #20000 1'b1;
+	src0[13] = #30000 1'b0;
+	src0[13] = #10000 1'b1;
+	src0[13] = #30000 1'b0;
+	src0[13] = #20000 1'b1;
+	src0[13] = #10000 1'b0;
+	src0[13] = #10000 1'b1;
+	src0[13] = #10000 1'b0;
+	src0[13] = #20000 1'b1;
+	src0[13] = #10000 1'b0;
+	src0[13] = #10000 1'b1;
+	src0[13] = #10000 1'b0;
+	src0[13] = #30000 1'b1;
+	src0[13] = #20000 1'b0;
+	src0[13] = #10000 1'b1;
+	src0[13] = #40000 1'b0;
+	src0[13] = #10000 1'b1;
+	src0[13] = #10000 1'b0;
+end 
+// src0[ 12 ]
+initial
+begin
+	src0[12] = 1'b1;
+	src0[12] = #20000 1'b0;
+	src0[12] = #20000 1'b1;
+	src0[12] = #30000 1'b0;
+	src0[12] = #10000 1'b1;
+	src0[12] = #30000 1'b0;
+	src0[12] = #10000 1'b1;
+	src0[12] = #30000 1'b0;
+	src0[12] = #10000 1'b1;
+	src0[12] = #20000 1'b0;
+	src0[12] = #10000 1'b1;
+	src0[12] = #40000 1'b0;
+	src0[12] = #10000 1'b1;
+	src0[12] = #10000 1'b0;
+	src0[12] = #20000 1'b1;
+	src0[12] = #10000 1'b0;
+	src0[12] = #20000 1'b1;
+	src0[12] = #70000 1'b0;
+	src0[12] = #30000 1'b1;
+	src0[12] = #10000 1'b0;
+	src0[12] = #10000 1'b1;
+	src0[12] = #10000 1'b0;
+	src0[12] = #30000 1'b1;
+	src0[12] = #10000 1'b0;
+	src0[12] = #50000 1'b1;
+	src0[12] = #10000 1'b0;
+	src0[12] = #50000 1'b1;
+	src0[12] = #10000 1'b0;
+	src0[12] = #10000 1'b1;
+	src0[12] = #20000 1'b0;
+	src0[12] = #20000 1'b1;
+	src0[12] = #10000 1'b0;
+	src0[12] = #20000 1'b1;
+	src0[12] = #10000 1'b0;
+	src0[12] = #10000 1'b1;
+	src0[12] = #10000 1'b0;
+	src0[12] = #30000 1'b1;
+	src0[12] = #10000 1'b0;
+	src0[12] = #10000 1'b1;
+	src0[12] = #10000 1'b0;
+	src0[12] = #30000 1'b1;
+	src0[12] = #10000 1'b0;
+	src0[12] = #10000 1'b1;
+	src0[12] = #20000 1'b0;
+	src0[12] = #10000 1'b1;
+	src0[12] = #20000 1'b0;
+	src0[12] = #30000 1'b1;
+	src0[12] = #10000 1'b0;
+	src0[12] = #10000 1'b1;
+	src0[12] = #10000 1'b0;
+	src0[12] = #40000 1'b1;
+	src0[12] = #10000 1'b0;
+	src0[12] = #20000 1'b1;
+end 
+// src0[ 11 ]
+initial
+begin
+	src0[11] = 1'b1;
+	src0[11] = #10000 1'b0;
+	src0[11] = #10000 1'b1;
+	src0[11] = #10000 1'b0;
+	src0[11] = #10000 1'b1;
+	src0[11] = #10000 1'b0;
+	src0[11] = #50000 1'b1;
+	src0[11] = #10000 1'b0;
+	src0[11] = #10000 1'b1;
+	src0[11] = #10000 1'b0;
+	src0[11] = #50000 1'b1;
+	src0[11] = #20000 1'b0;
+	src0[11] = #10000 1'b1;
+	src0[11] = #10000 1'b0;
+	src0[11] = #10000 1'b1;
+	src0[11] = #10000 1'b0;
+	src0[11] = #10000 1'b1;
+	src0[11] = #10000 1'b0;
+	src0[11] = #10000 1'b1;
+	src0[11] = #70000 1'b0;
+	src0[11] = #10000 1'b1;
+	src0[11] = #10000 1'b0;
+	src0[11] = #10000 1'b1;
+	src0[11] = #10000 1'b0;
+	src0[11] = #10000 1'b1;
+	src0[11] = #20000 1'b0;
+	src0[11] = #30000 1'b1;
+	src0[11] = #60000 1'b0;
+	src0[11] = #20000 1'b1;
+	src0[11] = #40000 1'b0;
+	src0[11] = #20000 1'b1;
+	src0[11] = #10000 1'b0;
+	src0[11] = #20000 1'b1;
+	src0[11] = #20000 1'b0;
+	src0[11] = #20000 1'b1;
+	src0[11] = #30000 1'b0;
+	src0[11] = #10000 1'b1;
+	src0[11] = #20000 1'b0;
+	src0[11] = #10000 1'b1;
+	src0[11] = #10000 1'b0;
+	src0[11] = #10000 1'b1;
+	src0[11] = #20000 1'b0;
+	src0[11] = #10000 1'b1;
+	src0[11] = #10000 1'b0;
+	src0[11] = #40000 1'b1;
+	src0[11] = #10000 1'b0;
+	src0[11] = #10000 1'b1;
+	src0[11] = #20000 1'b0;
+	src0[11] = #10000 1'b1;
+	src0[11] = #10000 1'b0;
+	src0[11] = #10000 1'b1;
+	src0[11] = #20000 1'b0;
+	src0[11] = #10000 1'b1;
+	src0[11] = #20000 1'b0;
+	src0[11] = #10000 1'b1;
+	src0[11] = #10000 1'b0;
+	src0[11] = #30000 1'b1;
+end 
+// src0[ 10 ]
+initial
+begin
+	src0[10] = 1'b0;
+	src0[10] = #20000 1'b1;
+	src0[10] = #20000 1'b0;
+	src0[10] = #20000 1'b1;
+	src0[10] = #10000 1'b0;
+	src0[10] = #10000 1'b1;
+	src0[10] = #10000 1'b0;
+	src0[10] = #20000 1'b1;
+	src0[10] = #20000 1'b0;
+	src0[10] = #20000 1'b1;
+	src0[10] = #10000 1'b0;
+	src0[10] = #20000 1'b1;
+	src0[10] = #10000 1'b0;
+	src0[10] = #10000 1'b1;
+	src0[10] = #10000 1'b0;
+	src0[10] = #40000 1'b1;
+	src0[10] = #30000 1'b0;
+	src0[10] = #10000 1'b1;
+	src0[10] = #20000 1'b0;
+	src0[10] = #50000 1'b1;
+	src0[10] = #10000 1'b0;
+	src0[10] = #10000 1'b1;
+	src0[10] = #30000 1'b0;
+	src0[10] = #10000 1'b1;
+	src0[10] = #20000 1'b0;
+	src0[10] = #10000 1'b1;
+	src0[10] = #10000 1'b0;
+	src0[10] = #30000 1'b1;
+	src0[10] = #10000 1'b0;
+	src0[10] = #10000 1'b1;
+	src0[10] = #10000 1'b0;
+	src0[10] = #10000 1'b1;
+	src0[10] = #30000 1'b0;
+	src0[10] = #20000 1'b1;
+	src0[10] = #70000 1'b0;
+	src0[10] = #30000 1'b1;
+	src0[10] = #10000 1'b0;
+	src0[10] = #10000 1'b1;
+	src0[10] = #10000 1'b0;
+	src0[10] = #10000 1'b1;
+	src0[10] = #20000 1'b0;
+	src0[10] = #50000 1'b1;
+	src0[10] = #20000 1'b0;
+	src0[10] = #20000 1'b1;
+	src0[10] = #20000 1'b0;
+	src0[10] = #20000 1'b1;
+	src0[10] = #10000 1'b0;
+	src0[10] = #10000 1'b1;
+	src0[10] = #20000 1'b0;
+	src0[10] = #10000 1'b1;
+	src0[10] = #10000 1'b0;
+	src0[10] = #10000 1'b1;
+	src0[10] = #30000 1'b0;
+	src0[10] = #20000 1'b1;
+end 
+// src0[ 9 ]
+initial
+begin
+	src0[9] = 1'b1;
+	src0[9] = #10000 1'b0;
+	src0[9] = #10000 1'b1;
+	src0[9] = #10000 1'b0;
+	src0[9] = #10000 1'b1;
+	src0[9] = #30000 1'b0;
+	src0[9] = #10000 1'b1;
+	src0[9] = #10000 1'b0;
+	src0[9] = #20000 1'b1;
+	src0[9] = #90000 1'b0;
+	src0[9] = #30000 1'b1;
+	src0[9] = #50000 1'b0;
+	src0[9] = #30000 1'b1;
+	src0[9] = #10000 1'b0;
+	src0[9] = #20000 1'b1;
+	src0[9] = #10000 1'b0;
+	src0[9] = #50000 1'b1;
+	src0[9] = #20000 1'b0;
+	src0[9] = #40000 1'b1;
+	src0[9] = #10000 1'b0;
+	src0[9] = #10000 1'b1;
+	src0[9] = #10000 1'b0;
+	src0[9] = #30000 1'b1;
+	src0[9] = #30000 1'b0;
+	src0[9] = #20000 1'b1;
+	src0[9] = #20000 1'b0;
+	src0[9] = #60000 1'b1;
+	src0[9] = #20000 1'b0;
+	src0[9] = #40000 1'b1;
+	src0[9] = #30000 1'b0;
+	src0[9] = #10000 1'b1;
+	src0[9] = #10000 1'b0;
+	src0[9] = #10000 1'b1;
+	src0[9] = #40000 1'b0;
+	src0[9] = #20000 1'b1;
+	src0[9] = #10000 1'b0;
+	src0[9] = #10000 1'b1;
+	src0[9] = #10000 1'b0;
+	src0[9] = #30000 1'b1;
+	src0[9] = #20000 1'b0;
+	src0[9] = #20000 1'b1;
+	src0[9] = #50000 1'b0;
+end 
+// src0[ 8 ]
+initial
+begin
+	src0[8] = 1'b1;
+	src0[8] = #30000 1'b0;
+	src0[8] = #10000 1'b1;
+	src0[8] = #20000 1'b0;
+	src0[8] = #10000 1'b1;
+	src0[8] = #40000 1'b0;
+	src0[8] = #20000 1'b1;
+	src0[8] = #20000 1'b0;
+	src0[8] = #10000 1'b1;
+	src0[8] = #40000 1'b0;
+	src0[8] = #50000 1'b1;
+	src0[8] = #10000 1'b0;
+	src0[8] = #10000 1'b1;
+	src0[8] = #10000 1'b0;
+	src0[8] = #10000 1'b1;
+	src0[8] = #60000 1'b0;
+	src0[8] = #30000 1'b1;
+	src0[8] = #10000 1'b0;
+	src0[8] = #20000 1'b1;
+	src0[8] = #20000 1'b0;
+	src0[8] = #20000 1'b1;
+	src0[8] = #50000 1'b0;
+	src0[8] = #10000 1'b1;
+	src0[8] = #20000 1'b0;
+	src0[8] = #10000 1'b1;
+	src0[8] = #20000 1'b0;
+	src0[8] = #20000 1'b1;
+	src0[8] = #20000 1'b0;
+	src0[8] = #30000 1'b1;
+	src0[8] = #60000 1'b0;
+	src0[8] = #20000 1'b1;
+	src0[8] = #10000 1'b0;
+	src0[8] = #10000 1'b1;
+	src0[8] = #10000 1'b0;
+	src0[8] = #10000 1'b1;
+	src0[8] = #10000 1'b0;
+	src0[8] = #20000 1'b1;
+	src0[8] = #10000 1'b0;
+	src0[8] = #10000 1'b1;
+	src0[8] = #10000 1'b0;
+	src0[8] = #20000 1'b1;
+	src0[8] = #20000 1'b0;
+	src0[8] = #30000 1'b1;
+	src0[8] = #20000 1'b0;
+	src0[8] = #20000 1'b1;
+end 
+// src0[ 7 ]
+initial
+begin
+	src0[7] = 1'b0;
+	src0[7] = #20000 1'b1;
+	src0[7] = #10000 1'b0;
+	src0[7] = #50000 1'b1;
+	src0[7] = #10000 1'b0;
+	src0[7] = #20000 1'b1;
+	src0[7] = #20000 1'b0;
+	src0[7] = #10000 1'b1;
+	src0[7] = #10000 1'b0;
+	src0[7] = #30000 1'b1;
+	src0[7] = #10000 1'b0;
+	src0[7] = #30000 1'b1;
+	src0[7] = #10000 1'b0;
+	src0[7] = #20000 1'b1;
+	src0[7] = #40000 1'b0;
+	src0[7] = #10000 1'b1;
+	src0[7] = #20000 1'b0;
+	src0[7] = #70000 1'b1;
+	src0[7] = #20000 1'b0;
+	src0[7] = #20000 1'b1;
+	src0[7] = #30000 1'b0;
+	src0[7] = #20000 1'b1;
+	src0[7] = #10000 1'b0;
+	src0[7] = #30000 1'b1;
+	src0[7] = #20000 1'b0;
+	src0[7] = #10000 1'b1;
+	src0[7] = #10000 1'b0;
+	src0[7] = #30000 1'b1;
+	src0[7] = #10000 1'b0;
+	src0[7] = #10000 1'b1;
+	src0[7] = #10000 1'b0;
+	src0[7] = #10000 1'b1;
+	src0[7] = #10000 1'b0;
+	src0[7] = #20000 1'b1;
+	src0[7] = #40000 1'b0;
+	src0[7] = #10000 1'b1;
+	src0[7] = #40000 1'b0;
+	src0[7] = #20000 1'b1;
+	src0[7] = #10000 1'b0;
+	src0[7] = #10000 1'b1;
+	src0[7] = #20000 1'b0;
+	src0[7] = #10000 1'b1;
+	src0[7] = #30000 1'b0;
+	src0[7] = #10000 1'b1;
+	src0[7] = #10000 1'b0;
+	src0[7] = #10000 1'b1;
+	src0[7] = #20000 1'b0;
+	src0[7] = #10000 1'b1;
+	src0[7] = #40000 1'b0;
+	src0[7] = #10000 1'b1;
+	src0[7] = #10000 1'b0;
+	src0[7] = #10000 1'b1;
+	src0[7] = #10000 1'b0;
+end 
+// src0[ 6 ]
+initial
+begin
+	src0[6] = 1'b1;
+	src0[6] = #20000 1'b0;
+	src0[6] = #10000 1'b1;
+	src0[6] = #30000 1'b0;
+	src0[6] = #10000 1'b1;
+	src0[6] = #20000 1'b0;
+	src0[6] = #30000 1'b1;
+	src0[6] = #10000 1'b0;
+	src0[6] = #10000 1'b1;
+	src0[6] = #40000 1'b0;
+	src0[6] = #10000 1'b1;
+	src0[6] = #30000 1'b0;
+	src0[6] = #10000 1'b1;
+	src0[6] = #10000 1'b0;
+	src0[6] = #10000 1'b1;
+	src0[6] = #10000 1'b0;
+	src0[6] = #10000 1'b1;
+	src0[6] = #20000 1'b0;
+	src0[6] = #10000 1'b1;
+	src0[6] = #10000 1'b0;
+	src0[6] = #30000 1'b1;
+	src0[6] = #20000 1'b0;
+	src0[6] = #10000 1'b1;
+	src0[6] = #20000 1'b0;
+	src0[6] = #10000 1'b1;
+	src0[6] = #10000 1'b0;
+	src0[6] = #20000 1'b1;
+	src0[6] = #10000 1'b0;
+	src0[6] = #20000 1'b1;
+	src0[6] = #70000 1'b0;
+	src0[6] = #30000 1'b1;
+	src0[6] = #40000 1'b0;
+	src0[6] = #20000 1'b1;
+	src0[6] = #10000 1'b0;
+	src0[6] = #20000 1'b1;
+	src0[6] = #20000 1'b0;
+	src0[6] = #10000 1'b1;
+	src0[6] = #20000 1'b0;
+	src0[6] = #10000 1'b1;
+	src0[6] = #20000 1'b0;
+	src0[6] = #20000 1'b1;
+	src0[6] = #10000 1'b0;
+	src0[6] = #20000 1'b1;
+	src0[6] = #10000 1'b0;
+	src0[6] = #20000 1'b1;
+	src0[6] = #10000 1'b0;
+	src0[6] = #10000 1'b1;
+	src0[6] = #10000 1'b0;
+	src0[6] = #10000 1'b1;
+	src0[6] = #10000 1'b0;
+	src0[6] = #20000 1'b1;
+	src0[6] = #10000 1'b0;
+	src0[6] = #20000 1'b1;
+	src0[6] = #20000 1'b0;
+	src0[6] = #10000 1'b1;
+	src0[6] = #20000 1'b0;
+	src0[6] = #20000 1'b1;
+	src0[6] = #10000 1'b0;
+end 
+// src0[ 5 ]
+initial
+begin
+	src0[5] = 1'b0;
+	src0[5] = #10000 1'b1;
+	src0[5] = #10000 1'b0;
+	src0[5] = #10000 1'b1;
+	src0[5] = #20000 1'b0;
+	src0[5] = #30000 1'b1;
+	src0[5] = #10000 1'b0;
+	src0[5] = #10000 1'b1;
+	src0[5] = #50000 1'b0;
+	src0[5] = #10000 1'b1;
+	src0[5] = #10000 1'b0;
+	src0[5] = #10000 1'b1;
+	src0[5] = #10000 1'b0;
+	src0[5] = #20000 1'b1;
+	src0[5] = #70000 1'b0;
+	src0[5] = #20000 1'b1;
+	src0[5] = #10000 1'b0;
+	src0[5] = #20000 1'b1;
+	src0[5] = #50000 1'b0;
+	src0[5] = #30000 1'b1;
+	src0[5] = #10000 1'b0;
+	src0[5] = #40000 1'b1;
+	src0[5] = #40000 1'b0;
+	src0[5] = #60000 1'b1;
+	src0[5] = #20000 1'b0;
+	src0[5] = #10000 1'b1;
+	src0[5] = #10000 1'b0;
+	src0[5] = #20000 1'b1;
+	src0[5] = #10000 1'b0;
+	src0[5] = #20000 1'b1;
+	src0[5] = #30000 1'b0;
+	src0[5] = #50000 1'b1;
+	src0[5] = #10000 1'b0;
+	src0[5] = #10000 1'b1;
+	src0[5] = #20000 1'b0;
+	src0[5] = #10000 1'b1;
+	src0[5] = #10000 1'b0;
+	src0[5] = #20000 1'b1;
+	src0[5] = #40000 1'b0;
+	src0[5] = #10000 1'b1;
+	src0[5] = #10000 1'b0;
+	src0[5] = #10000 1'b1;
+	src0[5] = #20000 1'b0;
+	src0[5] = #10000 1'b1;
+	src0[5] = #20000 1'b0;
+	src0[5] = #20000 1'b1;
+	src0[5] = #10000 1'b0;
+	src0[5] = #10000 1'b1;
+end 
+// src0[ 4 ]
+initial
+begin
+	src0[4] = 1'b1;
+	src0[4] = #20000 1'b0;
+	src0[4] = #10000 1'b1;
+	src0[4] = #40000 1'b0;
+	src0[4] = #10000 1'b1;
+	src0[4] = #30000 1'b0;
+	src0[4] = #40000 1'b1;
+	src0[4] = #10000 1'b0;
+	src0[4] = #10000 1'b1;
+	src0[4] = #10000 1'b0;
+	src0[4] = #10000 1'b1;
+	src0[4] = #20000 1'b0;
+	src0[4] = #10000 1'b1;
+	src0[4] = #20000 1'b0;
+	src0[4] = #50000 1'b1;
+	src0[4] = #20000 1'b0;
+	src0[4] = #40000 1'b1;
+	src0[4] = #10000 1'b0;
+	src0[4] = #30000 1'b1;
+	src0[4] = #50000 1'b0;
+	src0[4] = #10000 1'b1;
+	src0[4] = #20000 1'b0;
+	src0[4] = #20000 1'b1;
+	src0[4] = #20000 1'b0;
+	src0[4] = #10000 1'b1;
+	src0[4] = #10000 1'b0;
+	src0[4] = #30000 1'b1;
+	src0[4] = #10000 1'b0;
+	src0[4] = #10000 1'b1;
+	src0[4] = #10000 1'b0;
+	src0[4] = #60000 1'b1;
+	src0[4] = #10000 1'b0;
+	src0[4] = #40000 1'b1;
+	src0[4] = #20000 1'b0;
+	src0[4] = #40000 1'b1;
+	src0[4] = #10000 1'b0;
+	src0[4] = #20000 1'b1;
+	src0[4] = #30000 1'b0;
+	src0[4] = #20000 1'b1;
+	src0[4] = #20000 1'b0;
+	src0[4] = #10000 1'b1;
+	src0[4] = #20000 1'b0;
+	src0[4] = #30000 1'b1;
+	src0[4] = #10000 1'b0;
+	src0[4] = #50000 1'b1;
+end 
+// src0[ 3 ]
+initial
+begin
+	src0[3] = 1'b1;
+	src0[3] = #30000 1'b0;
+	src0[3] = #10000 1'b1;
+	src0[3] = #10000 1'b0;
+	src0[3] = #20000 1'b1;
+	src0[3] = #20000 1'b0;
+	src0[3] = #30000 1'b1;
+	src0[3] = #20000 1'b0;
+	src0[3] = #10000 1'b1;
+	src0[3] = #20000 1'b0;
+	src0[3] = #10000 1'b1;
+	src0[3] = #50000 1'b0;
+	src0[3] = #10000 1'b1;
+	src0[3] = #10000 1'b0;
+	src0[3] = #10000 1'b1;
+	src0[3] = #20000 1'b0;
+	src0[3] = #70000 1'b1;
+	src0[3] = #10000 1'b0;
+	src0[3] = #20000 1'b1;
+	src0[3] = #40000 1'b0;
+	src0[3] = #50000 1'b1;
+	src0[3] = #10000 1'b0;
+	src0[3] = #20000 1'b1;
+	src0[3] = #30000 1'b0;
+	src0[3] = #20000 1'b1;
+	src0[3] = #10000 1'b0;
+	src0[3] = #10000 1'b1;
+	src0[3] = #10000 1'b0;
+	src0[3] = #30000 1'b1;
+	src0[3] = #10000 1'b0;
+	src0[3] = #50000 1'b1;
+	src0[3] = #20000 1'b0;
+	src0[3] = #20000 1'b1;
+	src0[3] = #10000 1'b0;
+	src0[3] = #10000 1'b1;
+	src0[3] = #10000 1'b0;
+	src0[3] = #10000 1'b1;
+	src0[3] = #20000 1'b0;
+	src0[3] = #20000 1'b1;
+	src0[3] = #70000 1'b0;
+	src0[3] = #20000 1'b1;
+	src0[3] = #30000 1'b0;
+	src0[3] = #10000 1'b1;
+	src0[3] = #10000 1'b0;
+	src0[3] = #10000 1'b1;
+	src0[3] = #10000 1'b0;
+	src0[3] = #10000 1'b1;
+	src0[3] = #20000 1'b0;
+	src0[3] = #10000 1'b1;
+end 
+// src0[ 2 ]
+initial
+begin
+	src0[2] = 1'b1;
+	src0[2] = #40000 1'b0;
+	src0[2] = #80000 1'b1;
+	src0[2] = #10000 1'b0;
+	src0[2] = #10000 1'b1;
+	src0[2] = #20000 1'b0;
+	src0[2] = #10000 1'b1;
+	src0[2] = #10000 1'b0;
+	src0[2] = #20000 1'b1;
+	src0[2] = #10000 1'b0;
+	src0[2] = #20000 1'b1;
+	src0[2] = #50000 1'b0;
+	src0[2] = #40000 1'b1;
+	src0[2] = #10000 1'b0;
+	src0[2] = #50000 1'b1;
+	src0[2] = #30000 1'b0;
+	src0[2] = #10000 1'b1;
+	src0[2] = #10000 1'b0;
+	src0[2] = #20000 1'b1;
+	src0[2] = #40000 1'b0;
+	src0[2] = #20000 1'b1;
+	src0[2] = #10000 1'b0;
+	src0[2] = #10000 1'b1;
+	src0[2] = #10000 1'b0;
+	src0[2] = #30000 1'b1;
+	src0[2] = #20000 1'b0;
+	src0[2] = #10000 1'b1;
+	src0[2] = #20000 1'b0;
+	src0[2] = #10000 1'b1;
+	src0[2] = #30000 1'b0;
+	src0[2] = #20000 1'b1;
+	src0[2] = #10000 1'b0;
+	src0[2] = #10000 1'b1;
+	src0[2] = #10000 1'b0;
+	src0[2] = #10000 1'b1;
+	src0[2] = #10000 1'b0;
+	src0[2] = #10000 1'b1;
+	src0[2] = #10000 1'b0;
+	src0[2] = #10000 1'b1;
+	src0[2] = #10000 1'b0;
+	src0[2] = #10000 1'b1;
+	src0[2] = #10000 1'b0;
+	src0[2] = #10000 1'b1;
+	src0[2] = #10000 1'b0;
+	src0[2] = #20000 1'b1;
+	src0[2] = #10000 1'b0;
+	src0[2] = #10000 1'b1;
+	src0[2] = #30000 1'b0;
+	src0[2] = #20000 1'b1;
+	src0[2] = #30000 1'b0;
+	src0[2] = #10000 1'b1;
+	src0[2] = #20000 1'b0;
+	src0[2] = #20000 1'b1;
+	src0[2] = #10000 1'b0;
+end 
+// src0[ 1 ]
+initial
+begin
+	src0[1] = 1'b1;
+	src0[1] = #20000 1'b0;
+	src0[1] = #10000 1'b1;
+	src0[1] = #20000 1'b0;
+	src0[1] = #40000 1'b1;
+	src0[1] = #10000 1'b0;
+	src0[1] = #20000 1'b1;
+	src0[1] = #20000 1'b0;
+	src0[1] = #40000 1'b1;
+	src0[1] = #20000 1'b0;
+	src0[1] = #20000 1'b1;
+	src0[1] = #50000 1'b0;
+	src0[1] = #10000 1'b1;
+	src0[1] = #20000 1'b0;
+	src0[1] = #20000 1'b1;
+	src0[1] = #30000 1'b0;
+	src0[1] = #10000 1'b1;
+	src0[1] = #10000 1'b0;
+	src0[1] = #50000 1'b1;
+	src0[1] = #40000 1'b0;
+	src0[1] = #30000 1'b1;
+	src0[1] = #20000 1'b0;
+	src0[1] = #50000 1'b1;
+	src0[1] = #10000 1'b0;
+	src0[1] = #20000 1'b1;
+	src0[1] = #10000 1'b0;
+	src0[1] = #20000 1'b1;
+	src0[1] = #20000 1'b0;
+	src0[1] = #10000 1'b1;
+	src0[1] = #10000 1'b0;
+	src0[1] = #20000 1'b1;
+	src0[1] = #20000 1'b0;
+	src0[1] = #30000 1'b1;
+	src0[1] = #10000 1'b0;
+	src0[1] = #10000 1'b1;
+	src0[1] = #40000 1'b0;
+	src0[1] = #40000 1'b1;
+	src0[1] = #20000 1'b0;
+	src0[1] = #10000 1'b1;
+	src0[1] = #20000 1'b0;
+	src0[1] = #10000 1'b1;
+	src0[1] = #20000 1'b0;
+	src0[1] = #60000 1'b1;
+	src0[1] = #20000 1'b0;
+end 
+// src0[ 0 ]
+initial
+begin
+	src0[0] = 1'b0;
+	src0[0] = #20000 1'b1;
+	src0[0] = #10000 1'b0;
+	src0[0] = #30000 1'b1;
+	src0[0] = #20000 1'b0;
+	src0[0] = #10000 1'b1;
+	src0[0] = #10000 1'b0;
+	src0[0] = #30000 1'b1;
+	src0[0] = #10000 1'b0;
+	src0[0] = #10000 1'b1;
+	src0[0] = #10000 1'b0;
+	src0[0] = #10000 1'b1;
+	src0[0] = #10000 1'b0;
+	src0[0] = #30000 1'b1;
+	src0[0] = #20000 1'b0;
+	src0[0] = #10000 1'b1;
+	src0[0] = #20000 1'b0;
+	src0[0] = #20000 1'b1;
+	src0[0] = #30000 1'b0;
+	src0[0] = #20000 1'b1;
+	src0[0] = #40000 1'b0;
+	src0[0] = #20000 1'b1;
+	src0[0] = #20000 1'b0;
+	src0[0] = #10000 1'b1;
+	src0[0] = #30000 1'b0;
+	src0[0] = #10000 1'b1;
+	src0[0] = #20000 1'b0;
+	src0[0] = #70000 1'b1;
+	src0[0] = #10000 1'b0;
+	src0[0] = #10000 1'b1;
+	src0[0] = #20000 1'b0;
+	src0[0] = #20000 1'b1;
+	src0[0] = #50000 1'b0;
+	src0[0] = #10000 1'b1;
+	src0[0] = #40000 1'b0;
+	src0[0] = #20000 1'b1;
+	src0[0] = #10000 1'b0;
+	src0[0] = #10000 1'b1;
+	src0[0] = #10000 1'b0;
+	src0[0] = #10000 1'b1;
+	src0[0] = #10000 1'b0;
+	src0[0] = #20000 1'b1;
+	src0[0] = #20000 1'b0;
+	src0[0] = #20000 1'b1;
+	src0[0] = #20000 1'b0;
+	src0[0] = #10000 1'b1;
+	src0[0] = #10000 1'b0;
+	src0[0] = #20000 1'b1;
+	src0[0] = #10000 1'b0;
+	src0[0] = #20000 1'b1;
+	src0[0] = #10000 1'b0;
+	src0[0] = #10000 1'b1;
+	src0[0] = #20000 1'b0;
+	src0[0] = #20000 1'b1;
+end 
+// src1[ 31 ]
+initial
+begin
+	src1[31] = 1'b0;
+	src1[31] = #10000 1'b1;
+	src1[31] = #20000 1'b0;
+	src1[31] = #30000 1'b1;
+	src1[31] = #10000 1'b0;
+	src1[31] = #30000 1'b1;
+	src1[31] = #10000 1'b0;
+	src1[31] = #10000 1'b1;
+	src1[31] = #10000 1'b0;
+	src1[31] = #70000 1'b1;
+	src1[31] = #20000 1'b0;
+	src1[31] = #20000 1'b1;
+	src1[31] = #10000 1'b0;
+	src1[31] = #30000 1'b1;
+	src1[31] = #10000 1'b0;
+	src1[31] = #10000 1'b1;
+	src1[31] = #20000 1'b0;
+	src1[31] = #10000 1'b1;
+	src1[31] = #10000 1'b0;
+	src1[31] = #10000 1'b1;
+	src1[31] = #20000 1'b0;
+	src1[31] = #10000 1'b1;
+	src1[31] = #10000 1'b0;
+	src1[31] = #20000 1'b1;
+	src1[31] = #20000 1'b0;
+	src1[31] = #20000 1'b1;
+	src1[31] = #50000 1'b0;
+	src1[31] = #10000 1'b1;
+	src1[31] = #20000 1'b0;
+	src1[31] = #10000 1'b1;
+	src1[31] = #10000 1'b0;
+	src1[31] = #10000 1'b1;
+	src1[31] = #10000 1'b0;
+	src1[31] = #10000 1'b1;
+	src1[31] = #30000 1'b0;
+	src1[31] = #10000 1'b1;
+	src1[31] = #10000 1'b0;
+	src1[31] = #10000 1'b1;
+	src1[31] = #20000 1'b0;
+	src1[31] = #10000 1'b1;
+	src1[31] = #10000 1'b0;
+	src1[31] = #10000 1'b1;
+	src1[31] = #10000 1'b0;
+	src1[31] = #10000 1'b1;
+	src1[31] = #40000 1'b0;
+	src1[31] = #10000 1'b1;
+	src1[31] = #10000 1'b0;
+	src1[31] = #10000 1'b1;
+	src1[31] = #20000 1'b0;
+	src1[31] = #10000 1'b1;
+	src1[31] = #20000 1'b0;
+	src1[31] = #10000 1'b1;
+	src1[31] = #20000 1'b0;
+	src1[31] = #30000 1'b1;
+	src1[31] = #30000 1'b0;
+	src1[31] = #20000 1'b1;
+	src1[31] = #10000 1'b0;
+	src1[31] = #40000 1'b1;
+end 
+// src1[ 30 ]
+initial
+begin
+	src1[30] = 1'b0;
+	src1[30] = #30000 1'b1;
+	src1[30] = #10000 1'b0;
+	src1[30] = #80000 1'b1;
+	src1[30] = #30000 1'b0;
+	src1[30] = #30000 1'b1;
+	src1[30] = #50000 1'b0;
+	src1[30] = #10000 1'b1;
+	src1[30] = #20000 1'b0;
+	src1[30] = #10000 1'b1;
+	src1[30] = #10000 1'b0;
+	src1[30] = #10000 1'b1;
+	src1[30] = #10000 1'b0;
+	src1[30] = #10000 1'b1;
+	src1[30] = #10000 1'b0;
+	src1[30] = #20000 1'b1;
+	src1[30] = #30000 1'b0;
+	src1[30] = #10000 1'b1;
+	src1[30] = #10000 1'b0;
+	src1[30] = #40000 1'b1;
+	src1[30] = #20000 1'b0;
+	src1[30] = #30000 1'b1;
+	src1[30] = #10000 1'b0;
+	src1[30] = #10000 1'b1;
+	src1[30] = #20000 1'b0;
+	src1[30] = #10000 1'b1;
+	src1[30] = #30000 1'b0;
+	src1[30] = #30000 1'b1;
+	src1[30] = #10000 1'b0;
+	src1[30] = #10000 1'b1;
+	src1[30] = #10000 1'b0;
+	src1[30] = #50000 1'b1;
+	src1[30] = #10000 1'b0;
+	src1[30] = #10000 1'b1;
+	src1[30] = #10000 1'b0;
+	src1[30] = #20000 1'b1;
+	src1[30] = #10000 1'b0;
+	src1[30] = #20000 1'b1;
+	src1[30] = #10000 1'b0;
+	src1[30] = #10000 1'b1;
+	src1[30] = #10000 1'b0;
+	src1[30] = #30000 1'b1;
+	src1[30] = #30000 1'b0;
+	src1[30] = #10000 1'b1;
+	src1[30] = #40000 1'b0;
+	src1[30] = #10000 1'b1;
+	src1[30] = #30000 1'b0;
+	src1[30] = #10000 1'b1;
+	src1[30] = #10000 1'b0;
+	src1[30] = #20000 1'b1;
+	src1[30] = #10000 1'b0;
+	src1[30] = #10000 1'b1;
+end 
+// src1[ 29 ]
+initial
+begin
+	src1[29] = 1'b0;
+	src1[29] = #40000 1'b1;
+	src1[29] = #20000 1'b0;
+	src1[29] = #30000 1'b1;
+	src1[29] = #20000 1'b0;
+	src1[29] = #10000 1'b1;
+	src1[29] = #20000 1'b0;
+	src1[29] = #10000 1'b1;
+	src1[29] = #30000 1'b0;
+	src1[29] = #10000 1'b1;
+	src1[29] = #10000 1'b0;
+	src1[29] = #50000 1'b1;
+	src1[29] = #10000 1'b0;
+	src1[29] = #20000 1'b1;
+	src1[29] = #10000 1'b0;
+	src1[29] = #20000 1'b1;
+	src1[29] = #30000 1'b0;
+	src1[29] = #30000 1'b1;
+	src1[29] = #10000 1'b0;
+	src1[29] = #10000 1'b1;
+	src1[29] = #10000 1'b0;
+	src1[29] = #10000 1'b1;
+	src1[29] = #30000 1'b0;
+	src1[29] = #10000 1'b1;
+	src1[29] = #10000 1'b0;
+	src1[29] = #10000 1'b1;
+	src1[29] = #20000 1'b0;
+	src1[29] = #10000 1'b1;
+	src1[29] = #10000 1'b0;
+	src1[29] = #10000 1'b1;
+	src1[29] = #30000 1'b0;
+	src1[29] = #10000 1'b1;
+	src1[29] = #20000 1'b0;
+	src1[29] = #20000 1'b1;
+	src1[29] = #60000 1'b0;
+	src1[29] = #20000 1'b1;
+	src1[29] = #10000 1'b0;
+	src1[29] = #70000 1'b1;
+	src1[29] = #10000 1'b0;
+	src1[29] = #10000 1'b1;
+	src1[29] = #10000 1'b0;
+	src1[29] = #10000 1'b1;
+	src1[29] = #30000 1'b0;
+	src1[29] = #10000 1'b1;
+	src1[29] = #10000 1'b0;
+	src1[29] = #40000 1'b1;
+	src1[29] = #30000 1'b0;
+	src1[29] = #10000 1'b1;
+	src1[29] = #40000 1'b0;
+	src1[29] = #10000 1'b1;
+end 
+// src1[ 28 ]
+initial
+begin
+	src1[28] = 1'b1;
+	src1[28] = #40000 1'b0;
+	src1[28] = #30000 1'b1;
+	src1[28] = #20000 1'b0;
+	src1[28] = #30000 1'b1;
+	src1[28] = #10000 1'b0;
+	src1[28] = #20000 1'b1;
+	src1[28] = #40000 1'b0;
+	src1[28] = #40000 1'b1;
+	src1[28] = #10000 1'b0;
+	src1[28] = #10000 1'b1;
+	src1[28] = #10000 1'b0;
+	src1[28] = #20000 1'b1;
+	src1[28] = #60000 1'b0;
+	src1[28] = #20000 1'b1;
+	src1[28] = #10000 1'b0;
+	src1[28] = #20000 1'b1;
+	src1[28] = #10000 1'b0;
+	src1[28] = #10000 1'b1;
+	src1[28] = #10000 1'b0;
+	src1[28] = #20000 1'b1;
+	src1[28] = #30000 1'b0;
+	src1[28] = #10000 1'b1;
+	src1[28] = #30000 1'b0;
+	src1[28] = #10000 1'b1;
+	src1[28] = #20000 1'b0;
+	src1[28] = #10000 1'b1;
+	src1[28] = #10000 1'b0;
+	src1[28] = #20000 1'b1;
+	src1[28] = #10000 1'b0;
+	src1[28] = #20000 1'b1;
+	src1[28] = #30000 1'b0;
+	src1[28] = #30000 1'b1;
+	src1[28] = #10000 1'b0;
+	src1[28] = #10000 1'b1;
+	src1[28] = #20000 1'b0;
+	src1[28] = #30000 1'b1;
+	src1[28] = #10000 1'b0;
+	src1[28] = #20000 1'b1;
+	src1[28] = #40000 1'b0;
+	src1[28] = #30000 1'b1;
+	src1[28] = #70000 1'b0;
+	src1[28] = #20000 1'b1;
+	src1[28] = #10000 1'b0;
+	src1[28] = #10000 1'b1;
+	src1[28] = #20000 1'b0;
+	src1[28] = #10000 1'b1;
+	src1[28] = #10000 1'b0;
+end 
+// src1[ 27 ]
+initial
+begin
+	src1[27] = 1'b1;
+	src1[27] = #10000 1'b0;
+	src1[27] = #30000 1'b1;
+	src1[27] = #20000 1'b0;
+	src1[27] = #10000 1'b1;
+	src1[27] = #20000 1'b0;
+	src1[27] = #50000 1'b1;
+	src1[27] = #30000 1'b0;
+	src1[27] = #20000 1'b1;
+	src1[27] = #10000 1'b0;
+	src1[27] = #10000 1'b1;
+	src1[27] = #10000 1'b0;
+	src1[27] = #10000 1'b1;
+	src1[27] = #20000 1'b0;
+	src1[27] = #30000 1'b1;
+	src1[27] = #10000 1'b0;
+	src1[27] = #10000 1'b1;
+	src1[27] = #20000 1'b0;
+	src1[27] = #20000 1'b1;
+	src1[27] = #20000 1'b0;
+	src1[27] = #10000 1'b1;
+	src1[27] = #10000 1'b0;
+	src1[27] = #10000 1'b1;
+	src1[27] = #50000 1'b0;
+	src1[27] = #20000 1'b1;
+	src1[27] = #60000 1'b0;
+	src1[27] = #10000 1'b1;
+	src1[27] = #30000 1'b0;
+	src1[27] = #40000 1'b1;
+	src1[27] = #10000 1'b0;
+	src1[27] = #10000 1'b1;
+	src1[27] = #10000 1'b0;
+	src1[27] = #10000 1'b1;
+	src1[27] = #10000 1'b0;
+	src1[27] = #20000 1'b1;
+	src1[27] = #40000 1'b0;
+	src1[27] = #10000 1'b1;
+	src1[27] = #20000 1'b0;
+	src1[27] = #20000 1'b1;
+	src1[27] = #40000 1'b0;
+	src1[27] = #20000 1'b1;
+	src1[27] = #20000 1'b0;
+	src1[27] = #10000 1'b1;
+	src1[27] = #20000 1'b0;
+	src1[27] = #10000 1'b1;
+	src1[27] = #10000 1'b0;
+	src1[27] = #10000 1'b1;
+	src1[27] = #10000 1'b0;
+	src1[27] = #20000 1'b1;
+	src1[27] = #10000 1'b0;
+	src1[27] = #30000 1'b1;
+	src1[27] = #10000 1'b0;
+end 
+// src1[ 26 ]
+initial
+begin
+	src1[26] = 1'b0;
+	src1[26] = #50000 1'b1;
+	src1[26] = #30000 1'b0;
+	src1[26] = #10000 1'b1;
+	src1[26] = #30000 1'b0;
+	src1[26] = #10000 1'b1;
+	src1[26] = #10000 1'b0;
+	src1[26] = #10000 1'b1;
+	src1[26] = #20000 1'b0;
+	src1[26] = #30000 1'b1;
+	src1[26] = #10000 1'b0;
+	src1[26] = #10000 1'b1;
+	src1[26] = #10000 1'b0;
+	src1[26] = #40000 1'b1;
+	src1[26] = #10000 1'b0;
+	src1[26] = #50000 1'b1;
+	src1[26] = #10000 1'b0;
+	src1[26] = #10000 1'b1;
+	src1[26] = #20000 1'b0;
+	src1[26] = #10000 1'b1;
+	src1[26] = #10000 1'b0;
+	src1[26] = #50000 1'b1;
+	src1[26] = #40000 1'b0;
+	src1[26] = #20000 1'b1;
+	src1[26] = #20000 1'b0;
+	src1[26] = #10000 1'b1;
+	src1[26] = #10000 1'b0;
+	src1[26] = #10000 1'b1;
+	src1[26] = #20000 1'b0;
+	src1[26] = #20000 1'b1;
+	src1[26] = #10000 1'b0;
+	src1[26] = #20000 1'b1;
+	src1[26] = #20000 1'b0;
+	src1[26] = #10000 1'b1;
+	src1[26] = #20000 1'b0;
+	src1[26] = #10000 1'b1;
+	src1[26] = #20000 1'b0;
+	src1[26] = #30000 1'b1;
+	src1[26] = #20000 1'b0;
+	src1[26] = #20000 1'b1;
+	src1[26] = #20000 1'b0;
+	src1[26] = #20000 1'b1;
+	src1[26] = #20000 1'b0;
+	src1[26] = #20000 1'b1;
+	src1[26] = #10000 1'b0;
+	src1[26] = #10000 1'b1;
+	src1[26] = #10000 1'b0;
+	src1[26] = #20000 1'b1;
+	src1[26] = #10000 1'b0;
+	src1[26] = #20000 1'b1;
+	src1[26] = #20000 1'b0;
+	src1[26] = #20000 1'b1;
+	src1[26] = #10000 1'b0;
+end 
+// src1[ 25 ]
+initial
+begin
+	src1[25] = 1'b1;
+	src1[25] = #20000 1'b0;
+	src1[25] = #10000 1'b1;
+	src1[25] = #10000 1'b0;
+	src1[25] = #20000 1'b1;
+	src1[25] = #30000 1'b0;
+	src1[25] = #30000 1'b1;
+	src1[25] = #10000 1'b0;
+	src1[25] = #20000 1'b1;
+	src1[25] = #10000 1'b0;
+	src1[25] = #10000 1'b1;
+	src1[25] = #10000 1'b0;
+	src1[25] = #10000 1'b1;
+	src1[25] = #40000 1'b0;
+	src1[25] = #30000 1'b1;
+	src1[25] = #20000 1'b0;
+	src1[25] = #10000 1'b1;
+	src1[25] = #10000 1'b0;
+	src1[25] = #10000 1'b1;
+	src1[25] = #20000 1'b0;
+	src1[25] = #10000 1'b1;
+	src1[25] = #20000 1'b0;
+	src1[25] = #20000 1'b1;
+	src1[25] = #20000 1'b0;
+	src1[25] = #10000 1'b1;
+	src1[25] = #40000 1'b0;
+	src1[25] = #60000 1'b1;
+	src1[25] = #10000 1'b0;
+	src1[25] = #20000 1'b1;
+	src1[25] = #30000 1'b0;
+	src1[25] = #30000 1'b1;
+	src1[25] = #10000 1'b0;
+	src1[25] = #10000 1'b1;
+	src1[25] = #10000 1'b0;
+	src1[25] = #10000 1'b1;
+	src1[25] = #20000 1'b0;
+	src1[25] = #40000 1'b1;
+	src1[25] = #10000 1'b0;
+	src1[25] = #30000 1'b1;
+	src1[25] = #40000 1'b0;
+	src1[25] = #30000 1'b1;
+	src1[25] = #10000 1'b0;
+	src1[25] = #10000 1'b1;
+	src1[25] = #10000 1'b0;
+	src1[25] = #10000 1'b1;
+	src1[25] = #10000 1'b0;
+	src1[25] = #10000 1'b1;
+	src1[25] = #20000 1'b0;
+	src1[25] = #20000 1'b1;
+	src1[25] = #70000 1'b0;
+end 
+// src1[ 24 ]
+initial
+begin
+	src1[24] = 1'b0;
+	src1[24] = #10000 1'b1;
+	src1[24] = #30000 1'b0;
+	src1[24] = #10000 1'b1;
+	src1[24] = #20000 1'b0;
+	src1[24] = #20000 1'b1;
+	src1[24] = #90000 1'b0;
+	src1[24] = #10000 1'b1;
+	src1[24] = #10000 1'b0;
+	src1[24] = #10000 1'b1;
+	src1[24] = #20000 1'b0;
+	src1[24] = #20000 1'b1;
+	src1[24] = #20000 1'b0;
+	src1[24] = #20000 1'b1;
+	src1[24] = #10000 1'b0;
+	src1[24] = #10000 1'b1;
+	src1[24] = #10000 1'b0;
+	src1[24] = #20000 1'b1;
+	src1[24] = #10000 1'b0;
+	src1[24] = #10000 1'b1;
+	src1[24] = #10000 1'b0;
+	src1[24] = #10000 1'b1;
+	src1[24] = #10000 1'b0;
+	src1[24] = #10000 1'b1;
+	src1[24] = #20000 1'b0;
+	src1[24] = #10000 1'b1;
+	src1[24] = #10000 1'b0;
+	src1[24] = #30000 1'b1;
+	src1[24] = #10000 1'b0;
+	src1[24] = #30000 1'b1;
+	src1[24] = #20000 1'b0;
+	src1[24] = #20000 1'b1;
+	src1[24] = #30000 1'b0;
+	src1[24] = #10000 1'b1;
+	src1[24] = #20000 1'b0;
+	src1[24] = #20000 1'b1;
+	src1[24] = #10000 1'b0;
+	src1[24] = #60000 1'b1;
+	src1[24] = #20000 1'b0;
+	src1[24] = #10000 1'b1;
+	src1[24] = #10000 1'b0;
+	src1[24] = #30000 1'b1;
+	src1[24] = #20000 1'b0;
+	src1[24] = #10000 1'b1;
+	src1[24] = #10000 1'b0;
+	src1[24] = #10000 1'b1;
+	src1[24] = #10000 1'b0;
+	src1[24] = #70000 1'b1;
+	src1[24] = #10000 1'b0;
+	src1[24] = #20000 1'b1;
+	src1[24] = #10000 1'b0;
+	src1[24] = #40000 1'b1;
+end 
+// src1[ 23 ]
+initial
+begin
+	src1[23] = 1'b0;
+	src1[23] = #30000 1'b1;
+	src1[23] = #20000 1'b0;
+	src1[23] = #10000 1'b1;
+	src1[23] = #40000 1'b0;
+	src1[23] = #10000 1'b1;
+	src1[23] = #10000 1'b0;
+	src1[23] = #20000 1'b1;
+	src1[23] = #10000 1'b0;
+	src1[23] = #10000 1'b1;
+	src1[23] = #30000 1'b0;
+	src1[23] = #10000 1'b1;
+	src1[23] = #30000 1'b0;
+	src1[23] = #10000 1'b1;
+	src1[23] = #30000 1'b0;
+	src1[23] = #30000 1'b1;
+	src1[23] = #10000 1'b0;
+	src1[23] = #20000 1'b1;
+	src1[23] = #30000 1'b0;
+	src1[23] = #20000 1'b1;
+	src1[23] = #10000 1'b0;
+	src1[23] = #10000 1'b1;
+	src1[23] = #20000 1'b0;
+	src1[23] = #30000 1'b1;
+	src1[23] = #10000 1'b0;
+	src1[23] = #20000 1'b1;
+	src1[23] = #10000 1'b0;
+	src1[23] = #10000 1'b1;
+	src1[23] = #40000 1'b0;
+	src1[23] = #10000 1'b1;
+	src1[23] = #10000 1'b0;
+	src1[23] = #10000 1'b1;
+	src1[23] = #10000 1'b0;
+	src1[23] = #20000 1'b1;
+	src1[23] = #20000 1'b0;
+	src1[23] = #10000 1'b1;
+	src1[23] = #20000 1'b0;
+	src1[23] = #20000 1'b1;
+	src1[23] = #50000 1'b0;
+	src1[23] = #40000 1'b1;
+	src1[23] = #30000 1'b0;
+	src1[23] = #10000 1'b1;
+	src1[23] = #10000 1'b0;
+	src1[23] = #20000 1'b1;
+	src1[23] = #10000 1'b0;
+	src1[23] = #10000 1'b1;
+	src1[23] = #10000 1'b0;
+	src1[23] = #40000 1'b1;
+	src1[23] = #10000 1'b0;
+	src1[23] = #40000 1'b1;
+	src1[23] = #10000 1'b0;
+	src1[23] = #10000 1'b1;
+	src1[23] = #10000 1'b0;
+end 
+// src1[ 22 ]
+initial
+begin
+	src1[22] = 1'b0;
+	src1[22] = #30000 1'b1;
+	src1[22] = #10000 1'b0;
+	src1[22] = #10000 1'b1;
+	src1[22] = #30000 1'b0;
+	src1[22] = #20000 1'b1;
+	src1[22] = #30000 1'b0;
+	src1[22] = #20000 1'b1;
+	src1[22] = #10000 1'b0;
+	src1[22] = #10000 1'b1;
+	src1[22] = #10000 1'b0;
+	src1[22] = #20000 1'b1;
+	src1[22] = #10000 1'b0;
+	src1[22] = #10000 1'b1;
+	src1[22] = #10000 1'b0;
+	src1[22] = #50000 1'b1;
+	src1[22] = #10000 1'b0;
+	src1[22] = #20000 1'b1;
+	src1[22] = #20000 1'b0;
+	src1[22] = #30000 1'b1;
+	src1[22] = #20000 1'b0;
+	src1[22] = #10000 1'b1;
+	src1[22] = #70000 1'b0;
+	src1[22] = #10000 1'b1;
+	src1[22] = #10000 1'b0;
+	src1[22] = #20000 1'b1;
+	src1[22] = #30000 1'b0;
+	src1[22] = #10000 1'b1;
+	src1[22] = #10000 1'b0;
+	src1[22] = #10000 1'b1;
+	src1[22] = #10000 1'b0;
+	src1[22] = #10000 1'b1;
+	src1[22] = #20000 1'b0;
+	src1[22] = #50000 1'b1;
+	src1[22] = #10000 1'b0;
+	src1[22] = #20000 1'b1;
+	src1[22] = #30000 1'b0;
+	src1[22] = #30000 1'b1;
+	src1[22] = #30000 1'b0;
+	src1[22] = #10000 1'b1;
+	src1[22] = #90000 1'b0;
+	src1[22] = #20000 1'b1;
+	src1[22] = #10000 1'b0;
+	src1[22] = #20000 1'b1;
+end 
+// src1[ 21 ]
+initial
+begin
+	src1[21] = 1'b0;
+	src1[21] = #60000 1'b1;
+	src1[21] = #30000 1'b0;
+	src1[21] = #10000 1'b1;
+	src1[21] = #50000 1'b0;
+	src1[21] = #50000 1'b1;
+	src1[21] = #10000 1'b0;
+	src1[21] = #10000 1'b1;
+	src1[21] = #10000 1'b0;
+	src1[21] = #10000 1'b1;
+	src1[21] = #10000 1'b0;
+	src1[21] = #20000 1'b1;
+	src1[21] = #50000 1'b0;
+	src1[21] = #30000 1'b1;
+	src1[21] = #40000 1'b0;
+	src1[21] = #60000 1'b1;
+	src1[21] = #10000 1'b0;
+	src1[21] = #40000 1'b1;
+	src1[21] = #10000 1'b0;
+	src1[21] = #20000 1'b1;
+	src1[21] = #10000 1'b0;
+	src1[21] = #10000 1'b1;
+	src1[21] = #20000 1'b0;
+	src1[21] = #10000 1'b1;
+	src1[21] = #70000 1'b0;
+	src1[21] = #30000 1'b1;
+	src1[21] = #30000 1'b0;
+	src1[21] = #10000 1'b1;
+	src1[21] = #20000 1'b0;
+	src1[21] = #60000 1'b1;
+	src1[21] = #20000 1'b0;
+	src1[21] = #10000 1'b1;
+	src1[21] = #10000 1'b0;
+	src1[21] = #10000 1'b1;
+	src1[21] = #20000 1'b0;
+	src1[21] = #30000 1'b1;
+	src1[21] = #20000 1'b0;
+	src1[21] = #40000 1'b1;
+end 
+// src1[ 20 ]
+initial
+begin
+	src1[20] = 1'b0;
+	src1[20] = #20000 1'b1;
+	src1[20] = #20000 1'b0;
+	src1[20] = #10000 1'b1;
+	src1[20] = #10000 1'b0;
+	src1[20] = #30000 1'b1;
+	src1[20] = #10000 1'b0;
+	src1[20] = #10000 1'b1;
+	src1[20] = #30000 1'b0;
+	src1[20] = #10000 1'b1;
+	src1[20] = #20000 1'b0;
+	src1[20] = #30000 1'b1;
+	src1[20] = #30000 1'b0;
+	src1[20] = #20000 1'b1;
+	src1[20] = #10000 1'b0;
+	src1[20] = #40000 1'b1;
+	src1[20] = #30000 1'b0;
+	src1[20] = #10000 1'b1;
+	src1[20] = #40000 1'b0;
+	src1[20] = #50000 1'b1;
+	src1[20] = #10000 1'b0;
+	src1[20] = #10000 1'b1;
+	src1[20] = #20000 1'b0;
+	src1[20] = #10000 1'b1;
+	src1[20] = #30000 1'b0;
+	src1[20] = #10000 1'b1;
+	src1[20] = #10000 1'b0;
+	src1[20] = #10000 1'b1;
+	src1[20] = #10000 1'b0;
+	src1[20] = #10000 1'b1;
+	src1[20] = #20000 1'b0;
+	src1[20] = #20000 1'b1;
+	src1[20] = #10000 1'b0;
+	src1[20] = #20000 1'b1;
+	src1[20] = #20000 1'b0;
+	src1[20] = #10000 1'b1;
+	src1[20] = #10000 1'b0;
+	src1[20] = #10000 1'b1;
+	src1[20] = #10000 1'b0;
+	src1[20] = #20000 1'b1;
+	src1[20] = #10000 1'b0;
+	src1[20] = #20000 1'b1;
+	src1[20] = #20000 1'b0;
+	src1[20] = #10000 1'b1;
+	src1[20] = #10000 1'b0;
+	src1[20] = #50000 1'b1;
+	src1[20] = #20000 1'b0;
+	src1[20] = #10000 1'b1;
+	src1[20] = #20000 1'b0;
+	src1[20] = #10000 1'b1;
+	src1[20] = #20000 1'b0;
+	src1[20] = #10000 1'b1;
+	src1[20] = #10000 1'b0;
+	src1[20] = #20000 1'b1;
+	src1[20] = #10000 1'b0;
+	src1[20] = #10000 1'b1;
+end 
+// src1[ 19 ]
+initial
+begin
+	src1[19] = 1'b0;
+	src1[19] = #10000 1'b1;
+	src1[19] = #20000 1'b0;
+	src1[19] = #10000 1'b1;
+	src1[19] = #10000 1'b0;
+	src1[19] = #20000 1'b1;
+	src1[19] = #20000 1'b0;
+	src1[19] = #20000 1'b1;
+	src1[19] = #50000 1'b0;
+	src1[19] = #10000 1'b1;
+	src1[19] = #10000 1'b0;
+	src1[19] = #10000 1'b1;
+	src1[19] = #40000 1'b0;
+	src1[19] = #20000 1'b1;
+	src1[19] = #30000 1'b0;
+	src1[19] = #10000 1'b1;
+	src1[19] = #30000 1'b0;
+	src1[19] = #10000 1'b1;
+	src1[19] = #10000 1'b0;
+	src1[19] = #10000 1'b1;
+	src1[19] = #100000 1'b0;
+	src1[19] = #20000 1'b1;
+	src1[19] = #20000 1'b0;
+	src1[19] = #10000 1'b1;
+	src1[19] = #10000 1'b0;
+	src1[19] = #60000 1'b1;
+	src1[19] = #60000 1'b0;
+	src1[19] = #20000 1'b1;
+	src1[19] = #20000 1'b0;
+	src1[19] = #10000 1'b1;
+	src1[19] = #10000 1'b0;
+	src1[19] = #10000 1'b1;
+	src1[19] = #20000 1'b0;
+	src1[19] = #10000 1'b1;
+	src1[19] = #10000 1'b0;
+	src1[19] = #50000 1'b1;
+	src1[19] = #10000 1'b0;
+	src1[19] = #20000 1'b1;
+	src1[19] = #10000 1'b0;
+	src1[19] = #30000 1'b1;
+	src1[19] = #10000 1'b0;
+	src1[19] = #20000 1'b1;
+	src1[19] = #10000 1'b0;
+	src1[19] = #10000 1'b1;
+	src1[19] = #10000 1'b0;
+	src1[19] = #10000 1'b1;
+	src1[19] = #30000 1'b0;
+end 
+// src1[ 18 ]
+initial
+begin
+	src1[18] = 1'b0;
+	src1[18] = #20000 1'b1;
+	src1[18] = #20000 1'b0;
+	src1[18] = #10000 1'b1;
+	src1[18] = #20000 1'b0;
+	src1[18] = #20000 1'b1;
+	src1[18] = #10000 1'b0;
+	src1[18] = #10000 1'b1;
+	src1[18] = #20000 1'b0;
+	src1[18] = #10000 1'b1;
+	src1[18] = #10000 1'b0;
+	src1[18] = #30000 1'b1;
+	src1[18] = #10000 1'b0;
+	src1[18] = #20000 1'b1;
+	src1[18] = #10000 1'b0;
+	src1[18] = #30000 1'b1;
+	src1[18] = #10000 1'b0;
+	src1[18] = #50000 1'b1;
+	src1[18] = #20000 1'b0;
+	src1[18] = #10000 1'b1;
+	src1[18] = #10000 1'b0;
+	src1[18] = #10000 1'b1;
+	src1[18] = #10000 1'b0;
+	src1[18] = #10000 1'b1;
+	src1[18] = #90000 1'b0;
+	src1[18] = #60000 1'b1;
+	src1[18] = #20000 1'b0;
+	src1[18] = #10000 1'b1;
+	src1[18] = #10000 1'b0;
+	src1[18] = #10000 1'b1;
+	src1[18] = #30000 1'b0;
+	src1[18] = #10000 1'b1;
+	src1[18] = #10000 1'b0;
+	src1[18] = #20000 1'b1;
+	src1[18] = #20000 1'b0;
+	src1[18] = #10000 1'b1;
+	src1[18] = #10000 1'b0;
+	src1[18] = #10000 1'b1;
+	src1[18] = #10000 1'b0;
+	src1[18] = #20000 1'b1;
+	src1[18] = #30000 1'b0;
+	src1[18] = #20000 1'b1;
+	src1[18] = #60000 1'b0;
+	src1[18] = #30000 1'b1;
+	src1[18] = #30000 1'b0;
+	src1[18] = #30000 1'b1;
+	src1[18] = #30000 1'b0;
+	src1[18] = #20000 1'b1;
+	src1[18] = #10000 1'b0;
+end 
+// src1[ 17 ]
+initial
+begin
+	src1[17] = 1'b1;
+	src1[17] = #10000 1'b0;
+	src1[17] = #20000 1'b1;
+	src1[17] = #30000 1'b0;
+	src1[17] = #10000 1'b1;
+	src1[17] = #10000 1'b0;
+	src1[17] = #60000 1'b1;
+	src1[17] = #40000 1'b0;
+	src1[17] = #50000 1'b1;
+	src1[17] = #20000 1'b0;
+	src1[17] = #20000 1'b1;
+	src1[17] = #10000 1'b0;
+	src1[17] = #10000 1'b1;
+	src1[17] = #10000 1'b0;
+	src1[17] = #10000 1'b1;
+	src1[17] = #10000 1'b0;
+	src1[17] = #60000 1'b1;
+	src1[17] = #20000 1'b0;
+	src1[17] = #10000 1'b1;
+	src1[17] = #30000 1'b0;
+	src1[17] = #20000 1'b1;
+	src1[17] = #10000 1'b0;
+	src1[17] = #40000 1'b1;
+	src1[17] = #20000 1'b0;
+	src1[17] = #50000 1'b1;
+	src1[17] = #10000 1'b0;
+	src1[17] = #20000 1'b1;
+	src1[17] = #10000 1'b0;
+	src1[17] = #10000 1'b1;
+	src1[17] = #50000 1'b0;
+	src1[17] = #10000 1'b1;
+	src1[17] = #30000 1'b0;
+	src1[17] = #40000 1'b1;
+	src1[17] = #10000 1'b0;
+	src1[17] = #10000 1'b1;
+	src1[17] = #10000 1'b0;
+	src1[17] = #10000 1'b1;
+	src1[17] = #20000 1'b0;
+	src1[17] = #30000 1'b1;
+	src1[17] = #10000 1'b0;
+	src1[17] = #20000 1'b1;
+	src1[17] = #10000 1'b0;
+	src1[17] = #10000 1'b1;
+	src1[17] = #10000 1'b0;
+	src1[17] = #20000 1'b1;
+	src1[17] = #20000 1'b0;
+	src1[17] = #20000 1'b1;
+	src1[17] = #20000 1'b0;
+end 
+// src1[ 16 ]
+initial
+begin
+	src1[16] = 1'b0;
+	src1[16] = #20000 1'b1;
+	src1[16] = #40000 1'b0;
+	src1[16] = #10000 1'b1;
+	src1[16] = #10000 1'b0;
+	src1[16] = #20000 1'b1;
+	src1[16] = #20000 1'b0;
+	src1[16] = #10000 1'b1;
+	src1[16] = #10000 1'b0;
+	src1[16] = #10000 1'b1;
+	src1[16] = #50000 1'b0;
+	src1[16] = #10000 1'b1;
+	src1[16] = #10000 1'b0;
+	src1[16] = #10000 1'b1;
+	src1[16] = #20000 1'b0;
+	src1[16] = #30000 1'b1;
+	src1[16] = #20000 1'b0;
+	src1[16] = #10000 1'b1;
+	src1[16] = #10000 1'b0;
+	src1[16] = #10000 1'b1;
+	src1[16] = #20000 1'b0;
+	src1[16] = #10000 1'b1;
+	src1[16] = #10000 1'b0;
+	src1[16] = #30000 1'b1;
+	src1[16] = #50000 1'b0;
+	src1[16] = #10000 1'b1;
+	src1[16] = #50000 1'b0;
+	src1[16] = #50000 1'b1;
+	src1[16] = #50000 1'b0;
+	src1[16] = #40000 1'b1;
+	src1[16] = #20000 1'b0;
+	src1[16] = #70000 1'b1;
+	src1[16] = #10000 1'b0;
+	src1[16] = #10000 1'b1;
+	src1[16] = #20000 1'b0;
+	src1[16] = #20000 1'b1;
+	src1[16] = #10000 1'b0;
+	src1[16] = #10000 1'b1;
+	src1[16] = #10000 1'b0;
+	src1[16] = #30000 1'b1;
+	src1[16] = #20000 1'b0;
+	src1[16] = #10000 1'b1;
+	src1[16] = #20000 1'b0;
+	src1[16] = #50000 1'b1;
+	src1[16] = #10000 1'b0;
+	src1[16] = #10000 1'b1;
+end 
+// src1[ 15 ]
+initial
+begin
+	src1[15] = 1'b1;
+	src1[15] = #10000 1'b0;
+	src1[15] = #20000 1'b1;
+	src1[15] = #10000 1'b0;
+	src1[15] = #20000 1'b1;
+	src1[15] = #30000 1'b0;
+	src1[15] = #30000 1'b1;
+	src1[15] = #20000 1'b0;
+	src1[15] = #10000 1'b1;
+	src1[15] = #10000 1'b0;
+	src1[15] = #10000 1'b1;
+	src1[15] = #10000 1'b0;
+	src1[15] = #10000 1'b1;
+	src1[15] = #40000 1'b0;
+	src1[15] = #30000 1'b1;
+	src1[15] = #60000 1'b0;
+	src1[15] = #10000 1'b1;
+	src1[15] = #20000 1'b0;
+	src1[15] = #10000 1'b1;
+	src1[15] = #10000 1'b0;
+	src1[15] = #20000 1'b1;
+	src1[15] = #10000 1'b0;
+	src1[15] = #10000 1'b1;
+	src1[15] = #20000 1'b0;
+	src1[15] = #10000 1'b1;
+	src1[15] = #20000 1'b0;
+	src1[15] = #10000 1'b1;
+	src1[15] = #10000 1'b0;
+	src1[15] = #20000 1'b1;
+	src1[15] = #60000 1'b0;
+	src1[15] = #30000 1'b1;
+	src1[15] = #10000 1'b0;
+	src1[15] = #10000 1'b1;
+	src1[15] = #20000 1'b0;
+	src1[15] = #10000 1'b1;
+	src1[15] = #10000 1'b0;
+	src1[15] = #10000 1'b1;
+	src1[15] = #50000 1'b0;
+	src1[15] = #10000 1'b1;
+	src1[15] = #10000 1'b0;
+	src1[15] = #10000 1'b1;
+	src1[15] = #10000 1'b0;
+	src1[15] = #10000 1'b1;
+	src1[15] = #10000 1'b0;
+	src1[15] = #20000 1'b1;
+	src1[15] = #20000 1'b0;
+	src1[15] = #20000 1'b1;
+	src1[15] = #10000 1'b0;
+	src1[15] = #50000 1'b1;
+	src1[15] = #20000 1'b0;
+	src1[15] = #20000 1'b1;
+	src1[15] = #20000 1'b0;
+	src1[15] = #10000 1'b1;
+	src1[15] = #20000 1'b0;
+	src1[15] = #10000 1'b1;
+end 
+// src1[ 14 ]
+initial
+begin
+	src1[14] = 1'b1;
+	src1[14] = #10000 1'b0;
+	src1[14] = #10000 1'b1;
+	src1[14] = #40000 1'b0;
+	src1[14] = #20000 1'b1;
+	src1[14] = #10000 1'b0;
+	src1[14] = #10000 1'b1;
+	src1[14] = #10000 1'b0;
+	src1[14] = #10000 1'b1;
+	src1[14] = #10000 1'b0;
+	src1[14] = #20000 1'b1;
+	src1[14] = #10000 1'b0;
+	src1[14] = #10000 1'b1;
+	src1[14] = #50000 1'b0;
+	src1[14] = #40000 1'b1;
+	src1[14] = #30000 1'b0;
+	src1[14] = #30000 1'b1;
+	src1[14] = #10000 1'b0;
+	src1[14] = #30000 1'b1;
+	src1[14] = #20000 1'b0;
+	src1[14] = #20000 1'b1;
+	src1[14] = #10000 1'b0;
+	src1[14] = #10000 1'b1;
+	src1[14] = #10000 1'b0;
+	src1[14] = #20000 1'b1;
+	src1[14] = #10000 1'b0;
+	src1[14] = #10000 1'b1;
+	src1[14] = #40000 1'b0;
+	src1[14] = #10000 1'b1;
+	src1[14] = #20000 1'b0;
+	src1[14] = #10000 1'b1;
+	src1[14] = #40000 1'b0;
+	src1[14] = #20000 1'b1;
+	src1[14] = #10000 1'b0;
+	src1[14] = #20000 1'b1;
+	src1[14] = #10000 1'b0;
+	src1[14] = #20000 1'b1;
+	src1[14] = #10000 1'b0;
+	src1[14] = #10000 1'b1;
+	src1[14] = #20000 1'b0;
+	src1[14] = #10000 1'b1;
+	src1[14] = #10000 1'b0;
+	src1[14] = #10000 1'b1;
+	src1[14] = #10000 1'b0;
+	src1[14] = #10000 1'b1;
+	src1[14] = #10000 1'b0;
+	src1[14] = #20000 1'b1;
+	src1[14] = #30000 1'b0;
+	src1[14] = #10000 1'b1;
+	src1[14] = #10000 1'b0;
+	src1[14] = #30000 1'b1;
+	src1[14] = #30000 1'b0;
+	src1[14] = #10000 1'b1;
+	src1[14] = #30000 1'b0;
+end 
+// src1[ 13 ]
+initial
+begin
+	src1[13] = 1'b1;
+	src1[13] = #10000 1'b0;
+	src1[13] = #20000 1'b1;
+	src1[13] = #40000 1'b0;
+	src1[13] = #30000 1'b1;
+	src1[13] = #10000 1'b0;
+	src1[13] = #10000 1'b1;
+	src1[13] = #10000 1'b0;
+	src1[13] = #30000 1'b1;
+	src1[13] = #30000 1'b0;
+	src1[13] = #20000 1'b1;
+	src1[13] = #20000 1'b0;
+	src1[13] = #10000 1'b1;
+	src1[13] = #10000 1'b0;
+	src1[13] = #10000 1'b1;
+	src1[13] = #10000 1'b0;
+	src1[13] = #20000 1'b1;
+	src1[13] = #20000 1'b0;
+	src1[13] = #50000 1'b1;
+	src1[13] = #10000 1'b0;
+	src1[13] = #30000 1'b1;
+	src1[13] = #40000 1'b0;
+	src1[13] = #10000 1'b1;
+	src1[13] = #10000 1'b0;
+	src1[13] = #10000 1'b1;
+	src1[13] = #10000 1'b0;
+	src1[13] = #10000 1'b1;
+	src1[13] = #20000 1'b0;
+	src1[13] = #20000 1'b1;
+	src1[13] = #40000 1'b0;
+	src1[13] = #20000 1'b1;
+	src1[13] = #10000 1'b0;
+	src1[13] = #30000 1'b1;
+	src1[13] = #20000 1'b0;
+	src1[13] = #20000 1'b1;
+	src1[13] = #20000 1'b0;
+	src1[13] = #10000 1'b1;
+	src1[13] = #10000 1'b0;
+	src1[13] = #10000 1'b1;
+	src1[13] = #10000 1'b0;
+	src1[13] = #10000 1'b1;
+	src1[13] = #10000 1'b0;
+	src1[13] = #30000 1'b1;
+	src1[13] = #20000 1'b0;
+	src1[13] = #90000 1'b1;
+	src1[13] = #10000 1'b0;
+	src1[13] = #40000 1'b1;
+	src1[13] = #10000 1'b0;
+	src1[13] = #10000 1'b1;
+	src1[13] = #20000 1'b0;
+	src1[13] = #10000 1'b1;
+end 
+// src1[ 12 ]
+initial
+begin
+	src1[12] = 1'b0;
+	src1[12] = #40000 1'b1;
+	src1[12] = #10000 1'b0;
+	src1[12] = #30000 1'b1;
+	src1[12] = #10000 1'b0;
+	src1[12] = #30000 1'b1;
+	src1[12] = #20000 1'b0;
+	src1[12] = #50000 1'b1;
+	src1[12] = #20000 1'b0;
+	src1[12] = #10000 1'b1;
+	src1[12] = #20000 1'b0;
+	src1[12] = #60000 1'b1;
+	src1[12] = #10000 1'b0;
+	src1[12] = #10000 1'b1;
+	src1[12] = #10000 1'b0;
+	src1[12] = #30000 1'b1;
+	src1[12] = #10000 1'b0;
+	src1[12] = #20000 1'b1;
+	src1[12] = #40000 1'b0;
+	src1[12] = #10000 1'b1;
+	src1[12] = #10000 1'b0;
+	src1[12] = #40000 1'b1;
+	src1[12] = #10000 1'b0;
+	src1[12] = #30000 1'b1;
+	src1[12] = #70000 1'b0;
+	src1[12] = #20000 1'b1;
+	src1[12] = #10000 1'b0;
+	src1[12] = #20000 1'b1;
+	src1[12] = #20000 1'b0;
+	src1[12] = #10000 1'b1;
+	src1[12] = #20000 1'b0;
+	src1[12] = #10000 1'b1;
+	src1[12] = #20000 1'b0;
+	src1[12] = #20000 1'b1;
+	src1[12] = #30000 1'b0;
+	src1[12] = #20000 1'b1;
+	src1[12] = #60000 1'b0;
+	src1[12] = #10000 1'b1;
+	src1[12] = #20000 1'b0;
+	src1[12] = #40000 1'b1;
+	src1[12] = #50000 1'b0;
+end 
+// src1[ 11 ]
+initial
+begin
+	src1[11] = 1'b1;
+	src1[11] = #10000 1'b0;
+	src1[11] = #10000 1'b1;
+	src1[11] = #10000 1'b0;
+	src1[11] = #20000 1'b1;
+	src1[11] = #20000 1'b0;
+	src1[11] = #10000 1'b1;
+	src1[11] = #20000 1'b0;
+	src1[11] = #50000 1'b1;
+	src1[11] = #10000 1'b0;
+	src1[11] = #40000 1'b1;
+	src1[11] = #10000 1'b0;
+	src1[11] = #10000 1'b1;
+	src1[11] = #10000 1'b0;
+	src1[11] = #40000 1'b1;
+	src1[11] = #30000 1'b0;
+	src1[11] = #10000 1'b1;
+	src1[11] = #20000 1'b0;
+	src1[11] = #10000 1'b1;
+	src1[11] = #10000 1'b0;
+	src1[11] = #10000 1'b1;
+	src1[11] = #20000 1'b0;
+	src1[11] = #20000 1'b1;
+	src1[11] = #20000 1'b0;
+	src1[11] = #20000 1'b1;
+	src1[11] = #30000 1'b0;
+	src1[11] = #20000 1'b1;
+	src1[11] = #50000 1'b0;
+	src1[11] = #30000 1'b1;
+	src1[11] = #10000 1'b0;
+	src1[11] = #30000 1'b1;
+	src1[11] = #10000 1'b0;
+	src1[11] = #10000 1'b1;
+	src1[11] = #10000 1'b0;
+	src1[11] = #20000 1'b1;
+	src1[11] = #50000 1'b0;
+	src1[11] = #10000 1'b1;
+	src1[11] = #30000 1'b0;
+	src1[11] = #20000 1'b1;
+	src1[11] = #10000 1'b0;
+	src1[11] = #10000 1'b1;
+	src1[11] = #10000 1'b0;
+	src1[11] = #10000 1'b1;
+	src1[11] = #10000 1'b0;
+	src1[11] = #20000 1'b1;
+	src1[11] = #10000 1'b0;
+	src1[11] = #10000 1'b1;
+	src1[11] = #40000 1'b0;
+	src1[11] = #10000 1'b1;
+	src1[11] = #10000 1'b0;
+	src1[11] = #40000 1'b1;
+	src1[11] = #20000 1'b0;
+end 
+// src1[ 10 ]
+initial
+begin
+	src1[10] = 1'b1;
+	src1[10] = #40000 1'b0;
+	src1[10] = #10000 1'b1;
+	src1[10] = #30000 1'b0;
+	src1[10] = #10000 1'b1;
+	src1[10] = #50000 1'b0;
+	src1[10] = #30000 1'b1;
+	src1[10] = #10000 1'b0;
+	src1[10] = #10000 1'b1;
+	src1[10] = #10000 1'b0;
+	src1[10] = #50000 1'b1;
+	src1[10] = #10000 1'b0;
+	src1[10] = #30000 1'b1;
+	src1[10] = #10000 1'b0;
+	src1[10] = #10000 1'b1;
+	src1[10] = #10000 1'b0;
+	src1[10] = #20000 1'b1;
+	src1[10] = #30000 1'b0;
+	src1[10] = #20000 1'b1;
+	src1[10] = #30000 1'b0;
+	src1[10] = #50000 1'b1;
+	src1[10] = #10000 1'b0;
+	src1[10] = #20000 1'b1;
+	src1[10] = #50000 1'b0;
+	src1[10] = #40000 1'b1;
+	src1[10] = #30000 1'b0;
+	src1[10] = #10000 1'b1;
+	src1[10] = #20000 1'b0;
+	src1[10] = #20000 1'b1;
+	src1[10] = #10000 1'b0;
+	src1[10] = #10000 1'b1;
+	src1[10] = #10000 1'b0;
+	src1[10] = #20000 1'b1;
+	src1[10] = #10000 1'b0;
+	src1[10] = #10000 1'b1;
+	src1[10] = #10000 1'b0;
+	src1[10] = #20000 1'b1;
+	src1[10] = #10000 1'b0;
+	src1[10] = #10000 1'b1;
+	src1[10] = #20000 1'b0;
+	src1[10] = #20000 1'b1;
+	src1[10] = #10000 1'b0;
+	src1[10] = #10000 1'b1;
+	src1[10] = #10000 1'b0;
+	src1[10] = #50000 1'b1;
+	src1[10] = #20000 1'b0;
+	src1[10] = #20000 1'b1;
+	src1[10] = #20000 1'b0;
+	src1[10] = #20000 1'b1;
+end 
+// src1[ 9 ]
+initial
+begin
+	src1[9] = 1'b1;
+	src1[9] = #10000 1'b0;
+	src1[9] = #40000 1'b1;
+	src1[9] = #10000 1'b0;
+	src1[9] = #30000 1'b1;
+	src1[9] = #20000 1'b0;
+	src1[9] = #30000 1'b1;
+	src1[9] = #30000 1'b0;
+	src1[9] = #10000 1'b1;
+	src1[9] = #10000 1'b0;
+	src1[9] = #10000 1'b1;
+	src1[9] = #20000 1'b0;
+	src1[9] = #30000 1'b1;
+	src1[9] = #30000 1'b0;
+	src1[9] = #30000 1'b1;
+	src1[9] = #20000 1'b0;
+	src1[9] = #10000 1'b1;
+	src1[9] = #70000 1'b0;
+	src1[9] = #10000 1'b1;
+	src1[9] = #10000 1'b0;
+	src1[9] = #10000 1'b1;
+	src1[9] = #10000 1'b0;
+	src1[9] = #10000 1'b1;
+	src1[9] = #50000 1'b0;
+	src1[9] = #10000 1'b1;
+	src1[9] = #10000 1'b0;
+	src1[9] = #10000 1'b1;
+	src1[9] = #20000 1'b0;
+	src1[9] = #10000 1'b1;
+	src1[9] = #10000 1'b0;
+	src1[9] = #10000 1'b1;
+	src1[9] = #10000 1'b0;
+	src1[9] = #10000 1'b1;
+	src1[9] = #10000 1'b0;
+	src1[9] = #10000 1'b1;
+	src1[9] = #10000 1'b0;
+	src1[9] = #20000 1'b1;
+	src1[9] = #40000 1'b0;
+	src1[9] = #10000 1'b1;
+	src1[9] = #10000 1'b0;
+	src1[9] = #10000 1'b1;
+	src1[9] = #30000 1'b0;
+	src1[9] = #10000 1'b1;
+	src1[9] = #30000 1'b0;
+	src1[9] = #20000 1'b1;
+	src1[9] = #10000 1'b0;
+	src1[9] = #10000 1'b1;
+	src1[9] = #20000 1'b0;
+	src1[9] = #30000 1'b1;
+	src1[9] = #20000 1'b0;
+	src1[9] = #30000 1'b1;
+	src1[9] = #20000 1'b0;
+	src1[9] = #10000 1'b1;
+	src1[9] = #20000 1'b0;
+end 
+// src1[ 8 ]
+initial
+begin
+	src1[8] = 1'b0;
+	src1[8] = #10000 1'b1;
+	src1[8] = #10000 1'b0;
+	src1[8] = #10000 1'b1;
+	src1[8] = #30000 1'b0;
+	src1[8] = #10000 1'b1;
+	src1[8] = #10000 1'b0;
+	src1[8] = #10000 1'b1;
+	src1[8] = #30000 1'b0;
+	src1[8] = #20000 1'b1;
+	src1[8] = #10000 1'b0;
+	src1[8] = #10000 1'b1;
+	src1[8] = #20000 1'b0;
+	src1[8] = #40000 1'b1;
+	src1[8] = #20000 1'b0;
+	src1[8] = #30000 1'b1;
+	src1[8] = #10000 1'b0;
+	src1[8] = #70000 1'b1;
+	src1[8] = #10000 1'b0;
+	src1[8] = #10000 1'b1;
+	src1[8] = #10000 1'b0;
+	src1[8] = #20000 1'b1;
+	src1[8] = #40000 1'b0;
+	src1[8] = #10000 1'b1;
+	src1[8] = #10000 1'b0;
+	src1[8] = #10000 1'b1;
+	src1[8] = #50000 1'b0;
+	src1[8] = #60000 1'b1;
+	src1[8] = #20000 1'b0;
+	src1[8] = #10000 1'b1;
+	src1[8] = #10000 1'b0;
+	src1[8] = #10000 1'b1;
+	src1[8] = #20000 1'b0;
+	src1[8] = #10000 1'b1;
+	src1[8] = #20000 1'b0;
+	src1[8] = #50000 1'b1;
+	src1[8] = #30000 1'b0;
+	src1[8] = #20000 1'b1;
+	src1[8] = #20000 1'b0;
+	src1[8] = #40000 1'b1;
+	src1[8] = #10000 1'b0;
+	src1[8] = #10000 1'b1;
+	src1[8] = #10000 1'b0;
+	src1[8] = #10000 1'b1;
+	src1[8] = #10000 1'b0;
+	src1[8] = #10000 1'b1;
+	src1[8] = #10000 1'b0;
+	src1[8] = #70000 1'b1;
+end 
+// src1[ 7 ]
+initial
+begin
+	src1[7] = 1'b1;
+	src1[7] = #20000 1'b0;
+	src1[7] = #20000 1'b1;
+	src1[7] = #10000 1'b0;
+	src1[7] = #30000 1'b1;
+	src1[7] = #10000 1'b0;
+	src1[7] = #40000 1'b1;
+	src1[7] = #30000 1'b0;
+	src1[7] = #10000 1'b1;
+	src1[7] = #50000 1'b0;
+	src1[7] = #20000 1'b1;
+	src1[7] = #10000 1'b0;
+	src1[7] = #20000 1'b1;
+	src1[7] = #10000 1'b0;
+	src1[7] = #30000 1'b1;
+	src1[7] = #40000 1'b0;
+	src1[7] = #20000 1'b1;
+	src1[7] = #10000 1'b0;
+	src1[7] = #20000 1'b1;
+	src1[7] = #10000 1'b0;
+	src1[7] = #10000 1'b1;
+	src1[7] = #10000 1'b0;
+	src1[7] = #10000 1'b1;
+	src1[7] = #10000 1'b0;
+	src1[7] = #20000 1'b1;
+	src1[7] = #20000 1'b0;
+	src1[7] = #20000 1'b1;
+	src1[7] = #40000 1'b0;
+	src1[7] = #20000 1'b1;
+	src1[7] = #20000 1'b0;
+	src1[7] = #20000 1'b1;
+	src1[7] = #40000 1'b0;
+	src1[7] = #50000 1'b1;
+	src1[7] = #10000 1'b0;
+	src1[7] = #20000 1'b1;
+	src1[7] = #30000 1'b0;
+	src1[7] = #20000 1'b1;
+	src1[7] = #10000 1'b0;
+	src1[7] = #30000 1'b1;
+	src1[7] = #10000 1'b0;
+	src1[7] = #10000 1'b1;
+	src1[7] = #40000 1'b0;
+	src1[7] = #30000 1'b1;
+	src1[7] = #20000 1'b0;
+	src1[7] = #10000 1'b1;
+	src1[7] = #50000 1'b0;
+end 
+// src1[ 6 ]
+initial
+begin
+	src1[6] = 1'b1;
+	src1[6] = #10000 1'b0;
+	src1[6] = #20000 1'b1;
+	src1[6] = #20000 1'b0;
+	src1[6] = #10000 1'b1;
+	src1[6] = #20000 1'b0;
+	src1[6] = #10000 1'b1;
+	src1[6] = #40000 1'b0;
+	src1[6] = #10000 1'b1;
+	src1[6] = #10000 1'b0;
+	src1[6] = #10000 1'b1;
+	src1[6] = #20000 1'b0;
+	src1[6] = #10000 1'b1;
+	src1[6] = #10000 1'b0;
+	src1[6] = #20000 1'b1;
+	src1[6] = #10000 1'b0;
+	src1[6] = #30000 1'b1;
+	src1[6] = #10000 1'b0;
+	src1[6] = #30000 1'b1;
+	src1[6] = #10000 1'b0;
+	src1[6] = #10000 1'b1;
+	src1[6] = #20000 1'b0;
+	src1[6] = #10000 1'b1;
+	src1[6] = #10000 1'b0;
+	src1[6] = #90000 1'b1;
+	src1[6] = #30000 1'b0;
+	src1[6] = #20000 1'b1;
+	src1[6] = #10000 1'b0;
+	src1[6] = #10000 1'b1;
+	src1[6] = #10000 1'b0;
+	src1[6] = #10000 1'b1;
+	src1[6] = #20000 1'b0;
+	src1[6] = #20000 1'b1;
+	src1[6] = #10000 1'b0;
+	src1[6] = #30000 1'b1;
+	src1[6] = #30000 1'b0;
+	src1[6] = #10000 1'b1;
+	src1[6] = #10000 1'b0;
+	src1[6] = #20000 1'b1;
+	src1[6] = #20000 1'b0;
+	src1[6] = #10000 1'b1;
+	src1[6] = #20000 1'b0;
+	src1[6] = #40000 1'b1;
+	src1[6] = #20000 1'b0;
+	src1[6] = #10000 1'b1;
+	src1[6] = #30000 1'b0;
+	src1[6] = #10000 1'b1;
+	src1[6] = #20000 1'b0;
+	src1[6] = #30000 1'b1;
+	src1[6] = #10000 1'b0;
+	src1[6] = #10000 1'b1;
+	src1[6] = #30000 1'b0;
+	src1[6] = #20000 1'b1;
+	src1[6] = #10000 1'b0;
+	src1[6] = #10000 1'b1;
+end 
+// src1[ 5 ]
+initial
+begin
+	src1[5] = 1'b1;
+	src1[5] = #10000 1'b0;
+	src1[5] = #20000 1'b1;
+	src1[5] = #10000 1'b0;
+	src1[5] = #10000 1'b1;
+	src1[5] = #10000 1'b0;
+	src1[5] = #10000 1'b1;
+	src1[5] = #10000 1'b0;
+	src1[5] = #20000 1'b1;
+	src1[5] = #30000 1'b0;
+	src1[5] = #20000 1'b1;
+	src1[5] = #10000 1'b0;
+	src1[5] = #20000 1'b1;
+	src1[5] = #10000 1'b0;
+	src1[5] = #10000 1'b1;
+	src1[5] = #40000 1'b0;
+	src1[5] = #10000 1'b1;
+	src1[5] = #10000 1'b0;
+	src1[5] = #10000 1'b1;
+	src1[5] = #10000 1'b0;
+	src1[5] = #10000 1'b1;
+	src1[5] = #40000 1'b0;
+	src1[5] = #10000 1'b1;
+	src1[5] = #10000 1'b0;
+	src1[5] = #20000 1'b1;
+	src1[5] = #30000 1'b0;
+	src1[5] = #10000 1'b1;
+	src1[5] = #10000 1'b0;
+	src1[5] = #10000 1'b1;
+	src1[5] = #10000 1'b0;
+	src1[5] = #20000 1'b1;
+	src1[5] = #10000 1'b0;
+	src1[5] = #30000 1'b1;
+	src1[5] = #70000 1'b0;
+	src1[5] = #20000 1'b1;
+	src1[5] = #40000 1'b0;
+	src1[5] = #10000 1'b1;
+	src1[5] = #10000 1'b0;
+	src1[5] = #10000 1'b1;
+	src1[5] = #20000 1'b0;
+	src1[5] = #20000 1'b1;
+	src1[5] = #10000 1'b0;
+	src1[5] = #30000 1'b1;
+	src1[5] = #10000 1'b0;
+	src1[5] = #10000 1'b1;
+	src1[5] = #40000 1'b0;
+	src1[5] = #10000 1'b1;
+	src1[5] = #10000 1'b0;
+	src1[5] = #10000 1'b1;
+	src1[5] = #10000 1'b0;
+	src1[5] = #20000 1'b1;
+	src1[5] = #10000 1'b0;
+	src1[5] = #20000 1'b1;
+	src1[5] = #10000 1'b0;
+	src1[5] = #20000 1'b1;
+	src1[5] = #10000 1'b0;
+	src1[5] = #10000 1'b1;
+end 
+// src1[ 4 ]
+initial
+begin
+	src1[4] = 1'b1;
+	src1[4] = #30000 1'b0;
+	src1[4] = #10000 1'b1;
+	src1[4] = #10000 1'b0;
+	src1[4] = #20000 1'b1;
+	src1[4] = #10000 1'b0;
+	src1[4] = #80000 1'b1;
+	src1[4] = #40000 1'b0;
+	src1[4] = #20000 1'b1;
+	src1[4] = #10000 1'b0;
+	src1[4] = #20000 1'b1;
+	src1[4] = #20000 1'b0;
+	src1[4] = #10000 1'b1;
+	src1[4] = #10000 1'b0;
+	src1[4] = #10000 1'b1;
+	src1[4] = #30000 1'b0;
+	src1[4] = #30000 1'b1;
+	src1[4] = #10000 1'b0;
+	src1[4] = #40000 1'b1;
+	src1[4] = #10000 1'b0;
+	src1[4] = #10000 1'b1;
+	src1[4] = #10000 1'b0;
+	src1[4] = #20000 1'b1;
+	src1[4] = #10000 1'b0;
+	src1[4] = #20000 1'b1;
+	src1[4] = #30000 1'b0;
+	src1[4] = #10000 1'b1;
+	src1[4] = #50000 1'b0;
+	src1[4] = #10000 1'b1;
+	src1[4] = #10000 1'b0;
+	src1[4] = #30000 1'b1;
+	src1[4] = #10000 1'b0;
+	src1[4] = #30000 1'b1;
+	src1[4] = #10000 1'b0;
+	src1[4] = #10000 1'b1;
+	src1[4] = #10000 1'b0;
+	src1[4] = #10000 1'b1;
+	src1[4] = #10000 1'b0;
+	src1[4] = #10000 1'b1;
+	src1[4] = #10000 1'b0;
+	src1[4] = #20000 1'b1;
+	src1[4] = #10000 1'b0;
+	src1[4] = #10000 1'b1;
+	src1[4] = #50000 1'b0;
+	src1[4] = #10000 1'b1;
+	src1[4] = #10000 1'b0;
+	src1[4] = #10000 1'b1;
+	src1[4] = #50000 1'b0;
+	src1[4] = #20000 1'b1;
+	src1[4] = #30000 1'b0;
+	src1[4] = #20000 1'b1;
+end 
+// src1[ 3 ]
+initial
+begin
+	src1[3] = 1'b1;
+	src1[3] = #10000 1'b0;
+	src1[3] = #40000 1'b1;
+	src1[3] = #30000 1'b0;
+	src1[3] = #10000 1'b1;
+	src1[3] = #40000 1'b0;
+	src1[3] = #20000 1'b1;
+	src1[3] = #20000 1'b0;
+	src1[3] = #40000 1'b1;
+	src1[3] = #40000 1'b0;
+	src1[3] = #40000 1'b1;
+	src1[3] = #10000 1'b0;
+	src1[3] = #10000 1'b1;
+	src1[3] = #10000 1'b0;
+	src1[3] = #20000 1'b1;
+	src1[3] = #20000 1'b0;
+	src1[3] = #40000 1'b1;
+	src1[3] = #10000 1'b0;
+	src1[3] = #10000 1'b1;
+	src1[3] = #10000 1'b0;
+	src1[3] = #30000 1'b1;
+	src1[3] = #10000 1'b0;
+	src1[3] = #20000 1'b1;
+	src1[3] = #10000 1'b0;
+	src1[3] = #90000 1'b1;
+	src1[3] = #20000 1'b0;
+	src1[3] = #10000 1'b1;
+	src1[3] = #40000 1'b0;
+	src1[3] = #10000 1'b1;
+	src1[3] = #10000 1'b0;
+	src1[3] = #10000 1'b1;
+	src1[3] = #30000 1'b0;
+	src1[3] = #50000 1'b1;
+	src1[3] = #30000 1'b0;
+	src1[3] = #10000 1'b1;
+	src1[3] = #20000 1'b0;
+	src1[3] = #20000 1'b1;
+	src1[3] = #10000 1'b0;
+	src1[3] = #60000 1'b1;
+	src1[3] = #10000 1'b0;
+	src1[3] = #20000 1'b1;
+	src1[3] = #20000 1'b0;
+	src1[3] = #10000 1'b1;
+	src1[3] = #10000 1'b0;
+end 
+// src1[ 2 ]
+initial
+begin
+	src1[2] = 1'b0;
+	src1[2] = #20000 1'b1;
+	src1[2] = #30000 1'b0;
+	src1[2] = #10000 1'b1;
+	src1[2] = #10000 1'b0;
+	src1[2] = #20000 1'b1;
+	src1[2] = #10000 1'b0;
+	src1[2] = #20000 1'b1;
+	src1[2] = #10000 1'b0;
+	src1[2] = #10000 1'b1;
+	src1[2] = #10000 1'b0;
+	src1[2] = #20000 1'b1;
+	src1[2] = #10000 1'b0;
+	src1[2] = #10000 1'b1;
+	src1[2] = #20000 1'b0;
+	src1[2] = #50000 1'b1;
+	src1[2] = #30000 1'b0;
+	src1[2] = #50000 1'b1;
+	src1[2] = #10000 1'b0;
+	src1[2] = #10000 1'b1;
+	src1[2] = #30000 1'b0;
+	src1[2] = #10000 1'b1;
+	src1[2] = #20000 1'b0;
+	src1[2] = #10000 1'b1;
+	src1[2] = #10000 1'b0;
+	src1[2] = #10000 1'b1;
+	src1[2] = #10000 1'b0;
+	src1[2] = #30000 1'b1;
+	src1[2] = #20000 1'b0;
+	src1[2] = #10000 1'b1;
+	src1[2] = #10000 1'b0;
+	src1[2] = #20000 1'b1;
+	src1[2] = #10000 1'b0;
+	src1[2] = #10000 1'b1;
+	src1[2] = #40000 1'b0;
+	src1[2] = #20000 1'b1;
+	src1[2] = #10000 1'b0;
+	src1[2] = #10000 1'b1;
+	src1[2] = #30000 1'b0;
+	src1[2] = #10000 1'b1;
+	src1[2] = #10000 1'b0;
+	src1[2] = #20000 1'b1;
+	src1[2] = #20000 1'b0;
+	src1[2] = #20000 1'b1;
+	src1[2] = #10000 1'b0;
+	src1[2] = #30000 1'b1;
+	src1[2] = #10000 1'b0;
+	src1[2] = #10000 1'b1;
+	src1[2] = #10000 1'b0;
+	src1[2] = #30000 1'b1;
+	src1[2] = #30000 1'b0;
+	src1[2] = #20000 1'b1;
+	src1[2] = #30000 1'b0;
+	src1[2] = #10000 1'b1;
+	src1[2] = #30000 1'b0;
+	src1[2] = #10000 1'b1;
+end 
+// src1[ 1 ]
+initial
+begin
+	src1[1] = 1'b0;
+	src1[1] = #10000 1'b1;
+	src1[1] = #10000 1'b0;
+	src1[1] = #30000 1'b1;
+	src1[1] = #20000 1'b0;
+	src1[1] = #30000 1'b1;
+	src1[1] = #10000 1'b0;
+	src1[1] = #10000 1'b1;
+	src1[1] = #40000 1'b0;
+	src1[1] = #50000 1'b1;
+	src1[1] = #20000 1'b0;
+	src1[1] = #10000 1'b1;
+	src1[1] = #10000 1'b0;
+	src1[1] = #10000 1'b1;
+	src1[1] = #10000 1'b0;
+	src1[1] = #20000 1'b1;
+	src1[1] = #10000 1'b0;
+	src1[1] = #70000 1'b1;
+	src1[1] = #60000 1'b0;
+	src1[1] = #40000 1'b1;
+	src1[1] = #30000 1'b0;
+	src1[1] = #30000 1'b1;
+	src1[1] = #20000 1'b0;
+	src1[1] = #10000 1'b1;
+	src1[1] = #10000 1'b0;
+	src1[1] = #70000 1'b1;
+	src1[1] = #50000 1'b0;
+	src1[1] = #10000 1'b1;
+	src1[1] = #10000 1'b0;
+	src1[1] = #10000 1'b1;
+	src1[1] = #10000 1'b0;
+	src1[1] = #30000 1'b1;
+	src1[1] = #10000 1'b0;
+	src1[1] = #30000 1'b1;
+	src1[1] = #20000 1'b0;
+	src1[1] = #10000 1'b1;
+	src1[1] = #40000 1'b0;
+	src1[1] = #30000 1'b1;
+	src1[1] = #50000 1'b0;
+	src1[1] = #10000 1'b1;
+	src1[1] = #20000 1'b0;
+end 
+// src1[ 0 ]
+initial
+begin
+	src1[0] = 1'b0;
+	src1[0] = #70000 1'b1;
+	src1[0] = #30000 1'b0;
+	src1[0] = #30000 1'b1;
+	src1[0] = #10000 1'b0;
+	src1[0] = #20000 1'b1;
+	src1[0] = #10000 1'b0;
+	src1[0] = #10000 1'b1;
+	src1[0] = #40000 1'b0;
+	src1[0] = #10000 1'b1;
+	src1[0] = #10000 1'b0;
+	src1[0] = #10000 1'b1;
+	src1[0] = #30000 1'b0;
+	src1[0] = #10000 1'b1;
+	src1[0] = #30000 1'b0;
+	src1[0] = #20000 1'b1;
+	src1[0] = #20000 1'b0;
+	src1[0] = #20000 1'b1;
+	src1[0] = #10000 1'b0;
+	src1[0] = #10000 1'b1;
+	src1[0] = #30000 1'b0;
+	src1[0] = #40000 1'b1;
+	src1[0] = #50000 1'b0;
+	src1[0] = #10000 1'b1;
+	src1[0] = #10000 1'b0;
+	src1[0] = #10000 1'b1;
+	src1[0] = #20000 1'b0;
+	src1[0] = #20000 1'b1;
+	src1[0] = #10000 1'b0;
+	src1[0] = #20000 1'b1;
+	src1[0] = #30000 1'b0;
+	src1[0] = #20000 1'b1;
+	src1[0] = #50000 1'b0;
+	src1[0] = #10000 1'b1;
+	src1[0] = #20000 1'b0;
+	src1[0] = #10000 1'b1;
+	src1[0] = #70000 1'b0;
+	src1[0] = #10000 1'b1;
+	src1[0] = #20000 1'b0;
+	src1[0] = #10000 1'b1;
+	src1[0] = #10000 1'b0;
+	src1[0] = #20000 1'b1;
+	src1[0] = #30000 1'b0;
+	src1[0] = #10000 1'b1;
+	src1[0] = #10000 1'b0;
+	src1[0] = #10000 1'b1;
+	src1[0] = #30000 1'b0;
+end 
+
+ALU_EXT_vlg_sample_tst tb_sample (
+	.clk(clk),
+	.func(func),
+	.src0(src0),
+	.src1(src1),
+	.sampler_tx(sampler)
+);
+
+ALU_EXT_vlg_check_tst tb_out(
+	.dst_EX_DM(dst_EX_DM),
+	.neg(neg),
+	.ov(ov),
+	.zr(zr),
+	.sampler_rx(sampler)
+);
+endmodule
+

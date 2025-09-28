@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\JOSE LUIS TARQUI\Desktop\SCEIE\LASCAS\IA Y FPG\MI nuevo codigo\CNN_WITH_FPGA\simulation\qsim
+vALU_EXT
+Z1 !s100 ?YIRkE`]bDLKEXBCR@ZGS2
+Z2 I0bI[lR^ZMnN5TaG?BOGKH2
+Z3 ViY;>PU>=>DW[i7UD=<ji=3
+Z4 dC:\Users\JOSE LUIS TARQUI\Desktop\SCEIE\LASCAS\IA Y FPG\MI nuevo codigo\CNN_WITH_FPGA\simulation\qsim
+Z5 w1759093057
+Z6 8ALU_EXT.vo
+Z7 FALU_EXT.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|ALU_EXT.vo|
+Z10 o-work work -O0
+Z11 n@a@l@u_@e@x@t
+!i10b 1
+!s85 0
+Z12 !s108 1759093058.196000
+Z13 !s107 ALU_EXT.vo|
+!s101 -O0
+vALU_EXT_vlg_check_tst
+!i10b 1
+Z14 !s100 RSlRBCC:[N<hBG@SX_OCm0
+Z15 ISE5@_9X:;9eWQ`ALH^EC?3
+Z16 Vb1DQ_BKCUW451^a8?JBW?1
+R4
+Z17 w1759093056
+Z18 8ALU_EXT.vt
+Z19 FALU_EXT.vt
+L0 63
+R8
+r1
+!s85 0
+31
+Z20 !s108 1759093058.594000
+Z21 !s107 ALU_EXT.vt|
+Z22 !s90 -work|work|ALU_EXT.vt|
+!s101 -O0
+R10
+Z23 n@a@l@u_@e@x@t_vlg_check_tst
+vALU_EXT_vlg_sample_tst
+!i10b 1
+Z24 !s100 Z`ldoYGAAid=UfOn;K`5<1
+Z25 I_b=[iL4?ZY7fo6f`e<YUC0
+Z26 V?U@YE1YdWAQ67D9SZ<PJf3
+R4
+R17
+R18
+R19
+L0 29
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z27 n@a@l@u_@e@x@t_vlg_sample_tst
+vALU_EXT_vlg_vec_tst
+!i10b 1
+!s100 JSaQA>JMfhEDJk5iEG:j03
+ICC7hY3DRbOYz7a3<jIWZG1
+Z28 VXFGU@B_Ik1W2V]9F4lH1]3
+R4
+R17
+R18
+R19
+Z29 L0 841
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z30 n@a@l@u_@e@x@t_vlg_vec_tst
