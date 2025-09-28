@@ -26,10 +26,16 @@ module ALU_EXT(clk, src1, src0, func, dst_EX_DM, ov, zr, neg);
 	
 	FP_adder ifadd(
 		.A(src1),
-		.B(func==SUBF ? {~src0[31], src0[30:0]} : src0),	// flip second operand if doing A - B
+		.B(func==SUBF ? {~src0[31], src0[30:0]} : src0),	// flip second operand if doing A - B = A + (-B)
 		.out(ifadd_OUT)
 	);
-
+   
+	//modulo multiplicacion
+   FP_mul ifmul(
+		.A(src1),
+		.B(src0),
+		.OUT(ifmul_OUT)
+	);
 
 		
 endmodule
